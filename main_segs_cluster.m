@@ -1,7 +1,7 @@
-% clc
-% clear
-%
-%addpath('.\trainingdata1.1');
+clc
+clear
+
+addpath('.\trainingdata3');
 global Ts 
 Ts = 0.01;
 X = []; % store all the data 
@@ -10,7 +10,7 @@ num =1;
  
 winLen = 10;
 
-for i = 1:ndata
+for i = 1:48
     load(['test', int2str(i),'.mat']);
     
     trace_temp = FnProcessData(xout);
