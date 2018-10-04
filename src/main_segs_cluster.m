@@ -41,9 +41,8 @@ sorted_index = segIndex(index,:);
 
 global lambda;
 lambda = 0.005;  
-winLen = 5;
 tic
-idx= FnRecursive2(1,X,[],sorted_index, winLen);
+idx= FnRecursive1(1,X,[],sorted_index, winLen);
 labels = FnIndxarrange(idx, index);
 %load labels.mat
 %% assign labels to segments
