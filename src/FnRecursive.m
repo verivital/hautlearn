@@ -15,10 +15,6 @@ function indx = FnRecursive(x,ud,chpoints)
             indx = [1;-1];
             return;
         end
-        index_start1 = chpoints(1,1);
-        index_end1 = chpoints(1,2);
-        xseg1 = x(:,index_start1: index_end1); 
-        udseg1 = ud(:,index_start1: index_end1);
         
         %variable number
         num_var = size(x,1);
@@ -27,10 +23,20 @@ function indx = FnRecursive(x,ud,chpoints)
         %choose t1
         C = eye(num_var);
         
+        index_start1 = chpoints(1,1);
+        index_end1 = chpoints(1,2);
+        xseg1 = x(:,index_start1: index_end1);
         xk1 = xseg1(:,1:end - winlen); 
         ud1 = [];
-        for ii = 1:winlen
-            ud1 = [ud1;[udseg1(:,ii:end - winlen+ii-1); ones(1,size(xk1,2))]];
+        if num_ud ==0
+            for ii = 1:winlen
+                ud1 = [ud1; ones(1,size(xk1,2))];
+            end
+        else
+            udseg1 = ud(:,index_start1: index_end1);
+            for ii = 1:winlen
+                ud1 = [ud1;[udseg1(:,ii:end - winlen+ii-1); ones(1,size(xk1,2))]];
+            end
         end
         xki1 = [];
         for ii = 1:winlen
@@ -41,11 +47,8 @@ function indx = FnRecursive(x,ud,chpoints)
         Oki = xki1;
         
         %error tolerance
-        error_t = (lambda * length(Ok))^2;
-
         setlmis([]);
-        nv = 3; %number of variable
-        structV = [winlen*nv, winlen+winlen+nv];
+        structV = [winlen*num_var, winlen+num_ud+num_var];
         V = lmivar(2, structV);
         C = eye(size(Oki, 1));
         error_t = (lambda * size(Oki,2))^2;
@@ -64,26 +67,32 @@ function indx = FnRecursive(x,ud,chpoints)
         for j = 2:num_segments
             num_segments
             j
-            if num_segments == 120
+            if num_segments == 2
                 yy = 0;
             end
             index_startj = chpoints(j,1);
             index_endj = chpoints(j,2);
-            
-            %heater = x(4:6,index_startj: index_endj);
+                       
             xsegj = x(:,index_startj: index_endj);
             xkj = xsegj(:,1:end - winlen);
             xkij = [];
             for ii = 1:winlen
                 xkij = [xkij; xsegj(:, ii+1:end-winlen+ii)];
             end
-  
-            udsegj = ud(:,index_startj: index_endj);
-            udj = [];
-            for ii = 1:winlen
-                udj = [udj;[udsegj(:,ii:end - winlen+ii-1); ones(1,size(xkj,2))]];
+            
+            if num_ud == 0
+                udj = [];
+                for ii = 1:winlen
+                    udj = [udj; ones(1,size(xkj,2))];
+                end
+            else
+                udsegj = ud(:,index_startj: index_endj);
+                udj = [];
+                for ii = 1:winlen
+                    udj = [udj;[udsegj(:,ii:end - winlen+ii-1); ones(1,size(xkj,2))]];
+                end
             end
-        
+
             Okj = [xkj; udj];
             Okij = xkij;
             
@@ -116,7 +125,6 @@ function indx = FnRecursive(x,ud,chpoints)
                 len = length(Ok);
                 for i = 1:size(Okij,1)
                     n = (j-1)*num_var+i;
-                    %n = 3 + i;
                     lmi = dellmi(lmi,n);
                 end
             else
@@ -126,11 +134,14 @@ function indx = FnRecursive(x,ud,chpoints)
                 end
                 for i = 1:size(Okij,1)
                     n = (j-1)*num_var+i;
-                    %n = 3 + i;
                     lmi = dellmi(lmi,n);
                 end
                 xc = [xc, xsegj]; 
-                udc = [udc, udsegj];
+                if num_ud ==0
+                    udc = [];
+                else
+                    udc = [udc, udsegj];
+                end
                 if chpc == 1
                     chpc = [1,size(xsegj,2)];
                 else

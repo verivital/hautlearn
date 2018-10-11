@@ -16,7 +16,11 @@ for label = 1:len_labels
         
         for n = 1:length(startj)
         x_seg = [x_seg, x(startj(n):(endj(n)-1), :)'];
-        ud_seg = [ud_seg, [ud(startj(n):(endj(n)-1), :)'; ones(1, (endj(n)- startj(n)))]];
+        if isempty(ud)
+            ud_seg = [ud_seg, ones(1, (endj(n)- startj(n)))];
+        else
+            ud_seg = [ud_seg, [ud(startj(n):(endj(n)-1), :)'; ones(1, (endj(n)- startj(n)))]];
+        end
         x_seg_plus = [x_seg_plus, x((startj(n)+1):endj(n), :)'];
         end
     end

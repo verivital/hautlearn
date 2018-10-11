@@ -11,9 +11,9 @@ function trace = FnClusterSegs(trace, x, ud)
     [sorted_length, index] = sort(seglength,'descend');
     sorted_index = segIndex(index,:);
 
-    mix_label= FnRecursive3(x',ud',sorted_index);
+    mix_label= FnRecursive(x',ud',sorted_index);
     labels = FnIndxarrange(mix_label, index);
-    labels_num = unique(1,labels);
+    labels_num = unique(labels(:,2));
     cluster_segs = sortrows(labels,1); %
  %%   
     for i=1:length(trace)

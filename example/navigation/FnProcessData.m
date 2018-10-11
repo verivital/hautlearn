@@ -10,7 +10,7 @@ function trace = FnProcessData(xout, num_var, num_ud)
     trace.chpoints = chpoints;
     trace.x = xout(:,1:4);
     trace.ud = [];
-    trace.labels = []; 
+    trace.labels_num = []; 
     trace.labels_trace = []; 
     
 %     % x1
