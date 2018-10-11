@@ -1,4 +1,4 @@
- function [bestParameters, bestInIdx] = ransac_demo(chdata, alldata, n,iter,threshDist,inNum)
+ function [bestParameters, bestInIdx] = ransac_demo(chdata, n,iter,threshDist,inNum)
  
  chdata = chdata';
  number = size(chdata,2); % Total number of changepoints

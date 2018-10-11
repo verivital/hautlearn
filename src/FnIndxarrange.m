@@ -3,7 +3,7 @@ function labels = FnIndxarrange(cluster_idx, index)
     NOne = find(cluster_idx == -1);
     labels = ones(NOne(1)-1,1);
     nNOne = length(NOne);
-    indxx = 1:(length(cluster_idx) - nNOne);
+    indxx = 1:length(index);%(length(cluster_idx) - nNOne);
     
     starti = 1;
     endi = NOne(1) - 1;
