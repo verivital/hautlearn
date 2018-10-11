@@ -8,7 +8,7 @@ num =1;
 global lambda num_var num_ud
 lambda = 0.000001;  
 num_var = 4; num_ud = 0;
-for i = 1:56
+for i = 1:2%56
     load(['test', int2str(i),'.mat']);
     
     trace_temp = FnProcessData(xout, num_var, num_ud);
