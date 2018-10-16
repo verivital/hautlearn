@@ -1,8 +1,8 @@
 /* Include files */
 
-#include "bouncing_ball_sfun.h"
-#include "bouncing_ball_sfun_debug_macros.h"
-#include "c3_bouncing_ball.h"
+#include "ESTbouncing_sfun.h"
+#include "ESTbouncing_sfun_debug_macros.h"
+#include "c3_ESTbouncing.h"
 
 /* Type Definitions */
 
@@ -11,32 +11,32 @@
 /* Variable Declarations */
 
 /* Variable Definitions */
-uint32_T _bouncing_ballMachineNumber_;
+uint32_T _ESTbouncingMachineNumber_;
 
 /* Function Declarations */
 
 /* Function Definitions */
-void bouncing_ball_initializer(void)
+void ESTbouncing_initializer(void)
 {
 }
 
-void bouncing_ball_terminator(void)
+void ESTbouncing_terminator(void)
 {
 }
 
 /* SFunction Glue Code */
-unsigned int sf_bouncing_ball_method_dispatcher(SimStruct *simstructPtr,
-  unsigned int chartFileNumber, const char* specsCksum, int_T method, void *data)
+unsigned int sf_ESTbouncing_method_dispatcher(SimStruct *simstructPtr, unsigned
+  int chartFileNumber, const char* specsCksum, int_T method, void *data)
 {
   if (chartFileNumber==3) {
-    c3_bouncing_ball_method_dispatcher(simstructPtr, method, data);
+    c3_ESTbouncing_method_dispatcher(simstructPtr, method, data);
     return 1;
   }
 
   return 0;
 }
 
-unsigned int sf_bouncing_ball_process_check_sum_call( int nlhs, mxArray * plhs[],
+unsigned int sf_ESTbouncing_process_check_sum_call( int nlhs, mxArray * plhs[],
   int nrhs, const mxArray * prhs[] )
 {
 
@@ -56,18 +56,18 @@ unsigned int sf_bouncing_ball_process_check_sum_call( int nlhs, mxArray * plhs[]
     mxGetString(prhs[1], commandName,sizeof(commandName)/sizeof(char));
     commandName[(sizeof(commandName)/sizeof(char)-1)] = '\0';
     if (!strcmp(commandName,"machine")) {
-      ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(1893899451U);
-      ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(33633745U);
-      ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(3513867531U);
-      ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(3495070129U);
+      ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(1529976147U);
+      ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(1070979420U);
+      ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(3294875590U);
+      ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(3366946282U);
     } else if (nrhs==3 && !strcmp(commandName,"chart")) {
       unsigned int chartFileNumber;
       chartFileNumber = (unsigned int)mxGetScalar(prhs[2]);
       switch (chartFileNumber) {
        case 3:
         {
-          extern void sf_c3_bouncing_ball_get_check_sum(mxArray *plhs[]);
-          sf_c3_bouncing_ball_get_check_sum(plhs);
+          extern void sf_c3_ESTbouncing_get_check_sum(mxArray *plhs[]);
+          sf_c3_ESTbouncing_get_check_sum(plhs);
           break;
         }
 
@@ -86,10 +86,10 @@ unsigned int sf_bouncing_ball_process_check_sum_call( int nlhs, mxArray * plhs[]
       return 0;
     }
   } else {
-    ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(566738938U);
-    ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(1899508307U);
-    ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(1153892667U);
-    ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(3996940742U);
+    ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(96190403U);
+    ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(2634335112U);
+    ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(1721418429U);
+    ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(1410160958U);
   }
 
   return 1;
@@ -102,7 +102,7 @@ unsigned int sf_bouncing_ball_process_check_sum_call( int nlhs, mxArray * plhs[]
 
 }
 
-unsigned int sf_bouncing_ball_autoinheritance_info( int nlhs, mxArray * plhs[],
+unsigned int sf_ESTbouncing_autoinheritance_info( int nlhs, mxArray * plhs[],
   int nrhs, const mxArray * prhs[] )
 {
 
@@ -127,9 +127,9 @@ unsigned int sf_bouncing_ball_autoinheritance_info( int nlhs, mxArray * plhs[],
     switch (chartFileNumber) {
      case 3:
       {
-        if (strcmp(aiChksum, "StD9ePYxzF9n7RgaD4meN") == 0) {
-          extern mxArray *sf_c3_bouncing_ball_get_autoinheritance_info(void);
-          plhs[0] = sf_c3_bouncing_ball_get_autoinheritance_info();
+        if (strcmp(aiChksum, "BqZMnXJAIdNFLAeJUrzf4F") == 0) {
+          extern mxArray *sf_c3_ESTbouncing_get_autoinheritance_info(void);
+          plhs[0] = sf_c3_ESTbouncing_get_autoinheritance_info();
           break;
         }
 
@@ -152,8 +152,8 @@ unsigned int sf_bouncing_ball_autoinheritance_info( int nlhs, mxArray * plhs[],
 
 }
 
-unsigned int sf_bouncing_ball_get_eml_resolved_functions_info( int nlhs, mxArray
-  * plhs[], int nrhs, const mxArray * prhs[] )
+unsigned int sf_ESTbouncing_get_eml_resolved_functions_info( int nlhs, mxArray *
+  plhs[], int nrhs, const mxArray * prhs[] )
 {
 
 #ifdef MATLAB_MEX_FILE
@@ -174,10 +174,10 @@ unsigned int sf_bouncing_ball_get_eml_resolved_functions_info( int nlhs, mxArray
     switch (chartFileNumber) {
      case 3:
       {
-        extern const mxArray
-          *sf_c3_bouncing_ball_get_eml_resolved_functions_info(void);
+        extern const mxArray *sf_c3_ESTbouncing_get_eml_resolved_functions_info
+          (void);
         mxArray *persistentMxArray = (mxArray *)
-          sf_c3_bouncing_ball_get_eml_resolved_functions_info();
+          sf_c3_ESTbouncing_get_eml_resolved_functions_info();
         plhs[0] = mxDuplicateArray(persistentMxArray);
         mxDestroyArray(persistentMxArray);
         break;
@@ -198,7 +198,7 @@ unsigned int sf_bouncing_ball_get_eml_resolved_functions_info( int nlhs, mxArray
 
 }
 
-unsigned int sf_bouncing_ball_third_party_uses_info( int nlhs, mxArray * plhs[],
+unsigned int sf_ESTbouncing_third_party_uses_info( int nlhs, mxArray * plhs[],
   int nrhs, const mxArray * prhs[] )
 {
   char commandName[64];
@@ -220,9 +220,9 @@ unsigned int sf_bouncing_ball_third_party_uses_info( int nlhs, mxArray * plhs[],
     switch (chartFileNumber) {
      case 3:
       {
-        if (strcmp(tpChksum, "sva4SWpU3Jz4fTQ7a2dn39") == 0) {
-          extern mxArray *sf_c3_bouncing_ball_third_party_uses_info(void);
-          plhs[0] = sf_c3_bouncing_ball_third_party_uses_info();
+        if (strcmp(tpChksum, "sHQMwcdXQbIOSViTsOc4bb") == 0) {
+          extern mxArray *sf_c3_ESTbouncing_third_party_uses_info(void);
+          plhs[0] = sf_c3_ESTbouncing_third_party_uses_info();
           break;
         }
       }
@@ -235,7 +235,7 @@ unsigned int sf_bouncing_ball_third_party_uses_info( int nlhs, mxArray * plhs[],
   return 1;
 }
 
-unsigned int sf_bouncing_ball_jit_fallback_info( int nlhs, mxArray * plhs[], int
+unsigned int sf_ESTbouncing_jit_fallback_info( int nlhs, mxArray * plhs[], int
   nrhs, const mxArray * prhs[] )
 {
   char commandName[64];
@@ -257,9 +257,9 @@ unsigned int sf_bouncing_ball_jit_fallback_info( int nlhs, mxArray * plhs[], int
     switch (chartFileNumber) {
      case 3:
       {
-        if (strcmp(tpChksum, "sva4SWpU3Jz4fTQ7a2dn39") == 0) {
-          extern mxArray *sf_c3_bouncing_ball_jit_fallback_info(void);
-          plhs[0] = sf_c3_bouncing_ball_jit_fallback_info();
+        if (strcmp(tpChksum, "sHQMwcdXQbIOSViTsOc4bb") == 0) {
+          extern mxArray *sf_c3_ESTbouncing_jit_fallback_info(void);
+          plhs[0] = sf_c3_ESTbouncing_jit_fallback_info();
           break;
         }
       }
@@ -272,8 +272,8 @@ unsigned int sf_bouncing_ball_jit_fallback_info( int nlhs, mxArray * plhs[], int
   return 1;
 }
 
-unsigned int sf_bouncing_ball_updateBuildInfo_args_info( int nlhs, mxArray *
-  plhs[], int nrhs, const mxArray * prhs[] )
+unsigned int sf_ESTbouncing_updateBuildInfo_args_info( int nlhs, mxArray * plhs[],
+  int nrhs, const mxArray * prhs[] )
 {
   char commandName[64];
   char tpChksum[64];
@@ -294,9 +294,9 @@ unsigned int sf_bouncing_ball_updateBuildInfo_args_info( int nlhs, mxArray *
     switch (chartFileNumber) {
      case 3:
       {
-        if (strcmp(tpChksum, "sva4SWpU3Jz4fTQ7a2dn39") == 0) {
-          extern mxArray *sf_c3_bouncing_ball_updateBuildInfo_args_info(void);
-          plhs[0] = sf_c3_bouncing_ball_updateBuildInfo_args_info();
+        if (strcmp(tpChksum, "sHQMwcdXQbIOSViTsOc4bb") == 0) {
+          extern mxArray *sf_c3_ESTbouncing_updateBuildInfo_args_info(void);
+          plhs[0] = sf_c3_ESTbouncing_updateBuildInfo_args_info();
           break;
         }
       }
@@ -309,17 +309,17 @@ unsigned int sf_bouncing_ball_updateBuildInfo_args_info( int nlhs, mxArray *
   return 1;
 }
 
-void bouncing_ball_debug_initialize(struct SfDebugInstanceStruct* debugInstance)
+void ESTbouncing_debug_initialize(struct SfDebugInstanceStruct* debugInstance)
 {
-  _bouncing_ballMachineNumber_ = sf_debug_initialize_machine(debugInstance,
-    "bouncing_ball","sfun",0,1,0,0,0);
-  sf_debug_set_machine_event_thresholds(debugInstance,
-    _bouncing_ballMachineNumber_,0,0);
-  sf_debug_set_machine_data_thresholds(debugInstance,
-    _bouncing_ballMachineNumber_,0);
+  _ESTbouncingMachineNumber_ = sf_debug_initialize_machine(debugInstance,
+    "ESTbouncing","sfun",0,1,0,0,0);
+  sf_debug_set_machine_event_thresholds(debugInstance,_ESTbouncingMachineNumber_,
+    0,0);
+  sf_debug_set_machine_data_thresholds(debugInstance,_ESTbouncingMachineNumber_,
+    0);
 }
 
-void bouncing_ball_register_exported_symbols(SimStruct* S)
+void ESTbouncing_register_exported_symbols(SimStruct* S)
 {
 }
 
@@ -331,29 +331,29 @@ typedef struct SfOptimizationInfoFlagsTag {
 } SfOptimizationInfoFlags;
 
 static SfOptimizationInfoFlags sOptimizationInfoFlags;
-void unload_bouncing_ball_optimization_info(void);
-mxArray* load_bouncing_ball_optimization_info(boolean_T isRtwGen, boolean_T
+void unload_ESTbouncing_optimization_info(void);
+mxArray* load_ESTbouncing_optimization_info(boolean_T isRtwGen, boolean_T
   isModelRef, boolean_T isExternal)
 {
   if (sOptimizationInfoFlags.isRtwGen != isRtwGen ||
       sOptimizationInfoFlags.isModelRef != isModelRef ||
       sOptimizationInfoFlags.isExternal != isExternal) {
-    unload_bouncing_ball_optimization_info();
+    unload_ESTbouncing_optimization_info();
   }
 
   sOptimizationInfoFlags.isRtwGen = isRtwGen;
   sOptimizationInfoFlags.isModelRef = isModelRef;
   sOptimizationInfoFlags.isExternal = isExternal;
   if (sRtwOptimizationInfoStruct==NULL) {
-    sRtwOptimizationInfoStruct = sf_load_rtw_optimization_info("bouncing_ball",
-      "bouncing_ball");
+    sRtwOptimizationInfoStruct = sf_load_rtw_optimization_info("ESTbouncing",
+      "ESTbouncing");
     mexMakeArrayPersistent(sRtwOptimizationInfoStruct);
   }
 
   return(sRtwOptimizationInfoStruct);
 }
 
-void unload_bouncing_ball_optimization_info(void)
+void unload_ESTbouncing_optimization_info(void)
 {
   if (sRtwOptimizationInfoStruct!=NULL) {
     mxDestroyArray(sRtwOptimizationInfoStruct);

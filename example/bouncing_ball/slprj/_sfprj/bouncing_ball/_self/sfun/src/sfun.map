@@ -3,41 +3,41 @@ Relocations for 'c:\program files\matlab\r2017a\sys\lcc64\lcc64\lib64\libcrt10.o
 20: 000134ee|000134ce|_cinit                   | 
 Relocations for 'bouncing_ball_sfun.obj' section '.text':
 20: 00000fab|000088f6|c3_bouncing_ball_method_dispatcher| 20: 00000088|0002b574|mxIsChar                 |
-20: 000000bc|0002b548|mxGetString_700          | 20: 000000c7|000250dd|_$263                    |
+20: 000000bc|0002b548|mxGetString_700          | 20: 000000c7|000250d5|_$263                    |
 20: 0001b471|0001b2ab|strcmp                   | 20: 00000100|0002b50c|mxCreateDoubleMatrix_700 |
 20: 0000012f|0002b4cd|mxIsChar                 | 20: 00000161|0002b4a3|mxGetString_700          |
-20: 0000016c|00025030|_$269                    | 20: 0001b516|0001b206|strcmp                   |
-20: 0000019b|0002b479|mxGetPr                  | 20: 000001b2|00024fe2|_$270                    |
-20: 000001c9|0002b44b|mxGetPr                  | 20: 000001e0|00024fac|_$271                    |
-20: 000001f8|0002b41c|mxGetPr                  | 20: 0000020f|00024f75|_$272                    |
-20: 00000227|0002b3ed|mxGetPr                  | 20: 00000244|00024f38|_$273                    |
-20: 00000265|00024f0f|_$276                    | 20: 0001b60f|0001b10d|strcmp                   |
+20: 0000016c|00025028|_$269                    | 20: 0001b516|0001b206|strcmp                   |
+20: 0000019b|0002b479|mxGetPr                  | 20: 000001b2|00024fda|_$270                    |
+20: 000001c9|0002b44b|mxGetPr                  | 20: 000001e0|00024fa4|_$271                    |
+20: 000001f8|0002b41c|mxGetPr                  | 20: 0000020f|00024f6d|_$272                    |
+20: 00000227|0002b3ed|mxGetPr                  | 20: 00000244|00024f30|_$273                    |
+20: 00000265|00024f07|_$276                    | 20: 0001b60f|0001b10d|strcmp                   |
 20: 00000295|0002b387|mxGetScalar              | 20: 00001228|00005b56|sf_c3_bouncing_ball_get_check_sum|
-20: 000002da|0002b33a|mxGetPr                  | 20: 000002f1|00024e7b|_$280                    |
-20: 00000308|0002b30c|mxGetPr                  | 20: 00000325|00024e47|_$280                    |
-20: 0000033d|0002b2d7|mxGetPr                  | 20: 00000360|00024e0c|_$280                    |
-20: 00000378|0002b29c|mxGetPr                  | 20: 0000039b|00024dd1|_$280                    |
-20: 000003b2|00024db2|_$283                    | 20: 0001b75c|0001afc0|strcmp                   |
-20: 000003e1|0002b233|mxGetPr                  | 20: 000003f8|00024d64|_$284                    |
-20: 0000040f|0002b205|mxGetPr                  | 20: 00000426|00024d2e|_$285                    |
-20: 0000043e|0002b1d6|mxGetPr                  | 20: 0000045b|00024cf1|_$286                    |
-20: 00000473|0002b1a1|mxGetPr                  | 20: 00000496|00024cae|_$287                    |
-20: 000004ba|0002b15a|mxGetPr                  | 20: 000004d1|00024c6b|_$288                    |
-20: 000004e8|0002b12c|mxGetPr                  | 20: 000004ff|00024c35|_$289                    |
-20: 00000517|0002b0fd|mxGetPr                  | 20: 0000052e|00024bfe|_$290                    |
-20: 00000546|0002b0ce|mxGetPr                  | 20: 0000055d|00024bc7|_$291                    |
+20: 000002da|0002b33a|mxGetPr                  | 20: 000002f1|00024e73|_$280                    |
+20: 00000308|0002b30c|mxGetPr                  | 20: 00000325|00024e3f|_$280                    |
+20: 0000033d|0002b2d7|mxGetPr                  | 20: 00000360|00024e04|_$280                    |
+20: 00000378|0002b29c|mxGetPr                  | 20: 0000039b|00024dc9|_$280                    |
+20: 000003b2|00024daa|_$283                    | 20: 0001b75c|0001afc0|strcmp                   |
+20: 000003e1|0002b233|mxGetPr                  | 20: 000003f8|00024d5c|_$284                    |
+20: 0000040f|0002b205|mxGetPr                  | 20: 00000426|00024d26|_$285                    |
+20: 0000043e|0002b1d6|mxGetPr                  | 20: 0000045b|00024ce9|_$286                    |
+20: 00000473|0002b1a1|mxGetPr                  | 20: 00000496|00024ca6|_$287                    |
+20: 000004ba|0002b15a|mxGetPr                  | 20: 000004d1|00024c63|_$288                    |
+20: 000004e8|0002b12c|mxGetPr                  | 20: 000004ff|00024c2d|_$289                    |
+20: 00000517|0002b0fd|mxGetPr                  | 20: 0000052e|00024bf6|_$290                    |
+20: 00000546|0002b0ce|mxGetPr                  | 20: 0000055d|00024bbf|_$291                    |
 20: 000005a4|0002b058|mxIsChar                 | 20: 000005d8|0002b02c|mxGetString_700          |
-20: 000005e3|00024b21|_$349                    | 20: 0001b98d|0001ad8f|strcmp                   |
+20: 000005e3|00024b1f|_$349                    | 20: 0001b98d|0001ad8f|strcmp                   |
 20: 0000061e|0002afe6|mxGetString_700          | 20: 00000630|0002afec|mxGetScalar              |
-20: 00000669|00024a84|_$356                    | 20: 0001ba13|0001ad09|strcmp                   |
+20: 00000669|00024a83|_$356                    | 20: 0001ba13|0001ad09|strcmp                   |
 20: 000015f9|00005852|sf_c3_bouncing_ball_get_autoinheritance_info| 20: 000006cb|0002af41|mxCreateDoubleMatrix_700 |
 20: 000006fd|0002af0f|mxCreateDoubleMatrix_700 | 20: 0000075c|0002aea0|mxIsChar                 |
-20: 00000790|0002ae74|mxGetString_700          | 20: 0000079b|00024932|_$380                    |
+20: 00000790|0002ae74|mxGetString_700          | 20: 0000079b|00024931|_$380                    |
 20: 0001bb45|0001abd7|strcmp                   | 20: 000007cb|0002ae51|mxGetScalar              |
 20: 0000175a|0000456a|sf_c3_bouncing_ball_get_eml_resolved_functions_info| 20: 00000818|0002ae0c|mxDuplicateArray         |
 20: 00000845|0002ade7|mxDestroyArray           | 20: 00000854|0002adb8|mxCreateDoubleMatrix_700 |
 20: 000008a7|0002ad55|mxIsChar                 | 20: 000008e7|0002ad1d|mxGetString_700          |
-20: 00000904|0002ad00|mxGetString_700          | 20: 0000090f|000247a4|_$406                    |
+20: 00000904|0002ad00|mxGetString_700          | 20: 0000090f|000247a3|_$406                    |
 20: 0001bcb9|0001aa63|strcmp                   | 20: 0000094b|0002acd1|mxGetScalar              |
 20: 0000098d|0002470e|_$412                    | 20: 0001bd37|0001a9e5|strcmp                   |
 20: 0000191d|00005f50|sf_c3_bouncing_ball_third_party_uses_info| 20: 000009ef|0002ac1d|mxCreateDoubleMatrix_700 |
@@ -341,77 +341,77 @@ Relocations for 'c3_bouncing_ball.obj' section '.text':
 20: 00004f54|00025780|mxGetPr                  | 20: 0000514b|0001fa39|_$861                    |
 20: 00004f83|00025751|mxGetPr                  | 20: 0000517a|0001fa02|_$862                    |
 20: 000051a3|0001f4a1|_$874                    | 20: 00004fef|00025705|mxCreateStructMatrix_700 |
-20: 000051ea|0001f93d|_$881                    | 20: 00005010|000256ec|mxCreateString           |
-20: 0000520f|0001f960|_$875                    | 20: 0000503b|000256c9|mxSetField_700           |
-20: 00005048|00025684|mxCreateDoubleMatrix_700 | 20: 0000523f|0001f929|_$876                    |
+20: 000051ea|0001f93c|_$881                    | 20: 00005010|000256ec|mxCreateString           |
+20: 0000520f|0001f95e|_$875                    | 20: 0000503b|000256c9|mxSetField_700           |
+20: 00005048|00025684|mxCreateDoubleMatrix_700 | 20: 0000523f|0001f927|_$876                    |
 20: 0000506b|00025699|mxSetField_700           | 20: 00005078|00025654|mxCreateDoubleMatrix_700 |
-20: 0000526f|0001f8ee|_$877                    | 20: 0000509b|00025669|mxSetField_700           |
+20: 0000526f|0001f8ec|_$877                    | 20: 0000509b|00025669|mxSetField_700           |
 20: 00005286|0001f3ee|_$882                    | 20: 000050d2|00025622|mxCreateStructMatrix_700 |
 20: 000050fe|000255ce|mxCreateDoubleMatrix_700 | 20: 0000512e|000255a6|mxGetPr                  |
-20: 0000533f|0001f7e3|_$883                    | 20: 0000516b|00025599|mxSetField_700           |
+20: 0000533f|0001f7e2|_$883                    | 20: 0000516b|00025599|mxSetField_700           |
 20: 00005359|0001f333|_$886                    | 20: 000051a8|0002554c|mxCreateStructMatrix_700 |
 20: 000053b2|0001f89a|_$315                    | 20: 000051dd|0002552f|mxCreateDoubleScalar     |
-20: 000053e0|0001f72d|_$887                    | 20: 0000520f|000254f5|mxSetField_700           |
-20: 0000521c|000254b0|mxCreateDoubleMatrix_700 | 20: 0000541f|0001f6e8|_$888                    |
+20: 000053e0|0001f72c|_$887                    | 20: 0000520f|000254f5|mxSetField_700           |
+20: 0000521c|000254b0|mxCreateDoubleMatrix_700 | 20: 0000541f|0001f6e7|_$888                    |
 20: 0000524e|000254b6|mxSetField_700           | 20: 00005435|0001f827|_$306                    |
-20: 00005260|000254ac|mxCreateDoubleScalar     | 20: 00005463|0001f693|_$889                    |
-20: 00005292|00025472|mxSetField_700           | 20: 00005480|0001f69d|_$884                    |
+20: 00005260|000254ac|mxCreateDoubleScalar     | 20: 00005463|0001f692|_$889                    |
+20: 00005292|00025472|mxSetField_700           | 20: 00005480|0001f69c|_$884                    |
 20: 000052ac|00025458|mxSetField_700           | 20: 00005493|0001f7c9|_$306                    |
-20: 000052be|0002544e|mxCreateDoubleScalar     | 20: 000054c1|0001f651|_$885                    |
+20: 000052be|0002544e|mxCreateDoubleScalar     | 20: 000054c1|0001f650|_$885                    |
 20: 000052ed|00025417|mxSetField_700           | 20: 000052ff|000253cd|mxCreateDoubleMatrix_700 |
-20: 0000532f|000253a5|mxGetPr                  | 20: 00005540|0001f5e2|_$883                    |
+20: 0000532f|000253a5|mxGetPr                  | 20: 00005540|0001f5e1|_$883                    |
 20: 00005371|00025393|mxSetField_700           | 20: 0000555f|0001f145|_$890                    |
 20: 000053ae|00025346|mxCreateStructMatrix_700 | 20: 000055b8|0001f694|_$315                    |
-20: 000053e3|00025329|mxCreateDoubleScalar     | 20: 000055e6|0001f527|_$887                    |
+20: 000053e3|00025329|mxCreateDoubleScalar     | 20: 000055e6|0001f526|_$887                    |
 20: 00005415|000252ef|mxSetField_700           | 20: 00005422|000252aa|mxCreateDoubleMatrix_700 |
-20: 00005625|0001f4e2|_$888                    | 20: 00005454|000252b0|mxSetField_700           |
+20: 00005625|0001f4e1|_$888                    | 20: 00005454|000252b0|mxSetField_700           |
 20: 0000563b|0001f621|_$306                    | 20: 00005466|000252a6|mxCreateDoubleScalar     |
-20: 00005669|0001f48d|_$889                    | 20: 00005498|0002526c|mxSetField_700           |
-20: 00005686|0001f497|_$884                    | 20: 000054b7|0002524d|mxSetField_700           |
+20: 00005669|0001f48c|_$889                    | 20: 00005498|0002526c|mxSetField_700           |
+20: 00005686|0001f496|_$884                    | 20: 000054b7|0002524d|mxSetField_700           |
 20: 0000569e|0001f5be|_$306                    | 20: 000054c9|00025243|mxCreateDoubleScalar     |
-20: 000056cc|0001f446|_$885                    | 20: 000054fd|00025207|mxSetField_700           |
-20: 000056e8|0001f46d|_$878                    | 20: 00005514|000251f0|mxSetField_700           |
+20: 000056cc|0001f445|_$885                    | 20: 000054fd|00025207|mxSetField_700           |
+20: 000056e8|0001f46b|_$878                    | 20: 00005514|000251f0|mxSetField_700           |
 20: 000056ff|0001efbd|_$891                    | 20: 0000554b|000251a9|mxCreateStructMatrix_700 |
 20: 00005577|00025155|mxCreateDoubleMatrix_700 | 20: 000055a7|0002512d|mxGetPr                  |
-20: 000057b8|0001f36a|_$883                    | 20: 000055e4|00025120|mxSetField_700           |
+20: 000057b8|0001f369|_$883                    | 20: 000055e4|00025120|mxSetField_700           |
 20: 000057d2|0001ef02|_$892                    | 20: 00005621|000250d3|mxCreateStructMatrix_700 |
 20: 0000582b|0001f421|_$315                    | 20: 00005656|000250b6|mxCreateDoubleScalar     |
-20: 00005859|0001f2b4|_$887                    | 20: 00005688|0002507c|mxSetField_700           |
-20: 00005695|00025037|mxCreateDoubleMatrix_700 | 20: 00005898|0001f26f|_$888                    |
+20: 00005859|0001f2b3|_$887                    | 20: 00005688|0002507c|mxSetField_700           |
+20: 00005695|00025037|mxCreateDoubleMatrix_700 | 20: 00005898|0001f26e|_$888                    |
 20: 000056c7|0002503d|mxSetField_700           | 20: 000058ae|0001f3ae|_$306                    |
-20: 000056d9|00025033|mxCreateDoubleScalar     | 20: 000058dc|0001f21a|_$889                    |
-20: 0000570b|00024ff9|mxSetField_700           | 20: 000058f9|0001f224|_$884                    |
+20: 000056d9|00025033|mxCreateDoubleScalar     | 20: 000058dc|0001f219|_$889                    |
+20: 0000570b|00024ff9|mxSetField_700           | 20: 000058f9|0001f223|_$884                    |
 20: 00005725|00024fdf|mxSetField_700           | 20: 0000590c|0001f350|_$306                    |
-20: 00005737|00024fd5|mxCreateDoubleScalar     | 20: 0000593a|0001f1d8|_$885                    |
+20: 00005737|00024fd5|mxCreateDoubleScalar     | 20: 0000593a|0001f1d7|_$885                    |
 20: 00005766|00024f9e|mxSetField_700           | 20: 00005778|00024f54|mxCreateDoubleMatrix_700 |
-20: 000057a8|00024f2c|mxGetPr                  | 20: 000059b9|0001f169|_$883                    |
+20: 000057a8|00024f2c|mxGetPr                  | 20: 000059b9|0001f168|_$883                    |
 20: 000057ea|00024f1a|mxSetField_700           | 20: 000059d8|0001ed14|_$893                    |
 20: 00005827|00024ecd|mxCreateStructMatrix_700 | 20: 00005a31|0001f21b|_$315                    |
-20: 0000585c|00024eb0|mxCreateDoubleScalar     | 20: 00005a5f|0001f0ae|_$887                    |
+20: 0000585c|00024eb0|mxCreateDoubleScalar     | 20: 00005a5f|0001f0ad|_$887                    |
 20: 0000588e|00024e76|mxSetField_700           | 20: 0000589b|00024e31|mxCreateDoubleMatrix_700 |
-20: 00005a9e|0001f069|_$888                    | 20: 000058cd|00024e37|mxSetField_700           |
+20: 00005a9e|0001f068|_$888                    | 20: 000058cd|00024e37|mxSetField_700           |
 20: 00005ab4|0001f1a8|_$306                    | 20: 000058df|00024e2d|mxCreateDoubleScalar     |
-20: 00005ae2|0001f014|_$889                    | 20: 00005911|00024df3|mxSetField_700           |
-20: 00005aff|0001f01e|_$884                    | 20: 00005930|00024dd4|mxSetField_700           |
+20: 00005ae2|0001f013|_$889                    | 20: 00005911|00024df3|mxSetField_700           |
+20: 00005aff|0001f01d|_$884                    | 20: 00005930|00024dd4|mxSetField_700           |
 20: 00005b17|0001f145|_$306                    | 20: 00005942|00024dca|mxCreateDoubleScalar     |
-20: 00005b45|0001efcd|_$885                    | 20: 00005976|00024d8e|mxSetField_700           |
-20: 00005b61|0001efed|_$879                    | 20: 0000598d|00024d77|mxSetField_700           |
-20: 00005b92|0001efac|_$880                    | 20: 000059be|00024d46|mxSetField_700           |
+20: 00005b45|0001efcc|_$885                    | 20: 00005976|00024d8e|mxSetField_700           |
+20: 00005b61|0001efeb|_$879                    | 20: 0000598d|00024d77|mxSetField_700           |
+20: 00005b92|0001efaa|_$880                    | 20: 000059be|00024d46|mxSetField_700           |
 20: 000059e4|00024d30|mxCreateCellMatrix_700   | 20: 00005bfa|0001eb1a|_$972                    |
-20: 00005a46|00024cae|mxCreateStructMatrix_700 | 20: 00005c41|0001ee58|_$978                    |
-20: 00005a67|00024c95|mxCreateString           | 20: 00005c68|0001ee1f|_$979                    |
-20: 00005a8e|00024c6e|mxCreateString           | 20: 00005c95|0001edf1|_$980                    |
-20: 00005abb|00024c41|mxCreateString           | 20: 00005cc2|0001edc4|_$980                    |
-20: 00005ae8|00024c14|mxCreateString           | 20: 00005cef|0001ed97|_$980                    |
+20: 00005a46|00024cae|mxCreateStructMatrix_700 | 20: 00005c41|0001ee57|_$978                    |
+20: 00005a67|00024c95|mxCreateString           | 20: 00005c68|0001ee1e|_$979                    |
+20: 00005a8e|00024c6e|mxCreateString           | 20: 00005c95|0001edf0|_$980                    |
+20: 00005abb|00024c41|mxCreateString           | 20: 00005cc2|0001edc3|_$980                    |
+20: 00005ae8|00024c14|mxCreateString           | 20: 00005cef|0001ed96|_$980                    |
 20: 00005b15|00024be7|mxCreateString           | 20: 00005b49|00024bbb|mxSetField_700           |
 20: 00005b5d|00024ba7|mxSetField_700           | 20: 00005b71|00024b93|mxSetField_700           |
 20: 00005b85|00024b7f|mxSetField_700           | 20: 00005b99|00024b6b|mxSetField_700           |
 20: 00005bbf|00024b55|mxCreateCellMatrix_700   | 20: 00005dd5|0001e977|_$1005                   |
 20: 00005de9|0001e973|_$1008                   | 20: 00005c2c|00024af0|mxCreateStructArray_700  |
-20: 00005e27|0001ec5f|_$980                    | 20: 00005c4d|00024aaf|mxCreateString           |
+20: 00005e27|0001ec5e|_$980                    | 20: 00005c4d|00024aaf|mxCreateString           |
 20: 00005e48|0001e924|_$1009                   | 20: 00005c80|00024aa4|mxCreateCellArray_700    |
-20: 00005e7f|0001ebe6|_$1006                   | 20: 00005cab|00024a59|mxSetField_700           |
-20: 00005e96|0001ebb5|_$1007                   | 20: 00005cc2|00024a42|mxSetField_700           |
+20: 00005e7f|0001ebe5|_$1006                   | 20: 00005cab|00024a59|mxSetField_700           |
+20: 00005e96|0001ebb4|_$1007                   | 20: 00005cc2|00024a42|mxSetField_700           |
 20: 00005ec9|0001e8b3|_$1019                   | 20: 00005d15|000249df|mxCreateStructMatrix_700 |
 20: 00005f10|0001e87c|_$1022                   | 20: 00005d4f|0002475d|sf_mex_decode_encoded_mx_struct_array|
 20: 00005d7a|00024952|mxCreateDoubleMatrix_700 | 20: 00005dac|00024958|mxSetField_700           |
@@ -521,26 +521,26 @@ Relocations for 'c3_bouncing_ball.obj' section '.data':
  6: 000001b8|08006c85|c3_m_emlrt_marshallIn    |  6: 000001c0|08006ce4|sf_get_hover_data_for_msg|
  6: 000001c8|08006d04|c3_init_sf_message_store_memory|  6: 000001d0|08006d16|init_dsm_address_info    |
  6: 000001d8|08006d28|init_simulink_io_address |  6: 000001e0|08006e42|sf_c3_bouncing_ball_get_check_sum|
- 6: 000001e8|080268f3|_$875                    |  6: 000001f0|080268ec|_$876                    |
- 6: 000001f8|080268e1|_$877                    |  6: 00000200|080268d9|_$878                    |
- 6: 00000208|080268d2|_$879                    |  6: 00000210|080268c2|_$880                    |
- 6: 00000218|080268a6|_$883                    |  6: 00000220|080268a1|_$884                    |
- 6: 00000228|08026896|_$885                    |  6: 00000230|08026891|_$887                    |
- 6: 00000238|0802688b|_$888                    |  6: 00000240|0802687a|_$889                    |
- 6: 00000248|08026891|_$887                    |  6: 00000250|0802688b|_$888                    |
- 6: 00000258|0802687a|_$889                    |  6: 00000260|080268a6|_$883                    |
- 6: 00000268|080268a1|_$884                    |  6: 00000270|08026896|_$885                    |
- 6: 00000278|08026891|_$887                    |  6: 00000280|0802688b|_$888                    |
- 6: 00000288|0802687a|_$889                    |  6: 00000290|08026891|_$887                    |
- 6: 00000298|0802688b|_$888                    |  6: 000002a0|0802687a|_$889                    |
+ 6: 000001e8|080268f1|_$875                    |  6: 000001f0|080268ea|_$876                    |
+ 6: 000001f8|080268df|_$877                    |  6: 00000200|080268d7|_$878                    |
+ 6: 00000208|080268d0|_$879                    |  6: 00000210|080268c0|_$880                    |
+ 6: 00000218|080268a5|_$883                    |  6: 00000220|080268a0|_$884                    |
+ 6: 00000228|08026895|_$885                    |  6: 00000230|08026890|_$887                    |
+ 6: 00000238|0802688a|_$888                    |  6: 00000240|08026879|_$889                    |
+ 6: 00000248|08026890|_$887                    |  6: 00000250|0802688a|_$888                    |
+ 6: 00000258|08026879|_$889                    |  6: 00000260|080268a5|_$883                    |
+ 6: 00000268|080268a0|_$884                    |  6: 00000270|08026895|_$885                    |
+ 6: 00000278|08026890|_$887                    |  6: 00000280|0802688a|_$888                    |
+ 6: 00000288|08026879|_$889                    |  6: 00000290|08026890|_$887                    |
+ 6: 00000298|0802688a|_$888                    |  6: 000002a0|08026879|_$889                    |
  6: 000002a8|08006f0f|sf_c3_bouncing_ball_get_autoinheritance_info|  6: 000002b0|08007931|sf_c3_bouncing_ball_third_party_uses_info|
- 6: 000002b8|0802686d|_$973                    |  6: 000002c0|0802685e|_$974                    |
- 6: 000002c8|0802684b|_$975                    |  6: 000002d0|08026836|_$976                    |
- 6: 000002d8|08026823|_$977                    |  6: 000002e0|08007966|sf_c3_bouncing_ball_jit_fallback_info|
- 6: 000002e8|08007b0c|sf_c3_bouncing_ball_updateBuildInfo_args_info|  6: 000002f0|080267e9|_$1006                   |
- 6: 000002f8|080267cf|_$1007                   |  6: 00000318|08007b41|sf_c3_bouncing_ball_get_post_codegen_info|
- 6: 00000320|080267c1|_$1020                   |  6: 00000328|080267b9|_$1021                   |
- 6: 00000330|080266cc|_$1023                   |  6: 00000338|08007c35|sf_get_sim_state_info_c3_bouncing_ball|
+ 6: 000002b8|0802686c|_$973                    |  6: 000002c0|0802685d|_$974                    |
+ 6: 000002c8|0802684a|_$975                    |  6: 000002d0|08026835|_$976                    |
+ 6: 000002d8|08026822|_$977                    |  6: 000002e0|08007966|sf_c3_bouncing_ball_jit_fallback_info|
+ 6: 000002e8|08007b0c|sf_c3_bouncing_ball_updateBuildInfo_args_info|  6: 000002f0|080267e8|_$1006                   |
+ 6: 000002f8|080267ce|_$1007                   |  6: 00000318|08007b41|sf_c3_bouncing_ball_get_post_codegen_info|
+ 6: 00000320|080267c0|_$1020                   |  6: 00000328|080267b8|_$1021                   |
+ 6: 00000330|080266cb|_$1023                   |  6: 00000338|08007c35|sf_get_sim_state_info_c3_bouncing_ball|
  6: 00000340|08007d33|sf_opaque_get_hover_data_for_msg|  6: 00000364|08007d66|chart_debug_initialization|
  6: 0000036c|08008b66|chart_debug_initialize_data_addresses|  6: 00000374|08008d62|sf_get_instance_specialization|
  6: 0000037c|08008d77|sf_opaque_initialize_c3_bouncing_ball|  6: 00000384|08008dac|sf_opaque_enable_c3_bouncing_ball|
@@ -2301,7 +2301,7 @@ section  section   address    tsize
 
 .data              8026000  4400  4318 
 
-         .data     8026000   1dc   1dc  bouncing_ball_sfun.obj
+         .data     8026000   1d4   1d4  bouncing_ball_sfun.obj
                    8026050              __imp_bouncing_ball_register_exported_symbols
                    8026068              __imp_load_bouncing_ball_optimization_info
                    8026070              __imp_unload_bouncing_ball_optimization_info
@@ -2643,7 +2643,7 @@ Section .rdata: 3516
 	lccstub.obj:  8
 
 Section .data: 17176
-	bouncing_ball_sfun.obj:  476
+	bouncing_ball_sfun.obj:  468
 	c3_bouncing_ball.obj:  2100
 	bouncing_ball_sfun_registry.obj:  6108
 	lccstub.obj:  8
