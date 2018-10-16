@@ -1,4 +1,4 @@
-function trace = FnLI(trace, iter, threshDist, inNum);
+function [trace,label_guard] = FnLI(trace, iter, threshDist, inNum)
 
 
 global num_var num_ud
@@ -7,17 +7,20 @@ global num_var num_ud
 trans = []; 
 for i = 1:length(trace)
     chpoints = trace(i).chpoints;
+    labels_trace = trace(i).labels_trace;
     x = trace(i).x;   
     ud = trace(i).ud;
-    for j = 1:length(chpoints)-2  % last chpoints is the end point 
+    for j = 1:length(labels_trace)-1  % last chpoints is the end point 
         chpoints_temp = chpoints(j+1);
-        if isempty(ud)
-            trans(end+1,:) = [trace(i).labels_trace(j),trace(i).labels_trace(j+1),...
-            x(chpoints_temp,:)];  
-        else
-            trans(end+1,:) = [trace(i).labels_trace(j),trace(i).labels_trace(j+1),...
-            x(chpoints_temp,:), ud(chpoints_temp,:)];  
-        end
+%         if isempty(ud)
+%             trans(end+1,:) = [trace(i).labels_trace(j),trace(i).labels_trace(j+1),...
+%             x(chpoints_temp,:)];  
+%         else
+%             trans(end+1,:) = [trace(i).labels_trace(j),trace(i).labels_trace(j+1),...
+%             x(chpoints_temp,:), ud(chpoints_temp,:)];  
+%         end
+        trans(end+1,:) = [trace(i).labels_trace(j),trace(i).labels_trace(j+1),...
+        x(chpoints_temp,:)]; 
     end
 end
 
@@ -27,13 +30,13 @@ end
 for i = 1:size(state_trans,1)
     states = state_trans(i,:);
     id_chpoint = find(ic == i);
-    points = trans(id_chpoint,3:5); 
+    points = trans(id_chpoint,3:end); 
     if states(1)==states(2)
         wb = zeros(num_var+2,1);
         LI(i).states = states;
         LI(i).points = points;
         LI(i).inlayer = {id_chpoint};
-        LI(i).wb = wb;
+        LI(i).wb = {wb};
         continue;
     end
     
@@ -55,7 +58,8 @@ guard_trace = zeros(size(trans,1),1);
 for n = 1:length(LI)
     for i = 1:length(LI(n).inlayer)
         if ~isempty(LI(n).inlayer(1,i))
-            label_guard(num_guard) = {LI(n).wb};
+            iwb = cell2mat(LI(n).wb);
+            label_guard(num_guard) = {iwb(:,i)};
             id = cell2mat(LI(n).inlayer(1,i));
             guard_trace(id,:) = num_guard;
             num_guard = num_guard + 1;
@@ -67,8 +71,8 @@ end
 
 %%
 for n = 1:length(trace)
-    chpoints = trace(n).chpoints;
-    len_guard = length(chpoints)-2;
+    labels_trace = trace(n).labels_trace;
+    len_guard = length(labels_trace)-1;
     trace(n).guard_trace = guard_trace(1:len_guard,:);
     guard_trace(1:len_guard,:) = [];
 end

@@ -31,6 +31,7 @@ function [M, inlayer]= FnInequalitySymbol(indx_ch, wb, inlayer_temp, trace, poin
             len = size(ipoints, 1);
             idistance = (ipoints * wb(1:end-1, i) + repmat(wb(end, i),len, 1))/norm(wb(1:end-1, i));
             pnum = length(find(idistance>=0))/length(idistance);
+            symb = 0;
             if pnum>=0.90
                 symb = 1; 
             elseif pnum <=0.10 

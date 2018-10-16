@@ -1,0 +1,3 @@
+LIBRARY ESTNavigation_sfun.mexw64
+EXPORTS
+mexFunction
