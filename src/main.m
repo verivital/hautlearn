@@ -71,33 +71,11 @@ end
 
 numVar = length(varNames);
 
-% add invariants and flows in an order of locations that are charging,
-% discharging, discontinuous, respectively
-invariant = {
-%                [' il > 0 & vc >= 0-bounds & vc <= Vref+Vtol ',...
-%                '& rci1 >=', num2str(rci1_lb), ' & rci1 <=', num2str(rci1_ub),' & rcv1 >=', num2str(rcv1_lb), ' & rcv1 <=', num2str(rcv1_ub),...
-%                '& rb1 >=', num2str(rb1_lb), ' & rb1 <=', num2str(rb1_ub), ' & rci2 >=', num2str(rci2_lb), ' & rci2 <=', num2str(rci2_ub), ' & rcv2 >=', num2str(rcv2_lb), ' & rcv2 <=', num2str(rcv2_ub)];
-%                [' vc >= Vref-Vtol & vc <= bounds & il > 0 ',...
-%                '& roi1 >=', num2str(roi1_lb), ' & roi1 <=', num2str(roi1_ub),' & rov1 >=', num2str(rov1_lb), ' & rov1 <=', num2str(rov1_ub),...
-%                '& roi2 >=', num2str(roi2_lb), ' & roi2 <=', num2str(roi2_ub), ' & rov2 >=', num2str(rov2_lb), ' & rov2 <=', num2str(rov2_ub)];
-%                ['vc >= Vref-Vtol & vc <= bounds & il <= 0 & rdv2 >=', num2str(rdv2_lb), ' & rdv2 <=', num2str(rdv2_ub)];  
-            };       
-
-flow  = {
-%            'il = (a00c * il + rci1) + (a01c * vc + rcv1) + (b0c * Vs + rb1) & vc = (a10c * il + rci2) + (a11c * vc + rcv2) + (b1c * Vs)';
-%            'il = (a00o * il + roi1) + (a01o * vc + rov1) + b0o * Vs & vc = (a10o * il + roi2) + (a11o * vc + rov2) + b1o * Vs';
-%            'il = 0 & vc = (a11o * vc + rdv2) + b1o * Vs';   
-        };
-
 % add variables to ha
 for i_var = 1:numVar
     ha.variables.add(java.lang.String(varNames(i_var)));
 end
 
-locName ={%'charging','discharging','discontinuous'
-};
-
-%numLoc = length(locName);
 numLoc = length(ode);
 
 for i_loc = 1:numLoc
@@ -107,7 +85,6 @@ for i_loc = 1:numLoc
     flow{i_loc}
     class(flow{i_loc})
     loc = ha.createMode(locName{i_loc},invariant{i_loc},flow{i_loc});
-    %loc = ha.createMode('','','');
     locations(i_loc) = loc;
 end
 
@@ -157,13 +134,9 @@ if length(constantList) == length(constantValue)
     end
 end
 
-for i_var = 1:length(extraVar)
-    ha.variables.add(java.lang.String(extraVar(i_var)));
-end
-
 % add initial condition 
 initalLoc = '';
-initialExpression = '';%'il == 0 & vc == 0 & rci1==0 & rcv1==0 & rci2==0 & rcv2==0 & rb1==0 & roi1==0 & rov1==0 & roi2==0 & rov2==0 & rdv2==0 & a00o == -1.963e+02 & a01o == -3.775e+02 & a10o == 4.547e+02 & a11o == -45.51 & a00c == -2.718e+02 & a01c == -3.775e+02 & a10c == 4.547e+02 & a11c == -45.51 & bounds == 100 & T == 2.0e-05 & b0o == 0 & b1o == 0 & b0c == 3.775e+02 & b1c == 0 & Vs == 24 & tmax == 0.02 & Vtol == 0.1 & Vref == 12';
+initialExpression = '';
 
 %generate configuration
 config = com.verivital.hyst.ir.Configuration(ha);
