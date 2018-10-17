@@ -30,8 +30,9 @@ if opt_learn
     addpath('.\')
     x = []; ud = []; 
     num =1;
-    global lambda num_var num_ud
+    global lambda num_var num_ud Ts
     lambda = 0.000001;  
+    Ts = 0.1
     num_var = 4; num_ud = 0;
     for i = 1:5
         load(['test', int2str(i),'.mat']);
