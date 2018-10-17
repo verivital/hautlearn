@@ -16,13 +16,11 @@ function [out] = odeMatrixToString(A,varNames)
     n_extra = length(A);
     Br = A(1:n,n_extra);
     
-%     for i = 1:n
-%         tmp(i) = {char(vpa(Ar(i,:) * x + Br(i), 4))};
-%     end
-    tmp = string(vpa(Ar * x + Br, 4)); % round to 4 decimals; TODO: make this a config option
+    
+    %tmp = string(vpa(Ar * x + Br, 4)); % round to 4 decimals; TODO: make this a config option
     odeStrConjunction = '';
     for i = 1 : n
-        odeStr = strcat(varNames(i), ''' == ', tmp{i});
+        odeStr = strcat(varNames(i), ''' == ', tmp(i));
         if i > 1
             odeStrConjunction = strcat(odeStrConjunction, ' & ');
         end

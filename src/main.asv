@@ -23,7 +23,7 @@ import de.uni_freiburg.informatik.swt.spaxeexxmlreader.*;
 ha = com.verivital.hyst.ir.base.BaseComponent;
 
 opt_learn = 0;
-num_var = 4; num_ud = 0;
+
 if opt_learn
     addpath('..\example\navigation\');
     addpath('..\example\navigation\trainingdata1.1');
@@ -60,6 +60,9 @@ if opt_learn
     pta_trace = FnPTA(trace);
 end
 
+fromlocation = [];
+for i = length()
+
 varNames = {};
 for i = 1 : num_var
     varNames{i} = ['x', num2str(i)];
@@ -88,23 +91,16 @@ for i_loc = 1:numLoc
     locations(i_loc) = loc;
 end
 
-fromLocation = num2cell([pta_trace(:).id1]);
-% fromLocation = {
-% %locations(1);locations(2);locations(2);locations(3)
-% };
-toLocation = num2cell([pta_trace(:).id2]);
-% toLocation = {
-% %locations(2);locations(1);locations(3);locations(1)
-% };
+fromLocation = {
+%locations(1);locations(2);locations(2);locations(3)
+};
+toLocation = {
+%locations(2);locations(1);locations(3);locations(1)
+};
 
 % add guards and resets in an order of transitions
-for i = 1 : length(pta_trace)
-    li_id = pta_trace(i).guard;
-    v = label_guard{li_id};
-    guard{i} = guardVectorToString(v, varNames);
-end
-% guard = {%'vc >= Vref+Vtol';'vc >= Vref-Vtol';'il <= 0';'vc >= Vref-Vtol'
-%         };
+guard = {%'vc >= Vref+Vtol';'vc >= Vref-Vtol';'il <= 0';'vc >= Vref-Vtol'
+        };
 reset = {%'vc=vc & il=il';'vc=vc & il=il';
          %'vc=vc & il=il';'vc=vc & il=il'
          };
@@ -112,7 +108,7 @@ reset = {%'vc=vc & il=il';'vc=vc & il=il';
 numTran = length(fromLocation);
 for i_tran = 1:numTran
     tran = ha.createTransition(fromLocation{i_tran}, toLocation{i_tran});
-    tran.guard = com.verivital.hyst.grammar.formula.FormulaParser.parseGuard(guard{i_tran});
+    tran.guard = com.verivital.hyst.grammar.formula.FormulaParser.parseGuard(guard(i_tran));
     
     if (~isempty(reset(i_tran)))
     rstTmp = strsplit(char(reset(i_tran)),'&');

@@ -113,7 +113,6 @@ for n = 1:length(pta_trace)
     end
 end
 pta_trace(id_empty) = [];
-%mapping ids to new ones
 ids = [];
 for i = 1:length(pta_trace)
     ids(end+1) = pta_trace(i).id1;
