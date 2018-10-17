@@ -69,6 +69,10 @@ for i = 1 : length(ode)
     modesToFlows{i} = odeMatrixToString(ode{i}, varNames);
 end
 
+%for the terminal state "0"
+ode0 =zeros(size(ode{1}));
+modesToFlows{length(ode)+1} = odeMatrixToString(ode{i}, varNames);
+
 numVar = length(varNames);
 
 % add variables to ha
@@ -76,23 +80,44 @@ for i_var = 1:numVar
     ha.variables.add(java.lang.String(varNames(i_var)));
 end
 
-numLoc = length(ode);
+ids = [pta_trace(:).id1,pta_trace(:).id2];
+labels = [pta_trace(:).label1,pta_trace(:).label2];
+[uniq_ids, ia, ic] = unique(ids);
+id2lables = labels(ia);
+
+numLoc = length(uniq_ids);
 
 for i_loc = 1:numLoc
     locName{i_loc} = java.lang.String(strcat('loc', num2str(i_loc)));
     invariant{i_loc} = java.lang.String('');
-    flow{i_loc} = modesToFlows{i_loc};
-    flow{i_loc}
+    if id2lables(i_loc)==0 
+        flow{i_loc} = modesToFlows{length(ode)+1};
+    else
+        flow{i_loc} = modesToFlows{id2lables(i_loc)};
+    end
     class(flow{i_loc})
     loc = ha.createMode(locName{i_loc},invariant{i_loc},flow{i_loc});
     locations(i_loc) = loc;
 end
 
-fromLocation = num2cell([pta_trace(:).id1]);
+% for i_loc = 1:numLoc
+%     %ati = com.verivital.hyst.importer.SpaceExImporter;
+%     loc = ha.createMode(locName(i_loc),invariant(i_loc),flow(i_loc));
+%     locations(i_loc) = loc;
+% end
+
+fromLocation = {};
+toLocation= {};
+fromId = [pta_trace(:).id1];
+toId = [pta_trace(:).id2];
+for i=1:length(pta_trace)
+    fromLocation{end+1} = locations(fromId(i));
+    toLocation{end+1} = locations(toId(i));
+end
 % fromLocation = {
 % %locations(1);locations(2);locations(2);locations(3)
 % };
-toLocation = num2cell([pta_trace(:).id2]);
+
 % toLocation = {
 % %locations(2);locations(1);locations(3);locations(1)
 % };
@@ -114,7 +139,8 @@ for i_tran = 1:numTran
     tran = ha.createTransition(fromLocation{i_tran}, toLocation{i_tran});
     tran.guard = com.verivital.hyst.grammar.formula.FormulaParser.parseGuard(guard{i_tran});
     
-    if (~isempty(reset(i_tran)))
+    %if (~isempty(reset(i_tran)))
+    if (~isempty(reset))
     rstTmp = strsplit(char(reset(i_tran)),'&');
         for i_rst = 1: length(rstTmp)
             rstTmp_token = strsplit(char(rstTmp(i_rst)),'=');

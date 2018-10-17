@@ -5,7 +5,8 @@ addpath('.\trainingdata1.1');
 addpath('..\..\src')
 x = []; ud = []; 
 num =1;
-global lambda num_var num_ud
+global lambda num_var num_ud Ts 
+Ts  = 0.1;
 lambda = 0.000001;  
 num_var = 4; num_ud = 0;
 for i = 1:81

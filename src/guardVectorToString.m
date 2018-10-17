@@ -11,15 +11,14 @@ function [out] = guardVectorToString(V,varNames)
     
     Vr = V(1:n,:)'; % this matrix that ode returns is not just the A matrix, it has some extra parts so the dimensionality is greater than n
     
-    for i = 1:size(V,2)
-        tmp(i) = {char(vpa(Vr(i,:) * x, 4))}; % round to 4 decimals; TODO: make this a config option
-    end
+
+    tmp = string((vpa(Vr * x, 4))); % round to 4 decimals; TODO: make this a config option
     odeStrConjunction = '';
     for i = 1 : size(V,2)
         if V(end,i)==-1
-            odeStr = strcat(tmp{i},'+1<0');
+            odeStr = strcat(tmp(i),'+1<0');
         else
-             odeStr = strcat(tmp{i},'+1>0');
+             odeStr = strcat(tmp(i),'+1>0');
         end
         
         if i > 1
