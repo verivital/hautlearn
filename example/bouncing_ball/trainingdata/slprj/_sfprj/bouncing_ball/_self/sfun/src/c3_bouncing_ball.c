@@ -295,7 +295,7 @@ static void sf_gateway_c3_bouncing_ball(SFc3_bouncing_ballInstanceStruct
       }
 
       guard1 = false;
-      if (CV_EML_COND(1, 0, 0, *chartInstance->c3_p < 0.0)) {
+      if (CV_EML_COND(1, 0, 0, *chartInstance->c3_p <= 0.0)) {
         if (CV_EML_COND(1, 0, 1, *chartInstance->c3_v < 0.0)) {
           CV_EML_MCDC(1, 0, 0, true);
           CV_EML_IF(1, 0, 0, true);
@@ -443,7 +443,7 @@ static void zeroCrossings_c3_bouncing_ball(SFc3_bouncing_ballInstanceStruct
       }
 
       guard1 = false;
-      if (CV_EML_COND(1, 0, 0, *chartInstance->c3_p < 0.0)) {
+      if (CV_EML_COND(1, 0, 0, *chartInstance->c3_p <= 0.0)) {
         if (CV_EML_COND(1, 0, 1, *chartInstance->c3_v < 0.0)) {
           CV_EML_MCDC(1, 0, 0, true);
           CV_EML_IF(1, 0, 0, true);
@@ -1021,10 +1021,10 @@ extern void utFree(void*);
 
 void sf_c3_bouncing_ball_get_check_sum(mxArray *plhs[])
 {
-  ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(822842480U);
-  ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(1718447500U);
-  ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(992112691U);
-  ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(2948160836U);
+  ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(3711551807U);
+  ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(912988775U);
+  ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(4244047947U);
+  ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(3956086155U);
 }
 
 mxArray* sf_c3_bouncing_ball_get_post_codegen_info(void);
@@ -1038,7 +1038,7 @@ mxArray *sf_c3_bouncing_ball_get_autoinheritance_info(void)
     autoinheritanceFields);
 
   {
-    mxArray *mxChecksum = mxCreateString("zWsrh4htbyrIJnS7eRmSPD");
+    mxArray *mxChecksum = mxCreateString("SE54IZush1itpoqszs2b2D");
     mxSetField(mxAutoinheritanceInfo,0,"checksum",mxChecksum);
   }
 
@@ -1293,16 +1293,16 @@ static void chart_debug_initialization(SimStruct *S, unsigned int
         _SFD_CV_INIT_EML(0,1,0,0,0,0,0,0,0,0,0,0);
         _SFD_CV_INIT_EML(0,0,0,0,0,0,0,0,0,0,0,0);
         _SFD_CV_INIT_EML(1,0,0,0,1,0,0,0,0,0,2,1);
-        _SFD_CV_INIT_EML_IF(1,0,0,1,11,1,11);
+        _SFD_CV_INIT_EML_IF(1,0,0,1,12,1,12);
 
         {
-          static int condStart[] = { 1, 8 };
+          static int condStart[] = { 1, 9 };
 
-          static int condEnd[] = { 4, 11 };
+          static int condEnd[] = { 5, 12 };
 
           static int pfixExpr[] = { 0, 1, -3 };
 
-          _SFD_CV_INIT_EML_MCDC(1,0,0,1,11,2,0,&(condStart[0]),&(condEnd[0]),3,
+          _SFD_CV_INIT_EML_MCDC(1,0,0,1,12,2,0,&(condStart[0]),&(condEnd[0]),3,
                                 &(pfixExpr[0]));
         }
 
@@ -1342,7 +1342,7 @@ static void chart_debug_initialize_data_addresses(SimStruct *S)
 
 static const char* sf_get_instance_specialization(void)
 {
-  return "sAiAxM28nhIHVHUU4LdwYlD";
+  return "s7bxYkPnWNuZBZqsAyDTZFF";
 }
 
 static void sf_opaque_initialize_c3_bouncing_ball(void *chartInstanceVar)
@@ -1482,10 +1482,10 @@ static void mdlSetWorkWidths_c3_bouncing_ball(SimStruct *S)
   }
 
   ssSetOptions(S,ssGetOptions(S)|SS_OPTION_WORKS_WITH_CODE_REUSE);
-  ssSetChecksum0(S,(2032538160U));
-  ssSetChecksum1(S,(548545872U));
-  ssSetChecksum2(S,(3893174834U));
-  ssSetChecksum3(S,(2378385831U));
+  ssSetChecksum0(S,(3942456467U));
+  ssSetChecksum1(S,(3374141229U));
+  ssSetChecksum2(S,(3610407285U));
+  ssSetChecksum3(S,(544836003U));
   ssSetNumContStates(S,2);
   ssSetExplicitFCSSCtrl(S,1);
   ssSetStateSemanticsClassicAndSynchronous(S, true);
