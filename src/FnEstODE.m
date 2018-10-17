@@ -1,5 +1,5 @@
 function ode = FnEstODE(trace)
-
+global Ts num_var num_ud
 len_labels = length(trace(1).labels_num);
 for label = 1:len_labels
     x_seg = [];
@@ -26,5 +26,10 @@ for label = 1:len_labels
     end
     
     A_Bu = mrdivide(x_seg_plus,[x_seg;ud_seg]);
-    ode(label) = {A_Bu};
+    dA = A_Bu(:,1:num_var);
+    dB = A_Bu(:,num_var+1:end);
+    dC = eye(num_var); dD = zeros(num_var, num_ud+1);
+    sysd = ss(dA, dB, dC, dD, Ts);
+    sysc = d2c(sysd);
+    ode(label) = {[sysc.A, sysc.B]};
 end

@@ -36,7 +36,7 @@ for i = 1:size(state_trans,1)
         LI(i).states = states;
         LI(i).points = points;
         LI(i).inlayer = {id_chpoint};
-        LI(i).wb = {};
+        LI(i).wb = {zeros(num_var+2,1)};
         continue;
     end
     
@@ -48,8 +48,8 @@ for i = 1:size(state_trans,1)
     if isempty(wb_temp)
         LI(i).states = states;
         LI(i).points = points;
-        LI(i).inlayer = {};
-        LI(i).wb = {[]};
+        LI(i).inlayer = {id_chpoint};
+        LI(i).wb = {zeros(num_var+2,1)};
         continue;
     end
     [wb, inlayer]= FnInequalitySymbol(id_chpoint, wb_temp, inlayer_temp, trace, points);
