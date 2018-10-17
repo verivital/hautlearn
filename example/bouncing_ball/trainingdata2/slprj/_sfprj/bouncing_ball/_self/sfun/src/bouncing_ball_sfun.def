@@ -1,3 +1,0 @@
-LIBRARY bouncing_ball_sfun.mexw64
-EXPORTS
-mexFunction
