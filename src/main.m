@@ -22,9 +22,54 @@ import de.uni_freiburg.informatik.swt.spaxeexxmlreader.*;
 % create an empty hybrid automaton    
 ha = com.verivital.hyst.ir.base.BaseComponent;
 
-var = {'il';'vc'; };%Removed  ;
-extraVar = {'rci1'; 'rcv1'; 'rci2'; 'rcv2'; 'rb1'; 'roi1'; 'rov1'; 'roi2'; 'rov2'; 'rdv2'};
-numVar = length(var);
+opt_learn = 0;
+
+if opt_learn
+    addpath('..\example\navigation\');
+    addpath('..\example\navigation\trainingdata1.1');
+    addpath('.\')
+    x = []; ud = []; 
+    num =1;
+    global lambda num_var num_ud
+    lambda = 0.000001;  
+    num_var = 4; num_ud = 0;
+    for i = 1:5
+        load(['test', int2str(i),'.mat']);
+
+        trace_temp = FnProcessData(xout, num_var, num_ud);
+        chpoints = trace_temp.chpoints;
+        if min(diff(chpoints))>=10
+            trace(num) = trace_temp;
+            x = [x; trace(num).x];
+            ud = [ud; trace(num).ud];
+            num = num+1; 
+        end
+    end
+
+    trace = FnClusterSegs(trace, x, ud);
+    for n =1:length(trace)
+        trace(n).labels_trace = [trace(n).labels_trace;0];
+    end
+    %%
+    ode = FnEstODE(trace);
+
+    iter = 1000; % number of iterations 
+    threshDist = 0.01; % tolerance 
+    inNum = 5; %the least number of inlayers
+    [trace,label_guard] = FnLI(trace, iter, threshDist, inNum);
+    pta_trace = FnPTA(trace);
+end
+
+varNames = {};
+for i = 1 : num_var
+    varNames{i} = ['x', num2str(i)];
+end
+
+for i = 1 : length(ode)
+    modesToFlows{i} = odeMatrixToString(ode{i}, varNames);
+end
+
+numVar = length(varNames);
 
 % add invariants and flows in an order of locations that are charging,
 % discharging, discontinuous, respectively
@@ -46,16 +91,23 @@ flow  = {
 
 % add variables to ha
 for i_var = 1:numVar
-    ha.variables.add(java.lang.String(var(i_var)));
+    ha.variables.add(java.lang.String(varNames(i_var)));
 end
 
 locName ={%'charging','discharging','discontinuous'
 };
 
-numLoc = length(locName);
+%numLoc = length(locName);
+numLoc = length(ode);
 
 for i_loc = 1:numLoc
-    loc = ha.createMode(locName(i_loc),invariant(i_loc),flow(i_loc));
+    locName{i_loc} = java.lang.String(strcat('loc', num2str(i_loc)));
+    invariant{i_loc} = java.lang.String('');
+    flow{i_loc} = modesToFlows{i_loc};
+    flow{i_loc}
+    class(flow{i_loc})
+    loc = ha.createMode(locName{i_loc},invariant{i_loc},flow{i_loc});
+    %loc = ha.createMode('','','');
     locations(i_loc) = loc;
 end
 
@@ -148,3 +200,4 @@ fclose(fileID);
 fileID = fopen([file_name,'.xml'],'w');
 fprintf(fileID,char(xml_printer.stringXML()));
 fclose(fileID);
+
