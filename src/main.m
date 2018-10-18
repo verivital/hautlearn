@@ -23,6 +23,7 @@ import de.uni_freiburg.informatik.swt.spaxeexxmlreader.*;
 ha = com.verivital.hyst.ir.base.BaseComponent;
 
 opt_learn = 0;
+Ts = 0.1;
 num_var = 4; num_ud = 0;
 if opt_learn
     addpath('..\example\navigation\');
@@ -51,14 +52,15 @@ if opt_learn
         trace(n).labels_trace = [trace(n).labels_trace;0];
     end
     %%
-    ode = FnEstODE(trace);
-
-    iter = 1000; % number of iterations 
-    threshDist = 0.01; % tolerance 
-    inNum = 5; %the least number of inlayers
-    [trace,label_guard] = FnLI(trace, iter, threshDist, inNum);
-    pta_trace = FnPTA(trace);
 end
+ode = FnEstODE(trace);
+
+iter = 1000; % number of iterations 
+threshDist = 0.01; % tolerance 
+inNum = 5; %the least number of inlayers
+[trace,label_guard] = FnLI(trace, iter, threshDist, inNum);
+pta_trace = FnPTA(trace);
+
 
 varNames = {};
 for i = 1 : num_var
@@ -168,9 +170,13 @@ if length(constantList) == length(constantValue)
 end
 
 % add initial condition 
-initalLoc = '';
-initialExpression = '';
+initalLoc = 'loc1'; % todo: check naming, first location in fromLocation is initial
 
+initialExpression = 'loc(automata_learning) == loc1';
+for i = 1 : length(varNames)
+    initialExpression = strcat(initialExpression, ' & ', varNames{i}, ' == 0'); % todo: pick a reasonable initial condition
+end
+    
 %generate configuration
 config = com.verivital.hyst.ir.Configuration(ha);
 config.init.put(initalLoc,com.verivital.hyst.grammar.formula.FormulaParser.parseInitialForbidden(initialExpression));
@@ -207,3 +213,9 @@ fileID = fopen([file_name,'.xml'],'w');
 fprintf(fileID,char(xml_printer.stringXML()));
 fclose(fileID);
 
+cd('hyst\src\matlab');
+try
+    SpaceExToStateflow('..\..\..\automata_learning.xml');
+catch
+end
+cd('..\..\..');
