@@ -25,13 +25,14 @@ ha = com.verivital.hyst.ir.base.BaseComponent;
 opt_learn = 0;
 Ts = 0.1;
 num_var = 4; num_ud = 0;
+Ts = 0.1
 if opt_learn
     addpath('..\example\navigation\');
     addpath('..\example\navigation\trainingdata1.1');
     addpath('.\')
     x = []; ud = []; 
     num =1;
-    global lambda num_var num_ud
+    global lambda num_var num_ud Ts
     lambda = 0.000001;  
     num_var = 4; num_ud = 0;
     for i = 1:5
