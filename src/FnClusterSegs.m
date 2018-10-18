@@ -3,7 +3,7 @@ function trace = FnClusterSegs(trace, x, ud)
     segIndex = [0,0]; 
     for i=1:length(trace)  
         chpoints = (trace(i).chpoints);
-        chsegments = [chpoints(1:end-1), chpoints(2:end)];    
+        chsegments = [chpoints(1:end-1), chpoints(2:end)];   %%%%% -1 test 
         segIndex = [segIndex; segIndex(end,2) + chsegments]; 
     end
     segIndex(1,:) = [];

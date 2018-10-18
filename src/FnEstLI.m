@@ -9,7 +9,11 @@ function [wb, inlayer, leftover] = FnEstLI(xchpoints, num,iter,threshDist,inNum)
     if bestInIdx ==0
         return
     end
-    wb = bestParameters/bestParameters(end);
+    if bestParameters(end)~=0
+        wb = bestParameters/bestParameters(end);
+    else
+        wb = bestParameters;
+    end
     inlayer = {rel_index(bestInIdx)};
     xchpoints(bestInIdx, :) = [];
     rel_index(bestInIdx) = [];
@@ -20,6 +24,10 @@ function [wb, inlayer, leftover] = FnEstLI(xchpoints, num,iter,threshDist,inNum)
             break;
         end
         inlayer(end+1) = {rel_index(bestInIdx)};
+        
+        if bestParameters(end)~=0
+            wb = bestParameters/bestParameters(end);
+        end
         wb(:, end+1) = bestParameters/bestParameters(end);
         xchpoints(bestInIdx, :) = [];
         rel_index(bestInIdx) = [];

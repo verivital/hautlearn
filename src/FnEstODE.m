@@ -25,11 +25,21 @@ for label = 1:len_labels
         end
     end
     
+    % it is to check if it is a reset action
+    if size(x_seg,2)/length(trace)==2
+        A_Bu = mrdivide(x_seg_plus,[x_seg;ud_seg]);
+        dA = A_Bu(:,1:num_var);
+        dB = A_Bu(:,num_var+1:end);
+        % -1 indicate the ode is descrete and is used for variable reset
+        ode(label) = {[dA, dB, -ones(num_var,1)]};
+        return
+    end
+    
     A_Bu = mrdivide(x_seg_plus,[x_seg;ud_seg]);
     dA = A_Bu(:,1:num_var);
     dB = A_Bu(:,num_var+1:end);
     dC = eye(num_var); dD = zeros(num_var, num_ud+1);
     sysd = ss(dA, dB, dC, dD, Ts);
     sysc = d2c(sysd);
-    ode(label) = {[sysc.A, sysc.B]};
+    ode(label) = {[sysc.A, sysc.B]}
 end
