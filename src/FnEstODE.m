@@ -39,7 +39,12 @@ for label = 1:len_labels
     dA = A_Bu(:,1:num_var);
     dB = A_Bu(:,num_var+1:end);
     dC = eye(num_var); dD = zeros(num_var, num_ud+1);
-    sysd = ss(dA, dB, dC, dD, Ts);
+    sysd = ss(dA, dB, dC, dD, 0.1);
     sysc = d2c(sysd);
+<<<<<<< HEAD
     ode(label) = {[sysc.A, sysc.B]}
 end
+=======
+    ode(label) = {[sysc.A, sysc.B]};
+end
+>>>>>>> d1cb72658318210792f866ea1d789c7ca9cec06f
