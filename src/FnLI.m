@@ -31,14 +31,14 @@ for i = 1:size(state_trans,1)
     states = state_trans(i,:);
     id_chpoint = find(ic == i);
     points = trans(id_chpoint,3:end); 
-    if states(1)==states(2)
-        wb = zeros(num_var+2,1);
-        LI(i).states = states;
-        LI(i).points = points;
-        LI(i).inlayer = {id_chpoint};
-        LI(i).wb = {zeros(num_var+2,1)};
-        continue;
-    end
+%     if states(1)==states(2)
+%         wb = zeros(num_var+2,1);
+%         LI(i).states = states;
+%         LI(i).points = points;
+%         LI(i).inlayer = {id_chpoint};
+%         LI(i).wb = {zeros(num_var+2,1)};
+%         continue;
+%     end
     
     if size(points,1)<inNum
         continue;

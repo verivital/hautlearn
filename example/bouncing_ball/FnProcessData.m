@@ -3,8 +3,8 @@ function trace = FnProcessData(xout, num_var, num_ud)
     ichpoints = {};
     chpoints = [];
     for i = 1:num_var
-        ichpoints(i) = {changepoint(xout(:,i))};
-        chpoints = union(chpoints, changepoint(xout(:,i)));
+        ichpoints(i) = {changepoint(xout(:,2))};
+        chpoints = union(chpoints, changepoint(xout(:,2)));
     end
     trace.ichpoints = ichpoints;
     trace.chpoints = chpoints;
