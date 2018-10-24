@@ -9,16 +9,8 @@ for i = 1:length(trace)
     chpoints = trace(i).chpoints;
     labels_trace = trace(i).labels_trace;
     x = trace(i).x;   
-    ud = trace(i).ud;
     for j = 1:length(labels_trace)-1  % last chpoints is the end point 
         chpoints_temp = chpoints(j+1);
-%         if isempty(ud)
-%             trans(end+1,:) = [trace(i).labels_trace(j),trace(i).labels_trace(j+1),...
-%             x(chpoints_temp,:)];  
-%         else
-%             trans(end+1,:) = [trace(i).labels_trace(j),trace(i).labels_trace(j+1),...
-%             x(chpoints_temp,:), ud(chpoints_temp,:)];  
-%         end
         trans(end+1,:) = [trace(i).labels_trace(j),trace(i).labels_trace(j+1),...
         x(chpoints_temp,:)]; 
     end

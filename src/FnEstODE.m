@@ -12,7 +12,7 @@ for label = 1:len_labels
         ud = trace(j).ud;
          
         startj = trace(j).chpoints(idx);
-        endj = trace(j).chpoints(idx+1);
+        endj = trace(j).chpoints(idx+1)-1;
         
         for n = 1:length(startj)
             x_seg = [x_seg, x(startj(n):(endj(n)-1), :)'];
