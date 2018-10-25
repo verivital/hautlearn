@@ -10,8 +10,8 @@ colors = 'bgrcmyk';
 idx_subset = [1:10]';%[1; 5; 10; 20; 30; 40; 50; 60; 70; 75]';
 allTrace_tmax = 0;
 
-%for i = 1 : N % todo: switch back to N, just testing with small numbers for now
-for i = 1:10 %idx_subset
+for i = 1 : N % todo: switch back to N, just testing with small numbers for now
+%for i = 1:10 %idx_subset
     % traces may be different lengths, so we need to have a time vector for
     % each
     tmax_steps = length(trace(i).x);
@@ -22,7 +22,8 @@ for i = 1:10 %idx_subset
     % variable 1's initial condition
     x0 = trace(i).x(1,:);
     
-    res = sim('con_ESTbouncing', 'ReturnWorkspaceOutputs', 'on');
+    res = sim('automata_learning', 'ReturnWorkspaceOutputs', 'on');
+%    res = sim('con_ESTbouncing', 'ReturnWorkspaceOutputs', 'on');
     
     for j = 1 : n
         j_color = mod( j, length(colors)) + 1;
@@ -56,7 +57,7 @@ for i = 1:10 %idx_subset
     %figure;
     error = trace(i).x - trace(i).xHat; % error along each dimension across the whole trace (for error vs. time plots for example)
     errorAbs = abs(error); % error along each dimension (absolute value for magnitude)
-    traceError = vecnorm(error,2,2); % 2-norm along the time dimension across all the n state variables (for error vs. time)
+    trace(i).traceError = vecnorm(error,2,2); % 2-norm along the time dimension across all the n state variables (for error vs. time)
     %plot( t_vec, traceError);
     
     for j = 1 : n
@@ -68,9 +69,9 @@ for i = 1:10 %idx_subset
         plot( t_vec, trace(i).x(:, j) - errorAbs(:,j), '-.k');
     end
     
-    e_mseT = norm(traceError);
-    e_mse = norm(error);
-    e_immse = immse(trace(i).x, trace(i).xHat); % this looks to be way too small
+    trace(i).e_mseT = norm(traceError);
+    trace(i).e_mse = norm(error);
+    trace(i).e_immse = immse(trace(i).x, trace(i).xHat); % this looks to be way too small
     
     opt_mse = 0;
     if opt_mse
@@ -84,6 +85,12 @@ for i = 1:10 %idx_subset
         end
     end
 end
+
+% aggregate mse across all traces
+min([trace(:).e_mse])
+max([trace(:).e_mse])
+mean([trace(:).e_mse])
+median([trace(:).e_mse])
 
 varNamesPlots = {'x', 'y', 'v_x', 'v_y'};
 % add axes labels, etc.
