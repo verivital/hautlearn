@@ -135,9 +135,13 @@ end
 % add initial condition 
 initalLoc = 'loc1'; % todo: check naming, first location in fromLocation is initial
 
-initialExpression = 'loc(automata_learning) == loc1';
+% initialExpression = strcat('loc(automata_learning_', file_name, ') == loc1');
+initialExpression = '';
 for i = 1 : length(varNames)
-    initialExpression = strcat(initialExpression, ' & ', varNames{i}, ' == 0'); % todo: pick a reasonable initial condition
+    initialExpression = strcat(initialExpression, varNames{i}, ' == 0'); % todo: pick a reasonable initial condition
+    if i < length(varNames)
+        initialExpression = strcat(initialExpression, ' & ');
+    end
 end
     
 %generate configuration
