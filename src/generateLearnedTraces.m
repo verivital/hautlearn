@@ -22,7 +22,7 @@ for i = 1 : N % todo: switch back to N, just testing with small numbers for now
     % variable 1's initial condition
     x0 = trace(i).x(1,:);
     
-    res = sim('automata_learning', 'ReturnWorkspaceOutputs', 'on');
+    res = sim('automata_learning_nav', 'ReturnWorkspaceOutputs', 'on');
 %    res = sim('con_ESTbouncing', 'ReturnWorkspaceOutputs', 'on');
     
     for j = 1 : n
@@ -69,7 +69,7 @@ for i = 1 : N % todo: switch back to N, just testing with small numbers for now
         plot( t_vec, trace(i).x(:, j) - errorAbs(:,j), '-.k');
     end
     
-    trace(i).e_mseT = norm(traceError);
+    trace(i).e_mseT = norm(trace(i).traceError);
     trace(i).e_mse = norm(error);
     trace(i).e_immse = immse(trace(i).x, trace(i).xHat); % this looks to be way too small
     
