@@ -1,5 +1,5 @@
 %function FnEstCondition(trace)
-addpath('..\linear_inequality')
+addpath(['..', filesep, 'linear_inequality'])
 num_var = 3;
 num_ud = 1;
 xchpoints = [];

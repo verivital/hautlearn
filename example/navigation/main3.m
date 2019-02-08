@@ -1,8 +1,8 @@
 clc
 clear
 
-addpath('.\trainingdata3');
-addpath('..\..\src')
+addpath(['.', filesep, 'trainingdata3']);
+addpath(['..', filesep, '..', filesep, 'src']);
 x = []; ud = []; 
 num =1;
 global lambda num_var num_ud

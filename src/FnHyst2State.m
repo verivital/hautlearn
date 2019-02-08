@@ -1,5 +1,5 @@
 function FnHyst2State(xml_file)
 currentFolder = pwd;
-addpath('..\..\src\hyst\src\matlab')
-SpaceExToStateflow([currentFolder,'\',xml_file]);
+addpath(['..', filesep, '..', filesep, 'src', filesep, 'hyst', filesep, 'src', filesep, 'matlab'])
+SpaceExToStateflow([currentFolder, filesep, xml_file]);
 end
