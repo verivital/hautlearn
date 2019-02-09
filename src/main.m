@@ -1,4 +1,4 @@
-clear all;
+%clear all;
 
 % import data structures from Hyst
 javaaddpath(['hyst', filesep, 'lib', filesep, 'Hyst.jar']);
@@ -22,7 +22,7 @@ import de.uni_freiburg.informatik.swt.spaxeexxmlreader.*;
 % create an empty hybrid automaton    
 ha = com.verivital.hyst.ir.base.BaseComponent;
 
-opt_learn = 1;
+opt_learn = 0;
 Ts = 0.1;
 num_var = 4; num_ud = 0;
 Ts = 0.1
