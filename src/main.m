@@ -1,4 +1,4 @@
-%clear all;
+clear all;
 
 % import data structures from Hyst
 javaaddpath(['hyst', filesep, 'lib', filesep, 'Hyst.jar']);
@@ -22,7 +22,7 @@ import de.uni_freiburg.informatik.swt.spaxeexxmlreader.*;
 % create an empty hybrid automaton    
 ha = com.verivital.hyst.ir.base.BaseComponent;
 
-opt_learn = 0;
+opt_learn = 1;
 Ts = 0.1;
 num_var = 4; num_ud = 0;
 Ts = 0.1
@@ -216,7 +216,7 @@ fclose(fileID);
 
 cd('hyst', filsep, 'src', filsep, 'matlab');
 try
-    SpaceExToStateflow(['..', filsep, '..', filsep, '..', filsep, 'automata_learning.xml']);
+    SpaceExToStateflow(['..', filesep, '..', filesep, '..', filsep, 'automata_learning.xml']);
 catch
 end
 cd(['..', filsep, '..', filsep, '..']);
