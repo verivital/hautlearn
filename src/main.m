@@ -214,9 +214,9 @@ fileID = fopen([file_name,'.xml'],'w');
 fprintf(fileID,char(xml_printer.stringXML()));
 fclose(fileID);
 
-cd('hyst', filsep, 'src', filsep, 'matlab');
+cd(['hyst', filesep, 'src', filesep, 'matlab']);
 try
-    SpaceExToStateflow(['..', filesep, '..', filesep, '..', filsep, 'automata_learning.xml']);
+    SpaceExToStateflow(['..', filesep, '..', filesep, '..', filesep, 'automata_learning.xml']);
 catch
 end
-cd(['..', filsep, '..', filsep, '..']);
+cd(['..', filesep, '..', filesep, '..']);
