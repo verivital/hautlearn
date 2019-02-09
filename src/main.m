@@ -28,7 +28,7 @@ num_var = 4; num_ud = 0;
 Ts = 0.1
 if opt_learn
     addpath(['..', filesep, 'example', filesep, 'navigation', filesep]);
-    addpath('..', filesep, 'example', filesep, 'navigation', filesep, 'trainingdata1.1');
+    addpath(['..', filesep, 'example', filesep, 'navigation', filesep, 'trainingdata1.1']);
     addpath(['.', filesep]);
     x = []; ud = []; 
     num =1;
