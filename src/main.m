@@ -27,9 +27,9 @@ Ts = 0.1;
 num_var = 4; num_ud = 0;
 Ts = 0.1
 if opt_learn
-    addpath('..\example\navigation\');
-    addpath('..\example\navigation\trainingdata1.1');
-    addpath('.\')
+    addpath(['..', filesep, 'example', filesep, 'navigation', filesep]);
+    addpath(['..', filesep, 'example', filesep, 'navigation', filesep, 'trainingdata1.1']);
+    addpath(['.', filesep]);
     x = []; ud = []; 
     num =1;
     global lambda num_var num_ud Ts
@@ -214,9 +214,9 @@ fileID = fopen([file_name,'.xml'],'w');
 fprintf(fileID,char(xml_printer.stringXML()));
 fclose(fileID);
 
-cd('hyst\src\matlab');
+cd(['hyst', filesep, 'src', filesep, 'matlab']);
 try
-    SpaceExToStateflow('..\..\..\automata_learning.xml');
+    SpaceExToStateflow(['..', filesep, '..', filesep, '..', filesep, 'automata_learning.xml']);
 catch
 end
-cd('..\..\..');
+cd(['..', filesep, '..', filesep, '..']);

@@ -1,5 +1,3 @@
-
-
 function [wb, inlayer, leftover] = FnEstLI(xchpoints, num,iter,threshDist,inNum)
     wb = [];
     inlayer = {};
