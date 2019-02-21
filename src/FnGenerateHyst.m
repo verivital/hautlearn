@@ -23,8 +23,8 @@ import de.uni_freiburg.informatik.swt.spaxeexxmlreader.*;
 % create an empty hybrid automaton    
 ha = com.verivital.hyst.ir.base.BaseComponent;
 
-%load ode.mat
-num_var = size(ode{1},1);
+%%% %load ode.mat
+%%% num_var = size(ode{1},1);
 
 varNames = {};
 for i = 1 : num_var
@@ -61,6 +61,7 @@ for i_loc = 1:numLoc
     else
         flow{i_loc} = modesToFlows{id2lables(i_loc)};
     end
+    class(flow{i_loc}) %%%
     loc = ha.createMode(locName{i_loc},invariant{i_loc},flow{i_loc});
     locations(i_loc) = loc;
 end
@@ -135,14 +136,19 @@ end
 % add initial condition 
 initalLoc = 'loc1'; % todo: check naming, first location in fromLocation is initial
 
-% initialExpression = strcat('loc(automata_learning_', file_name, ') == loc1');
-initialExpression = '';
+initialExpression = 'loc(automata_learning) == loc1';
 for i = 1 : length(varNames)
-    initialExpression = strcat(initialExpression, varNames{i}, ' == 0'); % todo: pick a reasonable initial condition
-    if i < length(varNames)
-        initialExpression = strcat(initialExpression, ' & ');
-    end
+    initialExpression = strcat(initialExpression, ' & ', varNames{i}, ' == 0'); % todo: pick a reasonable initial condition
 end
+
+%%%% initialExpression = strcat('loc(automata_learning_', file_name, ') == loc1');
+%%%initialExpression = '';
+%%%for i = 1 : length(varNames)
+%%%    initialExpression = strcat(initialExpression, varNames{i}, ' == 0'); % todo: pick a reasonable initial condition
+%%%    if i < length(varNames)
+%%%        initialExpression = strcat(initialExpression, ' & ');
+%%%    end
+%%%end
     
 %generate configuration
 config = com.verivital.hyst.ir.Configuration(ha);
@@ -160,7 +166,8 @@ if numVar > 1
     end 
 end
 
-file_name =['automata_learning_',file_name]; 
+%%%file_name =['automata_learning_',file_name]; % todo: suffix example name
+file_name ='automata_learning'; % todo: suffix example name
 config.settings.plotVariableNames = jsa;
 config.settings.spaceExConfig = configValues;
 printer = com.verivital.hyst.printers.SpaceExPrinter;
