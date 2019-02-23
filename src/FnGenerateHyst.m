@@ -1,6 +1,6 @@
-function FnGenerateHyst(file_name,data)
+function FnGenerateHyst(file_name,label_guard, num_var, ode, pta_trace)
 
-load([data,'.mat']);
+%load([data,'.mat']);
 % import data structures from Hyst
 javaaddpath(['hyst', filesep, 'lib', filesep, 'Hyst.jar']);
 import de.uni_freiburg.informatik.swt.spaceexboogieprinter.*;
@@ -166,8 +166,8 @@ if numVar > 1
     end 
 end
 
-%%%file_name =['automata_learning_',file_name]; % todo: suffix example name
-file_name ='automata_learning'; % todo: suffix example name
+%file_name =['automata_learning_',file_name]; % todo: suffix example name
+%file_name ='automata_learning'; % todo: suffix example name
 config.settings.plotVariableNames = jsa;
 config.settings.spaceExConfig = configValues;
 printer = com.verivital.hyst.printers.SpaceExPrinter;
@@ -186,3 +186,72 @@ fclose(fileID);
 fileID = fopen([file_name,'.xml'],'w');
 fprintf(fileID,char(xml_printer.stringXML()));
 fclose(fileID);
+end
+
+% this function takes a matrix A, which is an element of the ode list
+% variable returned by other parts of the automata learning
+function [out] = odeMatrixToString(A,varNames)
+    x = [];
+    
+    n = length(varNames); % state space dimensionality
+    
+    for i = 1 : n
+        x = [x; sym(varNames{i})];
+    end
+    
+    Ar = A(1:n,1:n); % this matrix that ode returns is not just the A matrix, it has some extra parts so the dimensionality is greater than n
+    
+    % TODO: add in the B part of however the input affects things, e.g.,
+    % the extra rows/columns of the ode matrix
+    n_extra = length(A);
+    Br = A(1:n,n_extra);
+    
+%     for i = 1:n
+%         tmp(i) = {char(vpa(Ar(i,:) * x + Br(i), 4))};
+%     end
+    tmp = string(vpa(Ar * x + Br, 4)); % round to 4 decimals; TODO: make this a config option
+    odeStrConjunction = '';
+    for i = 1 : n
+        odeStr = strcat(varNames(i), ''' == ', tmp{i});
+        if i > 1
+            odeStrConjunction = strcat(odeStrConjunction, ' & ');
+        end
+        odeStrConjunction = strcat(odeStrConjunction, ' ', odeStr);
+        tmp(i) = java.lang.String(odeStr);
+    end
+    %out = tmp;
+    out = odeStrConjunction;
+end
+
+% this function takes a matrix A, which is an element of the ode list
+% variable returned by other parts of the automata learning
+function [out] = guardVectorToString(V,varNames)
+    x = [];
+    
+    n = length(varNames); % state space dimensionality
+    
+    for i = 1 : n
+        x = [x; sym(varNames{i})];
+    end
+    
+    Vr = V(1:n,:)'; % this matrix that ode returns is not just the A matrix, it has some extra parts so the dimensionality is greater than n
+    
+
+    tmp = string((vpa(Vr * x, 4))); % round to 4 decimals; TODO: make this a config option
+    odeStrConjunction = '';
+    for i = 1 : size(V,2)
+        if V(end,i)==-1
+            odeStr = strcat(tmp(i),'+1<0');
+        else
+             odeStr = strcat(tmp(i),'+1>0');
+        end
+        
+        if i > 1
+            odeStrConjunction = strcat(odeStrConjunction, ' && ');
+        end
+        odeStrConjunction = strcat(odeStrConjunction, ' ', odeStr);
+        tmp(i) = java.lang.String(odeStr);
+    end
+    %out = tmp;
+    out = odeStrConjunction;
+end

@@ -40,9 +40,7 @@
 % [trace,label_guard] = FnLI(trace, iter, threshDist, inNum);
 % pta_trace = FnPTA(trace);
 
-save('tmp');
-FnGenerateHyst('unimportant', 'tmp');
-delete tmp.mat;
+FnGenerateHyst('automata_learning',label_guard, num_var, ode, pta_trace);
 
 cd(['hyst', filesep, 'src', filesep, 'matlab']);
 try
