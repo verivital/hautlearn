@@ -48,6 +48,7 @@ trace = FnClusterSegs(trace, x, ud);
 for n =1:length(trace)
     trace(n).labels_trace = [trace(n).labels_trace;0];
 end
+%%%
 ode = FnEstODE(trace);
 [trace,label_guard] = FnLI(trace, iter, threshDist, inNum);
 pta_trace = FnPTA(trace);
