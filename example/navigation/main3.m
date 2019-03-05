@@ -21,15 +21,10 @@ for i = 1:66
     end
 end
 
-trace = FnClusterSegs(trace, x, ud);
-for n =1:length(trace)
-    trace(n).labels_trace = [trace(n).labels_trace;0];
-end
 %%
-ode = FnEstODE(trace);
 
 iter = 1000; % number of iterations 
 threshDist = 0.008; % tolerance 
 inNum = 5; %the least number of inlayers
-[trace,label_guard] = FnLI(trace, iter, threshDist, inNum);
-pta_trace = FnPTA(trace);
+cd(['..', filesep, '..', filesep, '..']);
+FnMain(trace, x, ud, iter, threshDist, inNum);

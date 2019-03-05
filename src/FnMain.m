@@ -41,13 +41,13 @@
 % pta_trace = FnPTA(trace);
 
 function FnMain(trace, x, ud, iter, threshDist, inNum)
-% global lambda num_var num_ud Ts;
+
 global num_var;
 trace = FnClusterSegs(trace, x, ud);
-%%% for buck_converter
-for n =1:length(trace)
-    trace(n).labels_trace = [trace(n).labels_trace;0];
-end
+%%% for buck_converter, navigation
+% for n =1:length(trace)
+%     trace(n).labels_trace = [trace(n).labels_trace;0];
+% end
 %%%
 ode = FnEstODE(trace);
 [trace,label_guard] = FnLI(trace, iter, threshDist, inNum);
