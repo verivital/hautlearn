@@ -13,6 +13,7 @@ for i = 1:1
     
     trace_temp = FnProcessData(xout, num_var, num_ud);
     chpoints = trace_temp.chpoints;
+    
     trace(num) = trace_temp;
     x = [x; trace(num).x];
     ud = [ud; trace(num).ud];

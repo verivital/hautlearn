@@ -3,11 +3,11 @@ clear
 
 addpath(['.', filesep, 'trainingdata3']);
 addpath(['..', filesep, '..', filesep, 'src']);
-x = []; ud = []; 
-num =1;
 global lambda num_var num_ud
 lambda = 0.000001;  
 num_var = 4; num_ud = 0;
+x = []; ud = []; 
+num =1;
 for i = 1:66
     load(['test', int2str(i),'.mat']);
     
