@@ -1,7 +1,5 @@
-function trace = FnProcessData(xout)
+function trace = FnProcessData(xout, num_var, num_ud)
 
-    global lambda num_var num_ud
-    
     ichpoints = {};
     chpoints = [];
     for i = 1:num_var
@@ -10,7 +8,7 @@ function trace = FnProcessData(xout)
     end
     trace.ichpoints = ichpoints;
     trace.chpoints = chpoints;
-    trace.x = xout(:,1:3);
+    trace.x = xout(:,1:num_var);
     trace.ud = xout(:,(num_var+1):(num_var+num_ud));
     trace.labels_num = []; 
     trace.labels_trace = []; 
