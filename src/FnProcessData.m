@@ -1,15 +1,19 @@
-function trace = FnProcessData(xout, num_var, num_ud)
+function trace = FnProcessData(xout, num_var, num_ud, chpoints_offset, chpoints_cols, chpoints_tolerance)
 
 %%%    ichpoints = {};
     chpoints = [];
-    for i = 1:num_var
-%%%        ichpoints(i) = {changepoint(xout(:,num_var))};
-        chpoints = union(chpoints, changepoint(xout(:,i)));
+    for i = 1:chpoints_cols
+%%%        ichpoints(i) = {changepoint(xout(:,i))};
+        chpoints = union(chpoints, changepoint(xout(:,chpoints_offset+i), chpoints_tolerance));
     end
 %%%    trace.ichpoints = ichpoints;
     trace.chpoints = chpoints;
     trace.x = xout(:,1:num_var);
-    trace.ud = [];
+    if num_ud>0
+        trace.ud = xout(:,(num_var+1):(num_var+num_ud));
+    else
+        trace.ud = [];
+    end
     trace.labels_num = []; 
     trace.labels_trace = []; 
     
@@ -30,9 +34,9 @@ function trace = FnProcessData(xout, num_var, num_ud)
    
 end
 
-function points_num = changepoint(values)
+function points_num = changepoint(values, tolerance)
 
   valdif1 = [values(1); diff(values)];
-  indx = find(abs(valdif1) >=5);
+  indx = find(abs(valdif1) >= tolerance);
   points_num = union(1,[indx; length(values)]);
 end
