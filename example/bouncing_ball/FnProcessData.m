@@ -4,7 +4,7 @@ function trace = FnProcessData(xout, num_var, num_ud)
     chpoints = [];
     for i = 1:num_var
 %%%        ichpoints(i) = {changepoint(xout(:,num_var))};
-        chpoints = union(chpoints, changepoint(xout(:,num_var)));
+        chpoints = union(chpoints, changepoint(xout(:,i)));
     end
 %%%    trace.ichpoints = ichpoints;
     trace.chpoints = chpoints;
