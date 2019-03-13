@@ -32,7 +32,7 @@ end
 
 function points_num = changepoint(values)
 
-  valdif1 = diff([values(1); values]);
+  valdif1 = [values(1); diff(values)];
   indx = find(abs(valdif1) >=5);
   points_num = union(1,[indx; length(values)]);
 end
