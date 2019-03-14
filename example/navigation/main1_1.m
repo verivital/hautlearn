@@ -3,13 +3,12 @@ clear
 
 addpath(['.', filesep, 'trainingdata1.1']);
 addpath(['..', filesep, '..', filesep, 'src']);
+global lambda num_var num_ud Ts 
+lambda = 0.000001;  
+num_var = 4; num_ud = 0; Ts  = 0.1;
 x = []; ud = []; 
 num =1;
-global lambda num_var num_ud Ts 
-Ts  = 0.1;
-lambda = 0.000001;  
-num_var = 4; num_ud = 0;
-for i = 1:81
+for i = 1:81 %%% 5
     load(['test', int2str(i),'.mat']);
     
     trace_temp = FnProcessData(xout, num_var, num_ud);
