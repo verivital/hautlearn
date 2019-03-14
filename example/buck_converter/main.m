@@ -11,7 +11,7 @@ num =1;
 for i = 1:1
     load(['training', int2str(i),'.mat']);
     
-    trace_temp = FnProcessData(xout, num_var, num_ud);
+    trace_temp = FnProcessData(xout, num_var, num_ud, num_var, 1, .5);
     
     trace(num) = trace_temp;
     x = [x; trace(num).x];
