@@ -18,7 +18,7 @@ end
 
 %% estimate linear inequality for each type of transitions 
 [state_trans, ia, ic ]= unique(trans(:,1:2), 'stable', 'rows');
-
+num = 1;
 for i = 1:size(state_trans,1)
     states = state_trans(i,:);
     id_chpoint = find(ic == i);
@@ -38,10 +38,10 @@ for i = 1:size(state_trans,1)
     % wb: inequality parameters, inlayer: index of inlayer points
     [wb_temp, inlayer_temp] = FnEstLI(points, num_var,iter,threshDist,inNum);
     if isempty(wb_temp)
-        LI(i).states = states;
-        LI(i).points = points;
-        LI(i).inlayer = {id_chpoint};
-        LI(i).wb = {zeros(num_var+2,1)};
+%         LI(i).states = states;
+%         LI(i).points = points;
+%         LI(i).inlayer = {id_chpoint};
+%         LI(i).wb = {zeros(num_var+2,1)};
         continue;
     end
     [wb, inlayer]= FnInequalitySymbol(id_chpoint, wb_temp, inlayer_temp, trace, points);
@@ -50,6 +50,8 @@ for i = 1:size(state_trans,1)
     LI(i).points = points;
     LI(i).inlayer = inlayer;
     LI(i).wb = {wb};
+    
+    num = num+1;
 end
 %%
 num_guard = 1;
@@ -57,8 +59,8 @@ guard_trace = zeros(size(trans,1),1);
 for n = 1:length(LI)
     for i = 1:length(LI(n).inlayer)
         if ~isempty(LI(n).inlayer(1,i))
-            iwb = cell2mat(LI(n).wb);
-            label_guard(num_guard) = {iwb(:,i)};
+            iwb = (LI(n).wb);
+            label_guard(num_guard) = iwb(i); %{iwb(:,i)};
             id = cell2mat(LI(n).inlayer(1,i));
             guard_trace(id,:) = num_guard;
             num_guard = num_guard + 1;
@@ -99,40 +101,47 @@ function [M, inlayer]= FnInequalitySymbol(indx_ch, wb, inlayer_temp, trace, poin
         end
    end
    
-   if length(inlayer_temp)>=2
-        for i = 1:length(inlayer_temp)
-            arr = 1:length(inlayer_temp);
-            arr(i) = [];
-            for j = arr
-                indx_temp = cell2mat(inlayer_temp(j));
-                ipoints = points(indx_temp,:);
-            end
-            len = size(ipoints, 1);
-            idistance = (ipoints * wb(1:end-1, i) + repmat(wb(end, i),len, 1))/norm(wb(1:end-1, i));
-            pnum = length(find(idistance>=0))/length(idistance);
-            symb = 0;
-            if pnum>=0.90
-                symb = 1; 
-            elseif pnum <=0.10 
-                symb = -1; 
-            end
-            % if other change points statisft ith gurad condition
-            if symb == M(end,i)
-                sat = 1;
-            else 
-                sat = 0;
-                break
-            end
-        end
-        
-        if sat ==1
-            merg_inlayer = [];
-            for i = 1:length(inlayer)
-                merg_inlayer = [merg_inlayer; cell2mat(inlayer(i))];
-            end
-            inlayer = {merg_inlayer};
-        end
-   end
+   % assume that LIs are conjunctive
+    merg_inlayer = [];
+    for i = 1:length(inlayer)
+        merg_inlayer = [merg_inlayer; cell2mat(inlayer(i))];
+    end
+    inlayer = {merg_inlayer};
+    
+%    if length(inlayer_temp)>=2
+%         for i = 1:length(inlayer_temp)
+%             arr = 1:length(inlayer_temp);
+%             arr(i) = [];
+%             for j = arr
+%                 indx_temp = cell2mat(inlayer_temp(j));
+%                 ipoints = points(indx_temp,:);
+%             end
+%             len = size(ipoints, 1);
+%             idistance = (ipoints * wb(1:end-1, i) + repmat(wb(end, i),len, 1))/norm(wb(1:end-1, i));
+%             pnum = length(find(idistance>=0))/length(idistance);
+%             symb = 0;
+%             if pnum>=0.90
+%                 symb = 1; 
+%             elseif pnum <=0.10 
+%                 symb = -1; 
+%             end
+%             % if other change points statisft ith gurad condition
+%             if symb == M(end,i)
+%                 sat = 1;
+%             else 
+%                 sat = 0;
+%                 break
+%             end
+%         end
+%         
+%         if sat ==1
+%             merg_inlayer = [];
+%             for i = 1:length(inlayer)
+%                 merg_inlayer = [merg_inlayer; cell2mat(inlayer(i))];
+%             end
+%             inlayer = {merg_inlayer};
+%         end
+%    end
   
 end
 

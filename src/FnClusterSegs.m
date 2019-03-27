@@ -118,11 +118,8 @@ function indx = FnRecursive(x,ud,chpoints)
         lmi = getlmis; 
         
         for j = 2:num_segments
-            num_segments
-            j
-            if num_segments == 2
-                yy = 0;
-            end
+            disp([int2str(j),'/', int2str(num_segments)])
+     
             index_startj = chpoints(j,1);
             index_endj = chpoints(j,2);
                        

@@ -1,8 +1,8 @@
-function trace = FnProcessData(xout, num_var, num_ud, chpoints_offset, chpoints_cols, chpoints_tolerance)
+function trace = FnProcessData(xout, num_var, num_ud)
 
     chpoints = [];
-    for i = 1:chpoints_cols
-        chpoints = union(chpoints, changepoint(xout(:,chpoints_offset+i), chpoints_tolerance));
+    for i = 1:num_var
+        chpoints = union(chpoints, changepoint(xout(:,i)));
     end
     
     % remove redundant chpoints
@@ -18,9 +18,9 @@ function trace = FnProcessData(xout, num_var, num_ud, chpoints_offset, chpoints_
     trace.labels_trace = [];  
 end
 
-function points_num = changepoint(values, tolerance)
-
+function points_num = changepoint(values)
   valdif1 = [values(1); diff(values)];
-  indx = find(abs(valdif1) >= tolerance);
+  valdif2 =  diff(valdif1);
+  indx = find(abs(valdif2) >=0.03);
   points_num = union(1,[indx; length(values)]);
 end
