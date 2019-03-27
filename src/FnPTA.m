@@ -8,9 +8,9 @@ for n = 1:length(trace)
         pta_trace_temp.guard = guard_trace(i); %guard condition
         pta_trace_temp.label2 = labels_trace(i+1);
         pta_trace_temp.id1 = num; %source state id
-        if i ==1 % the first segment are all assigned with 1
-             pta_trace_temp.id1 = 1; 
-        end
+%         if i ==1 % the first segment are all assigned with 1
+%              pta_trace_temp.id1 = 1; 
+%         end
         pta_trace_temp.id2 = num+1; %destination state id 
         pta_trace_temp.times = 1; 
         pta_trace(num) = pta_trace_temp;
