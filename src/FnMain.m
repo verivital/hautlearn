@@ -15,7 +15,7 @@ FnGenerateHyst('automata_learning',label_guard, num_var, ode, pta_trace);
 
 addpath(['..', filesep, '..', filesep, 'src',filesep,'hyst', filesep, 'src', filesep, 'matlab']);
 try
-    SpaceExToStateflow('.\automata_learning.xml');
+    SpaceExToStateflow(['.', filesep, 'automata_learning.xml']);
 catch
 end
 % cd(['..', filesep, '..', filesep, '..']);
