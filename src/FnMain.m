@@ -1,5 +1,5 @@
 function FnMain(trace, x, ud, iter, threshDist, inNum, outputDir)
-%dbstop at 14 in FnMain
+dbstop at 14 in FnMain
 global num_var;
 trace = FnClusterSegs(trace, x, ud);
 
