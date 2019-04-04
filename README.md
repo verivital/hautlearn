@@ -1,4 +1,4 @@
-# Automata-Learning
+# hautlearn
 This framework contains functions as follows:\
 FnClusterSegs(): clusters trace segments\
 FnEstODE(): estimates ordinary differential equations from the clustered trace segments\
