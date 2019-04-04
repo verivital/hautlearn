@@ -24,5 +24,4 @@ iter = 1000; % number of iterations
 threshDist = 0.05; % tolerance 
 inNum = 10; %the least number of inlayers
 outputDir=pwd;
-cd(['..', filesep, '..', filesep, 'src']);
 FnMain(trace, x, ud, iter, threshDist, inNum, outputDir);

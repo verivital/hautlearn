@@ -12,6 +12,8 @@ ode = FnEstODE(trace);
 pta_trace = FnPTA(trace);
 disp("Manually remove redundant invalid transitions in dataset *pta_trace*")
 
+% FnGenerateHyst assumes it is in current directory
+cd(fileparts(mfilename('fullpath')));
 FnGenerateHyst([outputDir, filesep, 'automata_learning'],label_guard, num_var, ode, pta_trace);
 
 % SpaceExToStateflow assumes it is in current directory
