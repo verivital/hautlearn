@@ -3,7 +3,6 @@ clear
 
 addpath(['.', filesep, 'trainingdata3']);
 addpath(['..', filesep, '..', filesep, 'src']);
-global lambda num_var num_ud
 lambda = 0.000001;  
 num_var = 4; num_ud = 0;
 x = []; ud = []; 
@@ -26,5 +25,5 @@ end
 iter = 1000; % number of iterations 
 threshDist = 0.008; % tolerance 
 inNum = 5; %the least number of inlayers
-cd(['..', filesep, '..', filesep, '..']);
-FnMain(trace, x, ud, iter, threshDist, inNum);
+outputDir=pwd;
+FnMain(trace, x, ud, iter, threshDist, inNum, outputDir, lambda, num_var, num_ud, 0);

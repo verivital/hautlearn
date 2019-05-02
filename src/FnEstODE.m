@@ -1,5 +1,4 @@
-function ode = FnEstODE(trace)
-global Ts num_var num_ud
+function ode = FnEstODE(trace, Ts, num_var, num_ud)
 len_labels = length(trace(1).labels_num);
 for label = 1:len_labels
     x_seg = [];

@@ -1,4 +1,4 @@
-function trace = FnClusterSegs(trace, x, ud)
+function trace = FnClusterSegs(trace, x, ud, lambda)
 
     segIndex = [0,0]; 
     for i=1:length(trace)  
@@ -12,7 +12,7 @@ function trace = FnClusterSegs(trace, x, ud)
     [sorted_length, index] = sort(seglength,'descend');
     sorted_index = segIndex(index,:);
 
-    mix_label= FnRecursive(x',ud',sorted_index);
+    mix_label= FnRecursive(x',ud',sorted_index, lambda);
     labels = FnIndxarrange(mix_label, index);
     labels_num = unique(labels(:,2));
     cluster_segs = sortrows(labels,1); %
@@ -51,9 +51,8 @@ function labels = FnIndxarrange(cluster_idx, index)
     labels = [idx, labels];
 end
 
-function indx = FnRecursive(x,ud,chpoints)  
+function indx = FnRecursive(x,ud,chpoints, lambda)  
     winlen = 1;
-    global lambda;
     
     if size(x,1) ~= 0
         
@@ -202,7 +201,7 @@ function indx = FnRecursive(x,ud,chpoints)
       
         indx = [indx; -1];
         
-        indxx = FnRecursive(xc,udc,chpc);
+        indxx = FnRecursive(xc,udc,chpc, lambda);
         indx = [indx; indxx];
          
     else

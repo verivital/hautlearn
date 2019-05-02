@@ -1,7 +1,4 @@
-function [trace,label_guard] = FnLI(trace, iter, threshDist, inNum)
-
-
-global num_var num_ud
+function [trace,label_guard] = FnLI(trace, iter, threshDist, inNum, num_var)
 
 % first two are the source state and destination state, last two is a changepoint
 trans = []; 

@@ -1,14 +1,13 @@
-function FnMain(trace, x, ud, iter, threshDist, inNum, outputDir)
+function FnMain(trace, x, ud, iter, threshDist, inNum, outputDir, lambda, num_var, num_ud, Ts)
 dbstop at 14 in FnMain
-global num_var;
-trace = FnClusterSegs(trace, x, ud);
+trace = FnClusterSegs(trace, x, ud, lambda);
 
 for n =1:length(trace)
     trace(n).labels_trace = [trace(n).labels_trace;0];
 end
 
-ode = FnEstODE(trace);
-[trace,label_guard] = FnLI(trace, iter, threshDist, inNum);
+ode = FnEstODE(trace, Ts, num_var, num_ud);
+[trace,label_guard] = FnLI(trace, iter, threshDist, inNum, num_var);
 pta_trace = FnPTA(trace);
 disp("Manually remove redundant invalid transitions in dataset *pta_trace*")
 
