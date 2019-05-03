@@ -4,7 +4,7 @@ clear
 addpath(['.', filesep, 'trainingdata']);
 addpath(['..', filesep, '..', filesep, 'src']);
 lambda = 0.00005;  
-num_var = 3; num_ud = 1;
+num_var = 3; num_ud = 1; Ts  = 0.1;
 x = []; ud = [];
 num =1;
 for i = [2,5,6,8]
@@ -23,4 +23,4 @@ iter = 1000; % number of iterations
 threshDist = 0.05; % tolerance 
 inNum = 5; %the least number of inlayers
 outputDir=pwd;
-FnMain(trace, x, ud, iter, threshDist, inNum, outputDir, lambda, num_var, num_ud, 0);
+FnMain(trace, x, ud, iter, threshDist, inNum, outputDir, lambda, num_var, num_ud, Ts);
