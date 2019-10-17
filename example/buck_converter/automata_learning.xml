@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<sspaceex xmlns="http://www-verimag.imag.fr/xml-namespaces/sspaceex" math="SpaceEx" version="0.2">
+   <component id="automata_learning_sys">
+      <param controlled="true" d1="1" d2="1" dynamics="any" local="false" name="x1" type="real"/>
+      <param controlled="true" d1="1" d2="1" dynamics="any" local="false" name="x2" type="real"/>
+      <location id="1" name="loc1">
+         <flow>x1' == 9065.375179201365 - 378.7059368174523 * x2 - 273.0049609662965 * x1 &amp;
+ x2' == 455.4184322077781 * x1 - 50.56574405031279 * x2 + 53.792456101975404</flow>
+      </location>
+      <location id="2" name="loc2">
+         <flow>x1' == -197.53309756610543 * x1 - 373.025359954685 * x2 - 44.181759011466056 &amp;
+ x2' == 459.439592320472 * x1 - 54.343865604605526 * x2 + 105.87266784789972</flow>
+      </location>
+      <location id="3" name="loc3">
+         <flow>x1' == 18.28870554093737 * x1 - 482.9973192149773 * x2 + 6486.8754991889 &amp;
+ x2' == 289.8225433314219 * x1 - 123.07744751870632 * x2 + 1314.753739465028</flow>
+      </location>
+      <transition asap="false" bezier="false" source="1" target="2" timedriven="false">
+         <guard>0.0007579 * x1 - 0.08267 * x2 + 1.0 &lt; 0.0</guard>
+         <labelposition/>
+         <middlepoint/>
+      </transition>
+      <transition asap="false" bezier="false" source="2" target="3" timedriven="false">
+         <guard>50.25 * x1 - 0.1047 * x2 + 1.0 &lt; 0.0</guard>
+         <labelposition/>
+         <middlepoint/>
+      </transition>
+      <transition asap="false" bezier="false" source="3" target="1" timedriven="false">
+         <guard>-0.01993 * x1 - 0.084 * x2 + 1.0 &gt; 0.0</guard>
+         <labelposition/>
+         <middlepoint/>
+      </transition>
+   </component>
+   <component id="automata_learning_net">
+      <param controlled="true" d1="1" d2="1" dynamics="any" local="false" name="x1" type="real"/>
+      <param controlled="true" d1="1" d2="1" dynamics="any" local="false" name="x2" type="real"/>
+      <bind as="automata_learning" component="automata_learning_sys">
+         <map key="x1">x1</map>
+         <map key="x2">x2</map>
+      </bind>
+   </component>
+</sspaceex>

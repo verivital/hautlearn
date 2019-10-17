@@ -1,0 +1,1 @@
+1) Our proposed methodology mainly focuses on the identification of hybrid automat made of linear ordinary differential equations and linear guards. Compared to other works, we also consider an estimation of guard conditions such as linear ineuqalities being satisfied. 
