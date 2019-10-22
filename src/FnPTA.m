@@ -8,9 +8,9 @@ for n = 1:length(trace)
         pta_trace_temp.guard = guard_trace(i); %guard condition
         pta_trace_temp.label2 = labels_trace(i+1);
         pta_trace_temp.id1 = num; %source state id
-%         if i ==1 % the first segment are all assigned with 1
-%              pta_trace_temp.id1 = 1; 
-%         end
+        if i ==1 % the first segment are all assigned with 1
+             pta_trace_temp.id1 = 1; 
+        end
         pta_trace_temp.id2 = num+1; %destination state id 
         pta_trace_temp.times = 1; 
         pta_trace(num) = pta_trace_temp;
@@ -21,9 +21,6 @@ end
 num = 1;
 
 for n =1:length(pta_trace)-1
-    if n == 262
-        yy = 1;
-    end
     if isempty(pta_trace(n).id1)
         continue;
     end
@@ -31,6 +28,9 @@ for n =1:length(pta_trace)-1
     label1 = pta_trace(n).label1;
     guard = pta_trace(n).guard;
     label2 = pta_trace(n).label2;
+    if guard == 0
+        continue;
+    end
     
     % get the transition after id2
     guard_next = pta_trace(pta_trace(n).id2).guard;

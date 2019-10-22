@@ -1,6 +1,6 @@
 Model {
   Name			  "automata_learning"
-  Version		  9.1
+  Version		  9.2
   SavedCharacterEncoding  "windows-1252"
   GraphicalInterface {
     NumRootInports	    0
@@ -14,19 +14,16 @@ Model {
     NumResetEvents	    0
     HasInitializeEvent	    0
     HasTerminateEvent	    0
+    PreCompExecutionDomainType "Unset"
     IsExportFunctionModel   0
     NumParameterArguments   0
     NumExternalFileReferences 0
     OrderedModelArguments   1
   }
   DiagnosticSuppressor	  "on"
-  SuppressorTable	  "22 serialization::archive 11 0 6 0 0 0 8 0"
-  Notes			  ""
+  WebScopes_FoundationPlugin "on"
   NotesPlugin		  "on"
-  LogicAnalyzerGraphicalSettings ""
   LogicAnalyzerPlugin	  "on"
-  LogicAnalyzerSignalOrdering ""
-  CustomCodeFunctionData  ""
   SLCCPlugin		  "on"
   ScopeRefreshTime	  0.035000
   OverrideScopeRefreshTime on
@@ -47,7 +44,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [367.0, 198.0, 814.0, 533.0]
+      Location		      [93.0, 84.0, 814.0, 634.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -62,24 +59,36 @@ Model {
 	$PropName		"ExplorerBarInfo"
 	$ObjectID		4
 	$ClassName		"Simulink.ExplorerBarInfo"
-	Visible			[0]
+	Visible			[1]
       }
       Object {
 	$PropName		"EditorsInfo"
 	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
-	Extents			[760.0, 382.0]
-	ZoomFactor		[1.0]
-	Offset			[0.0, 0.0]
+	ViewObjType		"StateflowChart"
+	LoadSaveID		"1"
+	Extents			[1272.0, 1196.0]
+	ZoomFactor		[0.25]
+	Offset			[-487.1034666666668, -524.93040000000019]
       }
       Array {
 	Type			"Simulink.DockComponentInfo"
 	Dimension		2
 	Object {
 	  $ObjectID		  6
+	  Type			  "GLUE2:DDG Component"
+	  ID			  "SymbolManager"
+	  Visible		  [1]
+	  CreateCallback	  "Stateflow.Interface.Panel.createSymbolManagerComponent"
+	  UserData		  "0"
+	  Floating		  [0]
+	  DockPosition		  "Right"
+	  Width			  [251]
+	  Height		  [501]
+	}
+	Object {
+	  $ObjectID		  7
 	  Type			  "GLUE2:PropertyInspector"
 	  ID			  "Property Inspector"
 	  Visible		  [0]
@@ -87,44 +96,32 @@ Model {
 	  UserData		  ""
 	  Floating		  [0]
 	  DockPosition		  "Right"
-	  Width			  [640]
-	  Height		  [480]
-	}
-	Object {
-	  $ObjectID		  7
-	  Type			  "GLUE2:DDG Component"
-	  ID			  "SymbolManager"
-	  Visible		  [0]
-	  CreateCallback	  "Stateflow.Interface.Panel.createSymbolManagerComponent"
-	  UserData		  "0"
-	  Floating		  [0]
-	  DockPosition		  "Right"
-	  Width			  [254]
-	  Height		  [383]
+	  Width			  [256]
+	  Height		  [192]
 	}
 	PropName		"DockComponentsInfo"
       }
       WindowState	      "AAAA/wAAAAD9AAAAAgAAAAAAAAC9AAAB+PwCAAAAA/sAAAAWAEQAbwBjAGsAVwBpAGQAZwBlAHQAMwEAAAAxAAAB+AAAA"
       "AAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0Ac"
-      "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAABjAP///wAAAAEAAAECAAABmfwCA"
+      "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAAEAAP///wAAAAEAAAJ5AAAFJvwCA"
       "AAAAvsAAABUAEcATABVAEUAMgA6AFAAcgBvAHAAZQByAHQAeQBJAG4AcwBwAGUAYwB0AG8AcgAvAFAAcgBvAHAAZQByAHQAeQAgAEkAbgBzAHAAZ"
-      "QBjAHQAbwByAAAAAAD/////AAAAKwD////7AAAAQgBHAEwAVQBFADIAOgBEAEQARwAgAEMAbwBtAHAAbwBuAGUAbgB0AC8AUwB5AG0AYgBvAGwAT"
-      "QBhAG4AYQBnAGUAcgAAAABAAAABmQAAAB4A////AAADHgAAAZkAAAABAAAAAgAAAAEAAAAC/AAAAAEAAAACAAAAD/////8AAAAAAP////8AAAAAA"
+      "QBjAHQAbwByAAAAAAD/////AAAAiAD////7AAAAQgBHAEwAVQBFADIAOgBEAEQARwAgAEMAbwBtAHAAbwBuAGUAbgB0AC8AUwB5AG0AYgBvAGwAT"
+      "QBhAG4AYQBnAGUAcgEAAACHAAAFJgAAAEQA////AAAFUAAABSYAAAABAAAAAgAAAAEAAAAC/AAAAAEAAAACAAAAD/////8AAAAAAP////8AAAAAA"
       "AAAAP////8BAAAAAP////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP////8AAAAAAP////8AAAAAA"
-      "AAAAP////8BAAAAef////8AAAAAAAAAAP////8BAAAA2v////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP////8BAAABU/////8AAAAAA"
-      "AAAAP////8AAAAAAP////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP////8BAAACwP////8AAAAAA"
-      "AAAAP////8BAAAC7/////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAA=="
+      "AAAAP////8BAAABC/////8AAAAAAAAAAP////8BAAAB2v////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP////8BAAAC5f////8AAAAAA"
+      "AAAAP////8AAAAAAP////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP////8BAAAHBf////8AAAAAA"
+      "AAAAP////8BAAAHbP////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAA=="
     }
   }
   HideAutomaticNames	  on
-  Created		  "Wed Oct 16 09:23:36 2019"
-  Creator		  "xiaodong"
+  Created		  "Mon Oct 21 23:19:16 2019"
+  Creator		  "Xiaodong"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "xiaodong"
+  LastModifiedBy	  "Xiaodong"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Oct 16 09:32:59 2019"
-  RTWModifiedTimeStamp	  493118620
+  LastModifiedDate	  "Mon Oct 21 23:19:31 2019"
+  RTWModifiedTimeStamp	  493600758
   ModelVersionFormat	  "1.%<AutoIncrement:2>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -132,6 +129,7 @@ Model {
   WideLines		  off
   ShowLineDimensions	  off
   ShowPortDataTypes	  off
+  ShowAllPropagatedSignalLabels	off
   PortDataTypeDisplayFormat "AliasTypeOnly"
   ShowEditTimeErrors	  on
   ShowEditTimeWarnings	  on
@@ -225,7 +223,7 @@ Model {
     Dimension		    1
     Simulink.ConfigSet {
       $ObjectID		      9
-      Version		      "1.18.0"
+      Version		      "1.18.1"
       DisabledProps	      []
       Description	      ""
       Array {
@@ -233,13 +231,13 @@ Model {
 	Dimension		10
 	Simulink.SolverCC {
 	  $ObjectID		  10
-	  Version		  "1.18.0"
+	  Version		  "1.18.1"
 	  DisabledProps		  []
 	  Description		  ""
 	  StartTime		  "0.0"
 	  StopTime		  "10.0"
 	  AbsTol		  "auto"
-	  AutoScaleAbsTol	  "on"
+	  AutoScaleAbsTol	  on
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
 	  MaxOrder		  5
@@ -274,7 +272,7 @@ Model {
 	}
 	Simulink.DataIOCC {
 	  $ObjectID		  11
-	  Version		  "1.18.0"
+	  Version		  "1.18.1"
 	  DisabledProps		  []
 	  Description		  ""
 	  Decimation		  "1"
@@ -315,7 +313,7 @@ Model {
 	}
 	Simulink.OptimizationCC {
 	  $ObjectID		  12
-	  Version		  "1.18.0"
+	  Version		  "1.18.1"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    8
@@ -382,7 +380,7 @@ Model {
 	}
 	Simulink.DebuggingCC {
 	  $ObjectID		  13
-	  Version		  "1.18.0"
+	  Version		  "1.18.1"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    1
@@ -465,7 +463,8 @@ Model {
 	  SimStateInterfaceChecksumMismatchMsg "warning"
 	  SimStateOlderReleaseMsg "error"
 	  ChecksumConsistencyForSSReuse	"none"
-	  LibraryContextMissingDiagnostic "none"
+	  LibraryContextMissingDiagnostic "warning"
+	  MatchCodeGenerationContextForUpdateDiagram "none"
 	  InitInArrayFormatMsg	  "warning"
 	  StrictBusMsg		  "ErrorLevel1"
 	  BusNameAdapt		  "WarnAndRepair"
@@ -496,10 +495,11 @@ Model {
 	  RCSCObservableMsg	  "warning"
 	  ForceCombineOutputUpdateInSim	off
 	  UnitDatabase		  ""
+	  UnderSpecifiedDimensionMsg "none"
 	}
 	Simulink.HardwareCC {
 	  $ObjectID		  14
-	  Version		  "1.18.0"
+	  Version		  "1.18.1"
 	  DisabledProps		  []
 	  Description		  ""
 	  ProdBitPerChar	  8
@@ -547,7 +547,7 @@ Model {
 	}
 	Simulink.ModelReferenceCC {
 	  $ObjectID		  15
-	  Version		  "1.18.0"
+	  Version		  "1.18.1"
 	  DisabledProps		  []
 	  Description		  ""
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
@@ -566,7 +566,7 @@ Model {
 	}
 	Simulink.SFSimCC {
 	  $ObjectID		  16
-	  Version		  "1.18.0"
+	  Version		  "1.18.1"
 	  DisabledProps		  []
 	  Description		  ""
 	  SimCustomSourceCode	  ""
@@ -583,8 +583,9 @@ Model {
 	  SFSimEcho		  on
 	  SimCtrlC		  on
 	  SimIntegrity		  on
-	  SimUseLocalCustomCode	  off
+	  SimUseLocalCustomCode	  on
 	  SimParseCustomCode	  on
+	  SimAnalyzeCustomCode	  off
 	  SimBuildMode		  "sf_incremental_build"
 	  SimGenImportedTypeDefs  off
 	  ModelFunctionsGlobalVisibility "on"
@@ -592,11 +593,13 @@ Model {
 	  EnableRuntimeRecursion  on
 	  MATLABDynamicMemAlloc	  on
 	  MATLABDynamicMemAllocThreshold 65536
+	  CustomCodeFunctionArrayLayout	[]
+	  DefaultCustomCodeFunctionArrayLayout "NotSpecified"
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
 	  $ObjectID		  17
-	  Version		  "1.18.0"
+	  Version		  "1.18.1"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    16
@@ -630,7 +633,6 @@ Model {
 	  PostCodeGenCommand	  ""
 	  Description		  ""
 	  GenerateReport	  off
-	  SaveLog		  off
 	  RTWVerbose		  on
 	  RetainRTWFile		  off
 	  RTWBuildHooks		  []
@@ -638,7 +640,7 @@ Model {
 	  TLCDebug		  off
 	  TLCCoverage		  off
 	  TLCAssert		  off
-	  RTWUseLocalCustomCode	  off
+	  RTWUseLocalCustomCode	  on
 	  RTWUseSimCustomCode	  off
 	  CustomSourceCode	  ""
 	  CustomHeaderCode	  ""
@@ -646,6 +648,7 @@ Model {
 	  CustomSource		  ""
 	  CustomLibrary		  ""
 	  CustomDefine		  ""
+	  CustomBLASCallback	  ""
 	  CustomLAPACKCallback	  ""
 	  CustomFFTCallback	  ""
 	  CustomInitializer	  ""
@@ -660,7 +663,7 @@ Model {
 	  CodeExecutionProfiling  off
 	  CodeExecutionProfileVariable "executionProfile"
 	  CodeProfilingSaveOptions "SummaryOnly"
-	  CodeProfilingInstrumentation off
+	  CodeProfilingInstrumentation "off"
 	  SILDebugging		  off
 	  TargetLang		  "C"
 	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
@@ -683,7 +686,7 @@ Model {
 	    Dimension		    2
 	    Simulink.CodeAppCC {
 	      $ObjectID		      18
-	      Version		      "1.18.0"
+	      Version		      "1.18.1"
 	      Array {
 		Type			"Cell"
 		Dimension		28
@@ -771,10 +774,10 @@ Model {
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
 	      $ObjectID		      19
-	      Version		      "1.18.0"
+	      Version		      "1.18.1"
 	      Array {
 		Type			"Cell"
-		Dimension		15
+		Dimension		16
 		Cell			"IncludeMdlTerminateFcn"
 		Cell			"SuppressErrorStatus"
 		Cell			"ERTCustomFileBanners"
@@ -790,6 +793,7 @@ Model {
 		Cell			"SupportNonInlinedSFcns"
 		Cell			"RemoveDisableFunc"
 		Cell			"RemoveResetFunc"
+		Cell			"PreserveStateflowLocalDataDimensions"
 		PropName		"DisabledProps"
 	      }
 	      Description	      ""
@@ -816,6 +820,7 @@ Model {
 	      GeneratePreprocessorConditionals "Use local settings"
 	      CombineOutputUpdateFcns on
 	      CombineSignalStateStructs	off
+	      GroupInternalDataByFunction off
 	      SuppressErrorStatus     off
 	      IncludeFileDelimiter    "Auto"
 	      ERTCustomFileBanners    off
@@ -824,9 +829,9 @@ Model {
 	      MatFileLogging	      on
 	      MultiInstanceERTCode    off
 	      CodeInterfacePackaging  "Nonreusable function"
+	      PurelyIntegerCode	      off
 	      SupportNonFinite	      on
 	      SupportComplex	      on
-	      PurelyIntegerCode	      off
 	      SupportContinuousTime   on
 	      SupportNonInlinedSFcns  on
 	      RemoveDisableFunc	      off
@@ -834,6 +839,7 @@ Model {
 	      SupportVariableSizeSignals off
 	      ParenthesesLevel	      "Nominal"
 	      CastingMode	      "Nominal"
+	      PreserveStateflowLocalDataDimensions off
 	      MATLABClassNameForMDSCustomization "Simulink.SoftwareTarget.GRTCustomization"
 	      ModelStepFunctionPrototypeControlCompliant off
 	      CPPClassGenCompliant    on
@@ -849,6 +855,7 @@ Model {
 	      LUTObjectStructOrderExplicitValues "Size,Breakpoints,Table"
 	      LUTObjectStructOrderEvenSpacing "Size,Breakpoints,Table"
 	      ArrayLayout	      "Column-major"
+	      UnsupportedSFcnMsg      "error"
 	      ERTHeaderFileRootName   "$R$E"
 	      ERTSourceFileRootName   "$R$E"
 	      ERTDataFileRootName     "$R_data"
@@ -873,7 +880,7 @@ Model {
 	}
 	SlCovCC.ConfigComp {
 	  $ObjectID		  20
-	  Version		  "1.18.0"
+	  Version		  "1.18.1"
 	  DisabledProps		  []
 	  Description		  "Simulink Coverage Configuration Component"
 	  Name			  "Simulink Coverage"
@@ -913,7 +920,7 @@ Model {
 	}
 	hdlcoderui.hdlcc {
 	  $ObjectID		  21
-	  Version		  "1.18.0"
+	  Version		  "1.18.1"
 	  DisabledProps		  []
 	  Description		  "HDL Coder custom configuration component"
 	  Name			  "HDL Coder"
@@ -1075,6 +1082,7 @@ Model {
       Opaque		      off
       MaskHideContents	      off
       SFBlockType	      "NONE"
+      VariantControlMode      "Expression"
       Variant		      off
       GeneratePreprocessorConditionals off
       AllowZeroVariantControls off
@@ -1083,6 +1091,9 @@ Model {
       ContentPreviewEnabled   off
       IsWebBlock	      off
       IsObserver	      off
+      Latency		      "0"
+      AutoFrameSizeCalculation off
+      IsWebBlockPanel	      off
     }
     Block {
       BlockType		      Terminator
@@ -1090,11 +1101,11 @@ Model {
   }
   System {
     Name		    "automata_learning"
-    Location		    [367, 198, 1181, 731]
-    Open		    on
+    Location		    [93, 84, 907, 718]
+    Open		    off
     PortBlocksUseCompactNotation off
-    SetDomainSpec	    off
-    DomainSpecType	    "Deduce"
+    SetExecutionDomain	    off
+    ExecutionDomainType	    "Deduce"
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1119,7 +1130,7 @@ Model {
       "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
       "ources','WiredSimulink',true,'DataLogging',true,'DataLoggingSaveFormat','Structure'),extmgr.Configuration('Visua"
       "ls','Time Domain',true),extmgr.Configuration('Tools','Plot Navigation',true),extmgr.Configuration('Tools','Measu"
-      "rements',true)),'Version','2018a')"
+      "rements',true)),'Version','2018b')"
       NumInputPorts	      "4"
       Floating		      off
     }
@@ -1158,11 +1169,11 @@ Model {
       }
       System {
 	Name			"automata_learning"
-	Location		[186, 89, 929, 809]
-	Open			off
+	Location		[93, 84, 907, 718]
+	Open			on
 	PortBlocksUseCompactNotation off
-	SetDomainSpec		off
-	DomainSpecType		"Deduce"
+	SetExecutionDomain	off
+	ExecutionDomainType	"Deduce"
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1373,25 +1384,25 @@ Stateflow {
   machine {
     id			    1
     name		    "automata_learning"
-    created		    "16-Oct-2019 09:23:36"
+    created		    "21-Oct-2019 23:19:16"
     isLibrary		    0
     sfVersion		    80000014
-    firstTarget		    28
+    firstTarget		    27
   }
   chart {
     id			    2
     machine		    1
     name		    "automata_learning"
     windowPosition	    [199.5 216.75 417 348.75]
-    viewLimits		    [0 707 0 549]
-    zoomFactor		    1.472
+    viewLimits		    [-487.103 1548.097 -524.93 1388.67]
+    zoomFactor		    5.333
     screen		    [1 1 3200 1200 1.25]
     treeNode		    [0 3 0 0]
     viewObj		    2
-    toolbarMode		    LIBRARY_TOOLBAR
+    visible		    1
     subviewS {
     }
-    ssIdHighWaterMark	    24
+    ssIdHighWaterMark	    23
     decomposition	    CLUSTER_CHART
     updateMethod	    CONTINUOUS
     chartFileNumber	    3
@@ -1400,15 +1411,15 @@ Stateflow {
     userSpecifiedStateTransitionExecutionOrder 1
     disableImplicitCasting  1
     actionLanguage	    2
-    firstData		    10
-    firstTransition	    17
+    firstData		    9
+    firstTransition	    16
   }
   state {
     id			    3
-    labelString		    "loc1\ndu:\nx1_dot = 0.030158665636008664 * x2 - 0.09947919446267406 * x1 + 0.039360045440275826 "
-    "* x3 - 0.002674285621807826;\nx2_dot = 0.010812596275485475 * x1 - 0.08157654470778652 * x2 + 0.0186715357014009 *"
-    " x3 + 1.1037585892590869;\nx3_dot = 0.04086923046463653 * x1 + 0.050264821390783254 * x2 - 0.14106810223120192 * x"
-    "3 - 0.004463351981769392;\nx1_out=x1;\nx2_out=x2;\nx3_out=x3;\nautomata_learning_location =1;"
+    labelString		    "loc1\ndu:\nx1_dot = 0.02983110936037292 * x2 - 0.10009188445428663 * x1 + 0.04001825733348596 * "
+    "x3 + 0.003670540986639992;\nx2_dot = 0.029938832714890395 * x1 - 0.1001124537197029 * x2 + 0.05001216143091369 * x"
+    "3 + 0.0024436763565773845;\nx3_dot = 0.03984668427960969 * x1 + 0.04971814957445986 * x2 - 0.13996957396375365 * x"
+    "3 + 1.1061260487040272;\nx1_out=x1;\nx2_out=x2;\nx3_out=x3;\nautomata_learning_location =1;"
     position		    [420 300 150 150]
     fontSize		    12
     chart		    2
@@ -1420,10 +1431,10 @@ Stateflow {
   }
   state {
     id			    4
-    labelString		    "loc2\ndu:\nx1_dot = 0.02983110936037292 * x2 - 0.10009188445428663 * x1 + 0.04001825733348596 * "
-    "x3 + 0.003670540986639992;\nx2_dot = 0.029938832714890395 * x1 - 0.1001124537197029 * x2 + 0.05001216143091369 * x"
-    "3 + 0.0024436763565773845;\nx3_dot = 0.03984668427960969 * x1 + 0.04971814957445986 * x2 - 0.13996957396375365 * x"
-    "3 + 1.1061260487040272;\nx1_out=x1;\nx2_out=x2;\nx3_out=x3;\nautomata_learning_location =2;"
+    labelString		    "loc2\ndu:\nx1_dot = 0.09343506368327326 * x3 - 0.0768821962135462 * x2 - 0.05341383530003441 * x"
+    "1 + 0.9197662889964704;\nx2_dot = 0.02988717956088749 * x1 - 0.09993327360325566 * x2 + 0.05004681230775532 * x3 +"
+    " 0.000007468157300252742;\nx3_dot = 0.03971729915588185 * x1 + 0.05016703087642327 * x2 - 0.13988245556402035 * x3"
+    " + 0.00001723801284819748;\nx1_out=x1;\nx2_out=x2;\nx3_out=x3;\nautomata_learning_location =2;"
     position		    [720 300 150 150]
     fontSize		    12
     chart		    2
@@ -1435,10 +1446,10 @@ Stateflow {
   }
   state {
     id			    5
-    labelString		    "loc3\ndu:\nx1_dot = 0.09343506368327326 * x3 - 0.0768821962135462 * x2 - 0.05341383530003441 * x"
-    "1 + 0.9197662889964704;\nx2_dot = 0.02988717956088749 * x1 - 0.09993327360325566 * x2 + 0.05004681230775532 * x3 +"
-    " 0.000007468157300252742;\nx3_dot = 0.03971729915588185 * x1 + 0.05016703087642327 * x2 - 0.13988245556402035 * x3"
-    " + 0.00001723801284819748;\nx1_out=x1;\nx2_out=x2;\nx3_out=x3;\nautomata_learning_location =3;"
+    labelString		    "loc3\ndu:\nx1_dot = 0.030158665636008664 * x2 - 0.09947919446267406 * x1 + 0.039360045440275826 "
+    "* x3 - 0.002674285621807826;\nx2_dot = 0.010812596275485475 * x1 - 0.08157654470778652 * x2 + 0.0186715357014009 *"
+    " x3 + 1.1037585892590869;\nx3_dot = 0.04086923046463653 * x1 + 0.050264821390783254 * x2 - 0.14106810223120192 * x"
+    "3 - 0.004463351981769392;\nx1_out=x1;\nx2_out=x2;\nx3_out=x3;\nautomata_learning_location =3;"
     position		    [1020 300 150 150]
     fontSize		    12
     chart		    2
@@ -1450,10 +1461,10 @@ Stateflow {
   }
   state {
     id			    6
-    labelString		    "loc4\ndu:\nx1_dot = 0.030158665636008664 * x2 - 0.09947919446267406 * x1 + 0.039360045440275826 "
-    "* x3 - 0.002674285621807826;\nx2_dot = 0.010812596275485475 * x1 - 0.08157654470778652 * x2 + 0.0186715357014009 *"
-    " x3 + 1.1037585892590869;\nx3_dot = 0.04086923046463653 * x1 + 0.050264821390783254 * x2 - 0.14106810223120192 * x"
-    "3 - 0.004463351981769392;\nx1_out=x1;\nx2_out=x2;\nx3_out=x3;\nautomata_learning_location =4;"
+    labelString		    "loc4\ndu:\nx1_dot = 0.02991490722291701 * x2 - 0.10025706683632052 * x1 + 0.03973912049514183 * "
+    "x3 + 0.006193401834465817;\nx2_dot = 0.029828865079934985 * x1 - 0.10005666806500813 * x2 + 0.04982632963992728 * "
+    "x3 + 0.004123277207327192;\nx3_dot = 0.039570999050056344 * x1 + 0.04985800978124644 * x2 - 0.1404354445003264 * x"
+    "3 + 0.010336345839021988;\nx1_out=x1;\nx2_out=x2;\nx3_out=x3;\nautomata_learning_location =4;"
     position		    [1320 300 150 150]
     fontSize		    12
     chart		    2
@@ -1487,29 +1498,14 @@ Stateflow {
     position		    [1920 300 150 150]
     fontSize		    12
     chart		    2
-    treeNode		    [2 0 7 9]
+    treeNode		    [2 0 7 0]
     subviewer		    2
     ssIdNumber		    14
     type		    OR_STATE
     decomposition	    CLUSTER_STATE
   }
-  state {
-    id			    9
-    labelString		    "loc7\ndu:\nx1_dot = 0.02991490722291701 * x2 - 0.10025706683632052 * x1 + 0.03973912049514183 * "
-    "x3 + 0.006193401834465817;\nx2_dot = 0.029828865079934985 * x1 - 0.10005666806500813 * x2 + 0.04982632963992728 * "
-    "x3 + 0.004123277207327192;\nx3_dot = 0.039570999050056344 * x1 + 0.04985800978124644 * x2 - 0.1404354445003264 * x"
-    "3 + 0.010336345839021988;\nx1_out=x1;\nx2_out=x2;\nx3_out=x3;\nautomata_learning_location =7;"
-    position		    [2220 300 150 150]
-    fontSize		    12
-    chart		    2
-    treeNode		    [2 0 8 0]
-    subviewer		    2
-    ssIdNumber		    15
-    type		    OR_STATE
-    decomposition	    CLUSTER_STATE
-  }
   data {
-    id			    10
+    id			    9
     ssIdNumber		    1
     name		    "x1_out"
     scope		    OUTPUT_DATA
@@ -1531,10 +1527,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [2 0 11]
+    linkNode		    [2 0 10]
   }
   data {
-    id			    11
+    id			    10
     ssIdNumber		    2
     name		    "x1"
     scope		    LOCAL_DATA
@@ -1557,10 +1553,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: From definition in chart"
-    linkNode		    [2 10 12]
+    linkNode		    [2 9 11]
   }
   data {
-    id			    12
+    id			    11
     ssIdNumber		    3
     name		    "x2_out"
     scope		    OUTPUT_DATA
@@ -1582,10 +1578,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [2 11 13]
+    linkNode		    [2 10 12]
   }
   data {
-    id			    13
+    id			    12
     ssIdNumber		    4
     name		    "x2"
     scope		    LOCAL_DATA
@@ -1608,10 +1604,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: From definition in chart"
-    linkNode		    [2 12 14]
+    linkNode		    [2 11 13]
   }
   data {
-    id			    14
+    id			    13
     ssIdNumber		    5
     name		    "x3_out"
     scope		    OUTPUT_DATA
@@ -1633,10 +1629,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [2 13 15]
+    linkNode		    [2 12 14]
   }
   data {
-    id			    15
+    id			    14
     ssIdNumber		    6
     name		    "x3"
     scope		    LOCAL_DATA
@@ -1659,10 +1655,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: From definition in chart"
-    linkNode		    [2 14 16]
+    linkNode		    [2 13 15]
   }
   data {
-    id			    16
+    id			    15
     ssIdNumber		    7
     name		    "automata_learning_location"
     scope		    OUTPUT_DATA
@@ -1684,137 +1680,135 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [2 15 0]
+    linkNode		    [2 14 0]
+  }
+  transition {
+    id			    16
+    labelString		    "[0.0005937 * x3 - 0.001096 * x2 - 0.04963 * x1 + 1.0 > 0.0]"
+    labelPosition	    [1412 281 312 16]
+    fontSize		    12
+    src {
+      id		      8
+      intersection	      [1 0 -1 0.1806 1947.0918 300 0 0]
+    }
+    dst {
+      id		      4
+      intersection	      [1 0 -1 0.8194 842.9082 300 0 0]
+    }
+    midPoint		    [1395 19.9468]
+    chart		    2
+    dataLimits		    [840.508 1947.092 20.208 300]
+    subviewer		    2
+    slide {
+      mode		      MIRROR_SLIDE
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    23
+    linkNode		    [2 0 17]
   }
   transition {
     id			    17
-    labelString		    "[0.0005937 * x3 - 0.001096 * x2 - 0.04963 * x1 + 1.0 > 0.0]"
-    labelPosition	    [1729 204 312 16]
+    labelString		    "[0.0002437 * x1 - 0.4794 * x2 + 0.477 * x3 + 1.0 < 0.0]"
+    labelPosition	    [796 240 288 16]
     fontSize		    12
     src {
-      id		      9
-      intersection	      [1 0 -1 0.2489 2257.3277 300 0 0]
-    }
-    dst {
       id		      5
-      intersection	      [1 0 -1 0.7511 1132.6723 300 0 0]
-    }
-    midPoint		    [1695 14.829]
-    chart		    2
-    dataLimits		    [1130.272 2257.328 15.1 300]
-    subviewer		    2
-    slide {
-      mode		      MIRROR_SLIDE
-      sticky		      BOTH_STICK
-    }
-    executionOrder	    1
-    ssIdNumber		    24
-    linkNode		    [2 0 18]
-  }
-  transition {
-    id			    18
-    labelString		    "[0.0007212 * x3 - 0.05266 * x2 - 0.0007331 * x1 + 1.0 > 0.0]"
-    labelPosition	    [990 288 319 16]
-    fontSize		    12
-    src {
-      id		      7
-      intersection	      [1 0 -1 0.3448 1671.7264 300 0 0]
+      intersection	      [1 0 -1 0.4292 1084.3863 300 0 0]
     }
     dst {
       id		      3
-      intersection	      [1 0 -1 0.6552 518.2736 300 0 0]
+      intersection	      [1 0 -1 0.5708 505.6137 300 0 0]
     }
-    midPoint		    [1095 7.6299]
+    midPoint		    [795 151.293]
     chart		    2
-    dataLimits		    [515.874 1671.726 7.914 300]
+    dataLimits		    [503.214 1084.386 151.306 300]
     subviewer		    2
     slide {
       mode		      MIRROR_SLIDE
       sticky		      BOTH_STICK
     }
     executionOrder	    1
-    ssIdNumber		    22
+    ssIdNumber		    19
+    linkNode		    [2 16 18]
+  }
+  transition {
+    id			    18
+    labelString		    "[0.3291 * x2 - 0.3308 * x1 + 0.001603 * x3 + 1.0 < 0.0]"
+    labelPosition	    [1096 180 288 16]
+    fontSize		    12
+    src {
+      id		      4
+      intersection	      [1 0 -1 0.2131 751.9725 300 0 0]
+    }
+    dst {
+      id		      5
+      intersection	      [1 0 -1 0.7869 1138.0275 300 0 0]
+    }
+    midPoint		    [945 199.4655]
+    chart		    2
+    dataLimits		    [751.972 1140.428 199.387 300]
+    subviewer		    2
+    slide {
+      mode		      MIRROR_SLIDE
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    17
     linkNode		    [2 17 19]
   }
   transition {
     id			    19
-    labelString		    "[0.0002437 * x1 - 0.4794 * x2 + 0.477 * x3 + 1.0 < 0.0]"
-    labelPosition	    [1148 254 288 16]
+    labelString		    "[0.4887 * x1 + 0.001217 * x2 - 0.4903 * x3 + 1.0 < 0.0]"
+    labelPosition	    [826 218 288 16]
     fontSize		    12
     src {
-      id		      6
-      intersection	      [1 0 -1 0.4957 1394.3483 300 0 0]
+      id		      3
+      intersection	      [1 0 -1 0.3421 471.3152 300 0 0]
     }
     dst {
       id		      4
-      intersection	      [1 0 -1 0.5043 795.6517 300 0 0]
+      intersection	      [1 0 -1 0.6579 818.6848 300 0 0]
     }
-    midPoint		    [1095 146.3125]
+    midPoint		    [645 209.1346]
     chart		    2
-    dataLimits		    [793.252 1394.348 146.335 300]
+    dataLimits		    [471.315 821.085 209.038 300]
     subviewer		    2
     slide {
       mode		      MIRROR_SLIDE
       sticky		      BOTH_STICK
     }
     executionOrder	    1
-    ssIdNumber		    20
+    ssIdNumber		    15
     linkNode		    [2 18 20]
   }
   transition {
     id			    20
-    labelString		    "[0.32914761011488736 * x2 - 0.330816243929803 * x1 + 0.0016025840094222588 * x3 + 1.0 < 0.0 && 0"
-    ".000747881469045808 * x1 - 0.06493177253923932 * x2 + 0.0015819446342675292 * x3 + 1.0 > 0.0]"
-    labelPosition	    [1397 199 1104 16]
+    labelString		    "[0.0007212 * x3 - 0.05266 * x2 - 0.0007331 * x1 + 1.0 > 0.0]"
+    labelPosition	    [1266 240 319 16]
     fontSize		    12
     src {
-      id		      5
-      intersection	      [1 0 -1 0.2145 1052.1719 300 0 0]
+      id		      6
+      intersection	      [1 0 -1 0.4227 1383.4099 300 0 0]
     }
     dst {
-      id		      6
-      intersection	      [1 0 -1 0.7855 1437.8281 300 0 0]
+      id		      5
+      intersection	      [1 0 -1 0.5773 1106.5901 300 0 0]
     }
-    midPoint		    [1245 199.5652]
+    midPoint		    [1245 226.7662]
     chart		    2
-    dataLimits		    [1052.172 1440.228 199.487 300]
+    dataLimits		    [1104.19 1383.41 226.636 300]
     subviewer		    2
     slide {
       mode		      MIRROR_SLIDE
       sticky		      BOTH_STICK
     }
     executionOrder	    1
-    ssIdNumber		    18
+    ssIdNumber		    21
     linkNode		    [2 19 21]
   }
   transition {
     id			    21
-    labelString		    "[0.4886526159425557 * x1 + 0.001216676004972328 * x2 - 0.4903256963525564 * x3 + 1.0 < 0.0 && 0."
-    "0003015183846786229 * x2 - 0.06271767129419459 * x1 - 0.00009015019658331624 * x3 + 1.0 > 0.0]"
-    labelPosition	    [1076 200 1109 16]
-    fontSize		    12
-    src {
-      id		      4
-      intersection	      [1 0 -1 0.3323 769.8413 300 0 0]
-    }
-    dst {
-      id		      5
-      intersection	      [1 0 -1 0.6677 1120.1587 300 0 0]
-    }
-    midPoint		    [945 208.3978]
-    chart		    2
-    dataLimits		    [769.841 1122.559 208.303 300]
-    subviewer		    2
-    slide {
-      mode		      MIRROR_SLIDE
-      sticky		      BOTH_STICK
-    }
-    executionOrder	    1
-    ssIdNumber		    16
-    linkNode		    [2 20 22]
-  }
-  transition {
-    id			    22
     labelString		    "{x1 = 0.0;\nx2 = 0.0;\nx3 = 0.0;}"
     labelPosition	    [445 220 52.328 44]
     fontSize		    12
@@ -1835,116 +1829,116 @@ Stateflow {
     }
     executionOrder	    1
     ssIdNumber		    9
-    linkNode		    [2 21 23]
+    linkNode		    [2 20 22]
   }
   transition {
-    id			    23
+    id			    22
     labelString		    "[0.0006491 * x1 + 0.0005503 * x2 - 0.05381 * x3 + 1.0 > 0.0]"
-    labelPosition	    [1441 899 322 16]
+    labelPosition	    [1040 967 322 16]
     fontSize		    12
     src {
-      id		      8
-      intersection	      [3 0 1 0.3016 2024.7591 450 0 0]
+      id		      7
+      intersection	      [3 0 1 0.3515 1717.2823 450 0 0]
     }
     dst {
-      id		      4
-      intersection	      [3 0 1 0.6984 765.2409 450 0 0]
+      id		      3
+      intersection	      [3 0 1 0.6485 472.7177 450 0 0]
     }
-    midPoint		    [1395 768.8859]
+    midPoint		    [1095 765.1476]
     chart		    2
-    dataLimits		    [762.841 2024.759 450 768.551]
+    dataLimits		    [470.318 1717.282 450 764.82]
     subviewer		    2
     slide {
       mode		      MIRROR_SLIDE
       sticky		      BOTH_STICK
     }
     executionOrder	    1
-    ssIdNumber		    23
+    ssIdNumber		    22
+    linkNode		    [2 21 23]
+  }
+  transition {
+    id			    23
+    labelString		    "[0.0002148 * x2 - 0.00004384 * x1 - 0.04556 * x3 + 1.0 < 0.0]"
+    labelPosition	    [1534 840 325 16]
+    fontSize		    12
+    src {
+      id		      3
+      intersection	      [3 0 1 0.209 538.6515 450 0 0]
+    }
+    dst {
+      id		      7
+      intersection	      [3 0 1 0.791 1651.3485 450 0 0]
+    }
+    midPoint		    [1095 732.1815]
+    chart		    2
+    dataLimits		    [538.651 1653.749 450 731.916]
+    subviewer		    2
+    slide {
+      mode		      MIRROR_SLIDE
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    2
+    ssIdNumber		    16
     linkNode		    [2 22 24]
   }
   transition {
     id			    24
-    labelString		    "[0.0002148 * x2 - 0.00004384 * x1 - 0.04556 * x3 + 1.0 < 0.0]"
-    labelPosition	    [1831 837 325 16]
+    labelString		    "[0.0004999 * x3 - 0.0007582 * x2 - 0.04737 * x1 + 1.0 < 0.0]"
+    labelPosition	    [1804 856 319 16]
     fontSize		    12
     src {
       id		      4
-      intersection	      [3 0 1 0.2025 839.6224 450 0 0]
+      intersection	      [3 0 1 0.4652 800.2197 450 0 0]
     }
     dst {
       id		      8
-      intersection	      [3 0 1 0.7975 1950.3776 450 0 0]
+      intersection	      [3 0 1 0.5348 1989.7803 450 0 0]
     }
-    midPoint		    [1395 731.696]
+    midPoint		    [1395 751.3969]
     chart		    2
-    dataLimits		    [839.622 1952.778 450 731.432]
+    dataLimits		    [800.22 1992.18 450 751.095]
     subviewer		    2
     slide {
       mode		      MIRROR_SLIDE
       sticky		      BOTH_STICK
     }
     executionOrder	    2
-    ssIdNumber		    17
+    ssIdNumber		    18
     linkNode		    [2 23 25]
   }
   transition {
     id			    25
-    labelString		    "[0.0004999 * x3 - 0.0007582 * x2 - 0.04737 * x1 + 1.0 < 0.0]"
-    labelPosition	    [2231 749 319 16]
+    labelString		    "[0.0007874 * x3 - 0.04794 * x2 - 0.0003544 * x1 + 1.0 < 0.0]"
+    labelPosition	    [1436 477 319 16]
     fontSize		    12
     src {
       id		      5
-      intersection	      [3 0 1 0.4139 1107.9158 450 0 0]
+      intersection	      [3 0 1 0.3204 1121.9376 450 0 0]
     }
     dst {
-      id		      9
-      intersection	      [3 0 1 0.5861 2282.0842 450 0 0]
-    }
-    midPoint		    [1695 747.5489]
-    chart		    2
-    dataLimits		    [1107.916 2284.484 450 747.255]
-    subviewer		    2
-    slide {
-      mode		      MIRROR_SLIDE
-      sticky		      BOTH_STICK
-    }
-    executionOrder	    2
-    ssIdNumber		    19
-    linkNode		    [2 24 26]
-  }
-  transition {
-    id			    26
-    labelString		    "[0.0007874 * x3 - 0.04794 * x2 - 0.0003544 * x1 + 1.0 < 0.0]"
-    labelPosition	    [1778 465 319 16]
-    fontSize		    12
-    src {
       id		      6
-      intersection	      [3 0 1 0.3197 1422.0385 450 0 0]
+      intersection	      [3 0 1 0.6796 1368.0624 450 0 0]
     }
-    dst {
-      id		      7
-      intersection	      [3 0 1 0.6803 1667.9615 450 0 0]
-    }
-    midPoint		    [1545 515.5133]
+    midPoint		    [1245 515.5637]
     chart		    2
-    dataLimits		    [1422.039 1670.361 450 515.658]
+    dataLimits		    [1121.938 1370.462 450 515.708]
     subviewer		    2
     slide {
       mode		      MIRROR_SLIDE
       sticky		      BOTH_STICK
     }
     executionOrder	    2
-    ssIdNumber		    21
-    linkNode		    [2 25 0]
+    ssIdNumber		    20
+    linkNode		    [2 24 0]
   }
   instance {
-    id			    27
+    id			    26
     machine		    1
     name		    "automata_learning"
     chart		    2
   }
   target {
-    id			    28
+    id			    27
     machine		    1
     name		    "sfun"
     description		    "Default Simulink S-Function Target."

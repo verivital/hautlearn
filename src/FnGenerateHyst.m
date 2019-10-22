@@ -37,7 +37,7 @@ end
 
 %for the terminal state "0"
 ode0 =zeros(size(ode{1}));
-modesToFlows{length(ode)+1} = odeMatrixToString(ode{i}, varNames);
+modesToFlows{length(ode)+1} = odeMatrixToString(ode0, varNames);
 
 numVar = length(varNames);
 

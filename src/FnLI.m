@@ -49,7 +49,7 @@ for i = 1:size(state_trans,1)
     LI(i).states = states;
     LI(i).points = points;
     LI(i).inlayer = inlayer;
-    LI(i).wb = {wb};
+    LI(i).wb = wb;
     
     num = num+1;
 end
@@ -60,7 +60,7 @@ for n = 1:length(LI)
     for i = 1:length(LI(n).inlayer)
         if ~isempty(LI(n).inlayer(1,i))
             iwb = (LI(n).wb);
-            label_guard(num_guard) = iwb(i); %{iwb(:,i)};
+            label_guard(num_guard) = {iwb(:,i)};%{iwb{:,i)};
             id = cell2mat(LI(n).inlayer(1,i));
             guard_trace(id,:) = num_guard;
             num_guard = num_guard + 1;
@@ -101,12 +101,25 @@ function [M, inlayer]= FnInequalitySymbol(indx_ch, wb, inlayer_temp, trace, poin
         end
    end
    
-   % assume that LIs are conjunctive
-    merg_inlayer = [];
-    for i = 1:length(inlayer)
-        merg_inlayer = [merg_inlayer; cell2mat(inlayer(i))];
-    end
-    inlayer = {merg_inlayer};
+   flag = true;
+   for i = 1:length(inlayer_temp)
+       indx_temp = cell2mat(inlayer_temp(i));
+       points_temp = points;
+       points_temp(indx_temp,:) = [];
+       vals_temp = M(1:end-2,i)'*points_temp' + 1;
+       if length(find(sign(vals_temp)==M(end,i)))/size(points_temp,1)<=0.01
+           flag = false*flag;
+       end 
+   end
+   if flag
+       % assume that LIs are conjunctive
+        merg_inlayer = [];
+        for i = 1:length(inlayer)
+            merg_inlayer = [merg_inlayer; cell2mat(inlayer(i))];
+        end
+        inlayer = {merg_inlayer};
+       
+   end
     
 %    if length(inlayer_temp)>=2
 %         for i = 1:length(inlayer_temp)

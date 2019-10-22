@@ -25,11 +25,11 @@ end
 %%
 
 iter = 1000; % number of iterations 
-threshDist = 0.05; % tolerance 
+threshDist = 0.01; % tolerance 
 inNum = 10; %the least number of inlayers
 % % cd(['..', filesep, '..', filesep, '..']);
 % FnMain(trace, x, ud, iter, threshDist, inNum);
-% tic
+tic
 % trace = FnClusterSegs(trace, x, ud);
 % t1 = toc;
 % 
