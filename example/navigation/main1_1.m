@@ -4,7 +4,7 @@ clear
 addpath(['.', filesep, 'trainingdata1.1']);
 addpath(['..', filesep, '..', filesep, 'src']);
 global lambda num_var num_ud Ts winlen
-lambda = 0.00001;  winlen = 10;
+lambda = 0.000005;  winlen = 10;
 num_var = 4; num_ud = 0; Ts  = 0.01;
 x = []; ud = []; 
 num =1;
@@ -27,15 +27,14 @@ end
 iter = 1000; % number of iterations 
 threshDist = 0.01; % tolerance 
 inNum = 10; %the least number of inlayers
-% % cd(['..', filesep, '..', filesep, '..']);
-% FnMain(trace, x, ud, iter, threshDist, inNum);
+
 tic
-% trace = FnClusterSegs(trace, x, ud);
-% t1 = toc;
+trace = FnClusterSegs(trace, x, ud);
+t1 = toc;
 % 
-% for n =1:length(trace)
-%     trace(n).labels_trace = [trace(n).labels_trace;0];
-% end
+for n =1:length(trace)
+    trace(n).labels_trace = [trace(n).labels_trace;0];
+end
 %%
 ode = FnEstODE(trace);
 [trace,label_guard] = FnLI(trace, iter, threshDist, inNum);

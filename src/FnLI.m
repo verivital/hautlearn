@@ -60,7 +60,11 @@ for n = 1:length(LI)
     for i = 1:length(LI(n).inlayer)
         if ~isempty(LI(n).inlayer(1,i))
             iwb = (LI(n).wb);
-            label_guard(num_guard) = {iwb(:,i)};%{iwb{:,i)};
+            if length(LI(n).inlayer)==1
+                label_guard(num_guard) = {iwb};
+            else
+                label_guard(num_guard) = {iwb(:,i)};
+            end
             id = cell2mat(LI(n).inlayer(1,i));
             guard_trace(id,:) = num_guard;
             num_guard = num_guard + 1;

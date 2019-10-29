@@ -61,15 +61,11 @@ for i_loc = 1:numLoc
     else
         flow{i_loc} = modesToFlows{id2lables(i_loc)};
     end
+    
     loc = ha.createMode(locName{i_loc},invariant{i_loc},flow{i_loc});
     locations(i_loc) = loc;
 end
 
-% for i_loc = 1:numLoc
-%     %ati = com.verivital.hyst.importer.SpaceExImporter;
-%     loc = ha.createMode(locName(i_loc),invariant(i_loc),flow(i_loc));
-%     locations(i_loc) = loc;
-% end
 
 fromLocation = {};
 toLocation= {};
@@ -139,15 +135,6 @@ initialExpression = 'loc(automata_learning) == loc1';
 for i = 1 : length(varNames)
     initialExpression = strcat(initialExpression, ' & ', varNames{i}, ' == 0'); % todo: pick a reasonable initial condition
 end
-
-%%%% initialExpression = strcat('loc(automata_learning_', file_name, ') == loc1');
-%%%initialExpression = '';
-%%%for i = 1 : length(varNames)
-%%%    initialExpression = strcat(initialExpression, varNames{i}, ' == 0'); % todo: pick a reasonable initial condition
-%%%    if i < length(varNames)
-%%%        initialExpression = strcat(initialExpression, ' & ');
-%%%    end
-%%%end
     
 %generate configuration
 config = com.verivital.hyst.ir.Configuration(ha);
@@ -165,8 +152,6 @@ if numVar > 1
     end 
 end
 
-%file_name =['automata_learning_',file_name]; % todo: suffix example name
-%file_name ='automata_learning'; % todo: suffix example name
 config.settings.plotVariableNames = jsa;
 config.settings.spaceExConfig = configValues;
 printer = com.verivital.hyst.printers.SpaceExPrinter;

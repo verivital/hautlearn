@@ -5,6 +5,8 @@ function trace = FnProcessData(xout, num_var, num_ud)
         chpoints = union(chpoints, changepoint(xout(:,i)));
     end
     
+    idx = find(diff(chpoints)<=2);
+    chpoints(idx)=[];
     trace.chpoints = chpoints;
     e = (2*rand(size(xout(:,1:num_var),1),num_var)-1)*0.005;
     trace.x = xout(:,1:num_var);%+e;

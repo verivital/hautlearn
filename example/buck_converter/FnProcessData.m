@@ -7,7 +7,7 @@ function trace = FnProcessData(xout, num_var, num_ud)
     
     % remove redundant chpoints
     dif_chpoints = diff(chpoints);
-    ids = find(dif_chpoints==1);
+    ids = find(dif_chpoints<=2);
     chpoints(ids,:) = [];
     xout_reduced= xout(:, 1:num_var);
 

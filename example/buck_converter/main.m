@@ -40,7 +40,7 @@ t2 = toc;
 pta_trace = FnPTA(trace);
 t3 = toc;
 
-disp("Generating the estimated model...")
+disp("Manually remove redundant invalid transitions in dataset *pta_trace*")
 FnGenerateHyst('automata_learning',label_guard, num_var, ode, pta_trace);
 
 addpath(['..', filesep, '..', filesep, 'src',filesep,'hyst', filesep, 'src', filesep, 'matlab']);

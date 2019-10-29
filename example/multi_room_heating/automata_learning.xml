@@ -5,19 +5,19 @@
       <param controlled="true" d1="1" d2="1" dynamics="any" local="false" name="x2" type="real"/>
       <param controlled="true" d1="1" d2="1" dynamics="any" local="false" name="x3" type="real"/>
       <location id="1" name="loc1">
+         <flow>x1' == 0.030158665636008664 * x2 - 0.09947919446267406 * x1 + 0.039360045440275826 * x3 - 0.002674285621807826 &amp;
+ x2' == 0.010812596275485475 * x1 - 0.08157654470778652 * x2 + 0.0186715357014009 * x3 + 1.1037585892590869 &amp;
+ x3' == 0.04086923046463653 * x1 + 0.050264821390783254 * x2 - 0.14106810223120192 * x3 - 0.004463351981769392</flow>
+      </location>
+      <location id="2" name="loc2">
          <flow>x1' == 0.02983110936037292 * x2 - 0.10009188445428663 * x1 + 0.04001825733348596 * x3 + 0.003670540986639992 &amp;
  x2' == 0.029938832714890395 * x1 - 0.1001124537197029 * x2 + 0.05001216143091369 * x3 + 0.0024436763565773845 &amp;
  x3' == 0.03984668427960969 * x1 + 0.04971814957445986 * x2 - 0.13996957396375365 * x3 + 1.1061260487040272</flow>
       </location>
-      <location id="2" name="loc2">
+      <location id="3" name="loc3">
          <flow>x1' == 0.09343506368327326 * x3 - 0.0768821962135462 * x2 - 0.05341383530003441 * x1 + 0.9197662889964704 &amp;
  x2' == 0.02988717956088749 * x1 - 0.09993327360325566 * x2 + 0.05004681230775532 * x3 + 0.000007468157300252742 &amp;
  x3' == 0.03971729915588185 * x1 + 0.05016703087642327 * x2 - 0.13988245556402035 * x3 + 0.00001723801284819748</flow>
-      </location>
-      <location id="3" name="loc3">
-         <flow>x1' == 0.030158665636008664 * x2 - 0.09947919446267406 * x1 + 0.039360045440275826 * x3 - 0.002674285621807826 &amp;
- x2' == 0.010812596275485475 * x1 - 0.08157654470778652 * x2 + 0.0186715357014009 * x3 + 1.1037585892590869 &amp;
- x3' == 0.04086923046463653 * x1 + 0.050264821390783254 * x2 - 0.14106810223120192 * x3 - 0.004463351981769392</flow>
       </location>
       <location id="4" name="loc4">
          <flow>x1' == 0.02991490722291701 * x2 - 0.10025706683632052 * x1 + 0.03973912049514183 * x3 + 0.006193401834465817 &amp;
@@ -35,46 +35,49 @@
  x3' == 0.039570999050056344 * x1 + 0.04985800978124644 * x2 - 0.1404354445003264 * x3 + 0.010336345839021988</flow>
       </location>
       <transition asap="false" bezier="false" source="1" target="2" timedriven="false">
-         <guard>0.4887 * x1 + 0.001217 * x2 - 0.4903 * x3 + 1.0 &lt; 0.0</guard>
+         <guard>0.00024371532852418554 * x1 - 0.47941399145020114 * x2 + 0.47701453661193227 * x3 + 1.0 &lt; 0.0 &amp;
+ 0.00041738168303329104 * x2 - 0.0013751061795019837 * x1 - 0.06585387725635883 * x3 + 1.0 &gt; 0.0</guard>
          <labelposition/>
          <middlepoint/>
       </transition>
       <transition asap="false" bezier="false" source="2" target="3" timedriven="false">
-         <guard>0.3291 * x2 - 0.3308 * x1 + 0.001603 * x3 + 1.0 &lt; 0.0</guard>
+         <guard>0.4886526159425557 * x1 + 0.001216676004972328 * x2 - 0.4903256963525564 * x3 + 1.0 &lt; 0.0 &amp;
+ 0.0003015183846786229 * x2 - 0.06271767129419459 * x1 - 0.00009015019658331624 * x3 + 1.0 &gt; 0.0</guard>
          <labelposition/>
          <middlepoint/>
       </transition>
       <transition asap="false" bezier="false" source="3" target="1" timedriven="false">
-         <guard>0.0002437 * x1 - 0.4794 * x2 + 0.477 * x3 + 1.0 &lt; 0.0</guard>
+         <guard>0.32914761011488736 * x2 - 0.330816243929803 * x1 + 0.0016025840094222588 * x3 + 1.0 &lt; 0.0 &amp;
+ 0.000747881469045808 * x1 - 0.06493177253923932 * x2 + 0.0015819446342675292 * x3 + 1.0 &gt; 0.0</guard>
          <labelposition/>
          <middlepoint/>
       </transition>
-      <transition asap="false" bezier="false" source="3" target="4" timedriven="false">
+      <transition asap="false" bezier="false" source="1" target="4" timedriven="false">
          <guard>0.0007874 * x3 - 0.04794 * x2 - 0.0003544 * x1 + 1.0 &lt; 0.0</guard>
          <labelposition/>
          <middlepoint/>
       </transition>
-      <transition asap="false" bezier="false" source="4" target="3" timedriven="false">
+      <transition asap="false" bezier="false" source="4" target="1" timedriven="false">
          <guard>0.0007212 * x3 - 0.05266 * x2 - 0.0007331 * x1 + 1.0 &gt; 0.0</guard>
          <labelposition/>
          <middlepoint/>
       </transition>
-      <transition asap="false" bezier="false" source="1" target="5" timedriven="false">
+      <transition asap="false" bezier="false" source="2" target="5" timedriven="false">
          <guard>0.0002148 * x2 - 0.00004384 * x1 - 0.04556 * x3 + 1.0 &lt; 0.0</guard>
          <labelposition/>
          <middlepoint/>
       </transition>
-      <transition asap="false" bezier="false" source="5" target="1" timedriven="false">
+      <transition asap="false" bezier="false" source="5" target="2" timedriven="false">
          <guard>0.0006491 * x1 + 0.0005503 * x2 - 0.05381 * x3 + 1.0 &gt; 0.0</guard>
          <labelposition/>
          <middlepoint/>
       </transition>
-      <transition asap="false" bezier="false" source="2" target="6" timedriven="false">
+      <transition asap="false" bezier="false" source="3" target="6" timedriven="false">
          <guard>0.0004999 * x3 - 0.0007582 * x2 - 0.04737 * x1 + 1.0 &lt; 0.0</guard>
          <labelposition/>
          <middlepoint/>
       </transition>
-      <transition asap="false" bezier="false" source="6" target="2" timedriven="false">
+      <transition asap="false" bezier="false" source="6" target="3" timedriven="false">
          <guard>0.0005937 * x3 - 0.001096 * x2 - 0.04963 * x1 + 1.0 &gt; 0.0</guard>
          <labelposition/>
          <middlepoint/>

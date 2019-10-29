@@ -113,6 +113,7 @@ function indx = FnRecursive(x,ud,chpoints)
             index_endj = chpoints(j,2);
                        
             xsegj = x(:,index_startj: index_endj);
+            %plot(xsegj')
             xkj = xsegj(:,1:end - winlen);
             xkij = [];
             xkij = xsegj(:, winlen+1:end);

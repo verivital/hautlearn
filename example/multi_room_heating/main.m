@@ -9,7 +9,7 @@ lambda = 0.00005;  winlen=1;
 num_var = 3; num_ud = 1;
 x = []; ud = [];
 num =1;
-for i = [2,5,6,8]
+for i = 1:4
     load(['training', int2str(i),'.mat'])
     
     trace_temp = FnProcessData(xout);
@@ -24,15 +24,14 @@ end
 tic
 iter = 1000; % number of iterations 
 threshDist = 0.05; % tolerance 
-inNum = 10; %the least number of inlayers
-% % cd(['..', filesep, '..', filesep, '..']);
-% FnMain(trace, x, ud, iter, threshDist, inNum);
-% trace = FnClusterSegs(trace, x, ud);
-% 
-% t1 = toc;
-% for n =1:length(trace)
-%     trace(n).labels_trace = [trace(n).labels_trace;0];
-% end
+inNum = 7; %the least number of inlayers
+
+trace = FnClusterSegs(trace, x, ud);
+
+t1 = toc;
+for n =1:length(trace)
+    trace(n).labels_trace = [trace(n).labels_trace;0];
+end
 
 ode = FnEstODE(trace);
 [trace,label_guard] = FnLI(trace, iter, threshDist, inNum);

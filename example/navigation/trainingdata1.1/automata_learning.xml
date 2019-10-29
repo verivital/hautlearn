@@ -48,7 +48,7 @@
  x4' == 0.0</flow>
       </location>
       <transition asap="false" bezier="false" source="1" target="2" timedriven="false">
-         <guard>0.004217 * x1 - 0.9989 * x2 - 0.01078 * x3 + 0.021 * x4 + 1.0 &lt; 0.0</guard>
+         <guard>0.00494 * x1 - 0.998 * x2 - 0.01336 * x3 + 0.02171 * x4 + 1.0 &lt; 0.0</guard>
          <labelposition/>
          <middlepoint/>
       </transition>

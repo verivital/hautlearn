@@ -1,49 +1,68 @@
 mdl1 = 'automata_learning.slx';
 mdl2 = 'buck_dcm_vs1.slx';
 
-
-n = 20;
+T = 0.02; Ts = 0.00005;
+n = 10; num_var = 2; num_u = 0;
 error_x = [];
+aSet = [];
 for i = 1:n
-x1 = rand*2-1;
-x2 = rand*2-1;
-x0 = [x1;x2];
+    x1 = rand*2-1;
+    x2 = rand*2-1;
+    x_init = [x1;x2];
 
-%simulation
-T = 0.02; Ts = 0.00005;
-sim(mdl1);
-T = 0.02; Ts = 0.00005;
-sim(mdl2);
-est_trace = FnProcessData(est_xout, 2, 0);
-trace = FnProcessData(xout, 2, 0);
-est_chp = est_trace.chpoints;
-chp = trace.chpoints;
-len_chp = min(length(est_chp), length(chp));
-for j = 2:len_chp
-    
-    est_startj = est_chp(j-1);
-    est_endj = est_chp(j);
-    est_len = est_endj- est_startj + 1;
-    est_x = trace.x(est_startj:est_endj,:);
-   
-    startj = chp(j-1);
-    endj = chp(j);
-    len = endj- startj + 1;
-    x = trace.x(startj:endj,:);
-    
-    if est_len > len
-        est_x = est_x(1:(len/est_len):end,:);
-    else
-        x = x(1:(est_len/len):end,:);
+    %simulation
+
+    sim(mdl1);
+    sim(mdl2);
+    est_trace = FnProcessData(est_xout, num_var, num_u);
+    trace = FnProcessData(xout, num_var, num_u);
+    est_chp = est_trace.chpoints;
+    chp = trace.chpoints;
+    len_chp = min(length(est_chp), length(chp));
+    est_chp2 = est_chp(1:len_chp);
+    chp2 = chp(1:len_chp);
+
+    tau_max = max(abs(est_chp2-chp2));
+    e = [];
+    for j = 2:len_chp
+        startj = chp(j-1);
+        endj = chp(j);
+        startj_est = est_chp(j-1);
+        endj_est = est_chp(j);
+
+        xs = trace.x(startj: endj,1:num_var);
+        xs_est = est_trace.x(startj_est: endj_est,1:num_var);
+
+        for h = 1:size(xs,1)
+            start_temp = h-tau_max;
+            end_temp = h+tau_max;
+            if start_temp<1
+                start_temp = 1;
+            end
+            if end_temp>size(xs_est,1)
+                end_temp = size(xs_est,1);
+            end
+
+            xs_temp = xs(h,1:num_var)-xs_est(start_temp:end_temp,1:num_var);
+            e_temp = min(diag(xs_temp*xs_temp'));
+            e = [e, sqrt(e_temp)];
+        end
+
+        for h = 1:size(xs_est,1)
+            start_temp = h-tau_max;
+            end_temp = h+tau_max;
+            if start_temp<1
+                start_temp = 1;
+            end
+            if end_temp>size(xs,1)
+                end_temp = size(xs,1);
+            end
+            xs_temp = xs_est(h,1:num_var)-xs(start_temp:end_temp,1:num_var);
+            e_temp = min(diag(xs_temp*xs_temp'));
+            e = [e, sqrt(e_temp)];
+        end
     end
-    
-    min_len = min(size(est_x,1), size(x,1));
-    est_x = est_x(1:min_len,:);
-    x = x(1:min_len,:);
-    error_temp = est_x-x;
-    error_x = [error_x;error_temp];
-end
-end
-mean(error_x)
-std(error_x)
+    aSet = [aSet; T, len_chp, tau_max*Ts, max(e)];
 
+end
+max(aSet)
