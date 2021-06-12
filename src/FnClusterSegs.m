@@ -3,8 +3,8 @@ function trace = FnClusterSegs(trace, x, ud)
     segIndex = [0,0]; 
     for i=1:length(trace)  
         chpoints = (trace(i).chpoints);
-        chsegments = [chpoints(1:end-1), chpoints(2:end)-1];
-        chsegments(end,2)=chsegments(end,2)+1;
+        chsegments = [chpoints(1:end-1), chpoints(2:end)];
+        chsegments(2:end,1) = chsegments(2:end,1)+1;
         segIndex = [segIndex; segIndex(end,2) + chsegments]; 
     end
     segIndex(1,:) = [];
@@ -52,7 +52,7 @@ function labels = FnIndxarrange(cluster_idx, index)
 end
 
 function indx = FnRecursive(x,ud,chpoints)  
-    global lambda winlen;
+    global sigma winlen;
     
     if size(x,1) ~= 0
         
@@ -96,7 +96,7 @@ function indx = FnRecursive(x,ud,chpoints)
             V{i} = lmivar(2, structV);
         end
         
-        error_t = (lambda * size(Oki,2))^2; %error tolerance
+        error_t = (sigma * size(Oki,2))^2; %error tolerance
         for i = 1:size(Oki,1)
             n = (i+(1-1)*num_var);
             lmiterm([-n, 1,1,0],1);
@@ -130,7 +130,7 @@ function indx = FnRecursive(x,ud,chpoints)
             Okij = xkij;
             
             setlmis(lmi);
-            error_tj = (lambda * size(Okj,2))^2;
+            error_tj = (sigma * size(Okj,2))^2;
             for i = 1:num_var
                 n = (i+(j-1)*num_var);
                 lmiterm([-n, 1,1,0],1);

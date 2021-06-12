@@ -1,3 +1,6 @@
+clc
+clear
+
 mdl1 = 'automata_learning.slx';
 mdl2 = 'Navigation.slx';
 

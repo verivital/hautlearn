@@ -1,7 +1,7 @@
 function [trace,label_guard] = FnLI(trace, iter, threshDist, inNum)
 
 
-global num_var num_ud
+global num_var num_ud Time
 
 % first two are the source state and destination state, last two is a changepoint
 trans = []; 
@@ -36,7 +36,12 @@ for i = 1:size(state_trans,1)
         continue;
     end
     % wb: inequality parameters, inlayer: index of inlayer points
-    [wb_temp, inlayer_temp] = FnEstLI(points, num_var,iter,threshDist,inNum);
+    if Time
+        num_vars = num_var+1;
+    else
+        num_vars = num_var;
+    end
+    [wb_temp, inlayer_temp] = FnEstLI(points, num_vars,iter,threshDist,inNum);
     if isempty(wb_temp)
 %         LI(i).states = states;
 %         LI(i).points = points;

@@ -8,7 +8,7 @@ for label = 1:len_labels
     for j = 1:length(trace)
         labels_trace = trace(j).labels_trace;
         idx = find(labels_trace == label);
-        x = trace(j).x;
+        x = trace(j).x(:,1:num_var);
         ud = trace(j).ud;
          
         startj = trace(j).chpoints(idx);

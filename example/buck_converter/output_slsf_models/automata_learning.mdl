@@ -1,12 +1,12 @@
 Model {
   Name			  "automata_learning"
-  Version		  9.1
+  Version		  9.2
   SavedCharacterEncoding  "windows-1252"
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.2"
+    ComputedModelVersion    "1.1"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -14,19 +14,16 @@ Model {
     NumResetEvents	    0
     HasInitializeEvent	    0
     HasTerminateEvent	    0
+    PreCompExecutionDomainType "Unset"
     IsExportFunctionModel   0
     NumParameterArguments   0
     NumExternalFileReferences 0
     OrderedModelArguments   1
   }
   DiagnosticSuppressor	  "on"
-  SuppressorTable	  "22 serialization::archive 11 0 6 0 0 0 8 0"
-  Notes			  ""
+  WebScopes_FoundationPlugin "on"
   NotesPlugin		  "on"
-  LogicAnalyzerGraphicalSettings ""
   LogicAnalyzerPlugin	  "on"
-  LogicAnalyzerSignalOrdering ""
-  CustomCodeFunctionData  ""
   SLCCPlugin		  "on"
   ScopeRefreshTime	  0.035000
   OverrideScopeRefreshTime on
@@ -47,7 +44,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-1152.0, 161.0, 814.0, 533.0]
+      Location		      [93.0, 84.0, 814.0, 634.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -62,36 +59,24 @@ Model {
 	$PropName		"ExplorerBarInfo"
 	$ObjectID		4
 	$ClassName		"Simulink.ExplorerBarInfo"
-	Visible			[0]
+	Visible			[1]
       }
       Object {
 	$PropName		"EditorsInfo"
 	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"StateflowChart"
-	LoadSaveID		"1"
-	Extents			[498.0, 382.0]
-	ZoomFactor		[0.79999999999999993]
-	Offset			[521.19066666666663, 55.061999999999983]
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
+	Extents			[1905.0, 910.0]
+	ZoomFactor		[1.0]
+	Offset			[0.0, 0.0]
       }
       Array {
 	Type			"Simulink.DockComponentInfo"
 	Dimension		2
 	Object {
 	  $ObjectID		  6
-	  Type			  "GLUE2:DDG Component"
-	  ID			  "SymbolManager"
-	  Visible		  [1]
-	  CreateCallback	  "Stateflow.Interface.Panel.createSymbolManagerComponent"
-	  UserData		  "0"
-	  Floating		  [0]
-	  DockPosition		  "Right"
-	  Width			  [254]
-	  Height		  [383]
-	}
-	Object {
-	  $ObjectID		  7
 	  Type			  "GLUE2:PropertyInspector"
 	  ID			  "Property Inspector"
 	  Visible		  [0]
@@ -99,39 +84,52 @@ Model {
 	  UserData		  ""
 	  Floating		  [0]
 	  DockPosition		  "Right"
-	  Width			  [640]
-	  Height		  [480]
+	  Width			  [256]
+	  Height		  [192]
+	}
+	Object {
+	  $ObjectID		  7
+	  Type			  "GLUE2:DDG Component"
+	  ID			  "SymbolManager"
+	  Visible		  [0]
+	  CreateCallback	  "Stateflow.Interface.Panel.createSymbolManagerComponent"
+	  UserData		  "0"
+	  Floating		  [0]
+	  DockPosition		  "Right"
+	  Width			  [251]
+	  Height		  [501]
 	}
 	PropName		"DockComponentsInfo"
       }
       WindowState	      "AAAA/wAAAAD9AAAAAgAAAAAAAAC9AAAB+PwCAAAAA/sAAAAWAEQAbwBjAGsAVwBpAGQAZwBlAHQAMwEAAAAxAAAB+AAAA"
       "AAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0Ac"
-      "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAABjAP///wAAAAEAAAECAAABmfwCA"
+      "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAAEAAP///wAAAAEAAAJ5AAAFJvwCA"
       "AAAAvsAAABUAEcATABVAEUAMgA6AFAAcgBvAHAAZQByAHQAeQBJAG4AcwBwAGUAYwB0AG8AcgAvAFAAcgBvAHAAZQByAHQAeQAgAEkAbgBzAHAAZ"
-      "QBjAHQAbwByAAAAAAD/////AAAAKwD////7AAAAQgBHAEwAVQBFADIAOgBEAEQARwAgAEMAbwBtAHAAbwBuAGUAbgB0AC8AUwB5AG0AYgBvAGwAT"
-      "QBhAG4AYQBnAGUAcgEAAABAAAABmQAAAB4A////AAACGAAAAZkAAAABAAAAAgAAAAEAAAAC/AAAAAEAAAACAAAAD/////8AAAAAAP////8AAAAAA"
+      "QBjAHQAbwByAAAAAAD/////AAAAiAD////7AAAAQgBHAEwAVQBFADIAOgBEAEQARwAgAEMAbwBtAHAAbwBuAGUAbgB0AC8AUwB5AG0AYgBvAGwAT"
+      "QBhAG4AYQBnAGUAcgAAAACHAAAFJgAAAEQA////AAAH0wAABSYAAAABAAAAAgAAAAEAAAAC/AAAAAEAAAACAAAAD/////8AAAAAAP////8AAAAAA"
       "AAAAP////8BAAAAAP////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP////8AAAAAAP////8AAAAAA"
-      "AAAAP////8BAAAAef////8AAAAAAAAAAP////8BAAAA2v////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP////8BAAABU/////8AAAAAA"
-      "AAAAP////8AAAAAAP////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP////8BAAACwP////8AAAAAA"
-      "AAAAP////8BAAAC7/////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAA=="
+      "AAAAP////8BAAABC/////8AAAAAAAAAAP////8BAAAB2v////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP////8BAAAC5f////8AAAAAA"
+      "AAAAP////8AAAAAAP////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAP////8BAAAHBf////8AAAAAA"
+      "AAAAP////8BAAAHbP////8AAAAAAAAAAP////8AAAAAAP////8AAAAAAAAAAA=="
     }
   }
   HideAutomaticNames	  on
-  Created		  "Mon Oct 28 21:26:00 2019"
-  Creator		  "xiaodong"
+  Created		  "Sat Jun 12 15:14:22 2021"
+  Creator		  "Xiaodong"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "xiaodong"
+  LastModifiedBy	  "Xiaodong"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Oct 28 21:29:48 2019"
-  RTWModifiedTimeStamp	  494198762
-  ModelVersionFormat	  "1.%<AutoIncrement:2>"
+  LastModifiedDate	  "Sat Jun 12 15:14:24 2021"
+  RTWModifiedTimeStamp	  545411663
+  ModelVersionFormat	  "1.%<AutoIncrement:1>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
   WideLines		  off
   ShowLineDimensions	  off
   ShowPortDataTypes	  off
+  ShowAllPropagatedSignalLabels	off
   PortDataTypeDisplayFormat "AliasTypeOnly"
   ShowEditTimeErrors	  on
   ShowEditTimeWarnings	  on
@@ -225,7 +223,7 @@ Model {
     Dimension		    1
     Simulink.ConfigSet {
       $ObjectID		      9
-      Version		      "1.18.0"
+      Version		      "1.18.1"
       DisabledProps	      []
       Description	      ""
       Array {
@@ -233,13 +231,13 @@ Model {
 	Dimension		10
 	Simulink.SolverCC {
 	  $ObjectID		  10
-	  Version		  "1.18.0"
+	  Version		  "1.18.1"
 	  DisabledProps		  []
 	  Description		  ""
 	  StartTime		  "0.0"
 	  StopTime		  "10.0"
 	  AbsTol		  "auto"
-	  AutoScaleAbsTol	  "on"
+	  AutoScaleAbsTol	  on
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
 	  MaxOrder		  5
@@ -274,7 +272,7 @@ Model {
 	}
 	Simulink.DataIOCC {
 	  $ObjectID		  11
-	  Version		  "1.18.0"
+	  Version		  "1.18.1"
 	  DisabledProps		  []
 	  Description		  ""
 	  Decimation		  "1"
@@ -315,7 +313,7 @@ Model {
 	}
 	Simulink.OptimizationCC {
 	  $ObjectID		  12
-	  Version		  "1.18.0"
+	  Version		  "1.18.1"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    8
@@ -382,7 +380,7 @@ Model {
 	}
 	Simulink.DebuggingCC {
 	  $ObjectID		  13
-	  Version		  "1.18.0"
+	  Version		  "1.18.1"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    1
@@ -465,7 +463,8 @@ Model {
 	  SimStateInterfaceChecksumMismatchMsg "warning"
 	  SimStateOlderReleaseMsg "error"
 	  ChecksumConsistencyForSSReuse	"none"
-	  LibraryContextMissingDiagnostic "none"
+	  LibraryContextMissingDiagnostic "warning"
+	  MatchCodeGenerationContextForUpdateDiagram "none"
 	  InitInArrayFormatMsg	  "warning"
 	  StrictBusMsg		  "ErrorLevel1"
 	  BusNameAdapt		  "WarnAndRepair"
@@ -496,10 +495,11 @@ Model {
 	  RCSCObservableMsg	  "warning"
 	  ForceCombineOutputUpdateInSim	off
 	  UnitDatabase		  ""
+	  UnderSpecifiedDimensionMsg "none"
 	}
 	Simulink.HardwareCC {
 	  $ObjectID		  14
-	  Version		  "1.18.0"
+	  Version		  "1.18.1"
 	  DisabledProps		  []
 	  Description		  ""
 	  ProdBitPerChar	  8
@@ -547,7 +547,7 @@ Model {
 	}
 	Simulink.ModelReferenceCC {
 	  $ObjectID		  15
-	  Version		  "1.18.0"
+	  Version		  "1.18.1"
 	  DisabledProps		  []
 	  Description		  ""
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
@@ -566,7 +566,7 @@ Model {
 	}
 	Simulink.SFSimCC {
 	  $ObjectID		  16
-	  Version		  "1.18.0"
+	  Version		  "1.18.1"
 	  DisabledProps		  []
 	  Description		  ""
 	  SimCustomSourceCode	  ""
@@ -583,8 +583,9 @@ Model {
 	  SFSimEcho		  on
 	  SimCtrlC		  on
 	  SimIntegrity		  on
-	  SimUseLocalCustomCode	  off
+	  SimUseLocalCustomCode	  on
 	  SimParseCustomCode	  on
+	  SimAnalyzeCustomCode	  off
 	  SimBuildMode		  "sf_incremental_build"
 	  SimGenImportedTypeDefs  off
 	  ModelFunctionsGlobalVisibility "on"
@@ -592,11 +593,13 @@ Model {
 	  EnableRuntimeRecursion  on
 	  MATLABDynamicMemAlloc	  on
 	  MATLABDynamicMemAllocThreshold 65536
+	  CustomCodeFunctionArrayLayout	[]
+	  DefaultCustomCodeFunctionArrayLayout "NotSpecified"
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
 	  $ObjectID		  17
-	  Version		  "1.18.0"
+	  Version		  "1.18.1"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    16
@@ -630,7 +633,6 @@ Model {
 	  PostCodeGenCommand	  ""
 	  Description		  ""
 	  GenerateReport	  off
-	  SaveLog		  off
 	  RTWVerbose		  on
 	  RetainRTWFile		  off
 	  RTWBuildHooks		  []
@@ -638,7 +640,7 @@ Model {
 	  TLCDebug		  off
 	  TLCCoverage		  off
 	  TLCAssert		  off
-	  RTWUseLocalCustomCode	  off
+	  RTWUseLocalCustomCode	  on
 	  RTWUseSimCustomCode	  off
 	  CustomSourceCode	  ""
 	  CustomHeaderCode	  ""
@@ -646,6 +648,7 @@ Model {
 	  CustomSource		  ""
 	  CustomLibrary		  ""
 	  CustomDefine		  ""
+	  CustomBLASCallback	  ""
 	  CustomLAPACKCallback	  ""
 	  CustomFFTCallback	  ""
 	  CustomInitializer	  ""
@@ -660,7 +663,7 @@ Model {
 	  CodeExecutionProfiling  off
 	  CodeExecutionProfileVariable "executionProfile"
 	  CodeProfilingSaveOptions "SummaryOnly"
-	  CodeProfilingInstrumentation off
+	  CodeProfilingInstrumentation "off"
 	  SILDebugging		  off
 	  TargetLang		  "C"
 	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
@@ -683,7 +686,7 @@ Model {
 	    Dimension		    2
 	    Simulink.CodeAppCC {
 	      $ObjectID		      18
-	      Version		      "1.18.0"
+	      Version		      "1.18.1"
 	      Array {
 		Type			"Cell"
 		Dimension		28
@@ -771,10 +774,10 @@ Model {
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
 	      $ObjectID		      19
-	      Version		      "1.18.0"
+	      Version		      "1.18.1"
 	      Array {
 		Type			"Cell"
-		Dimension		15
+		Dimension		16
 		Cell			"IncludeMdlTerminateFcn"
 		Cell			"SuppressErrorStatus"
 		Cell			"ERTCustomFileBanners"
@@ -790,6 +793,7 @@ Model {
 		Cell			"SupportNonInlinedSFcns"
 		Cell			"RemoveDisableFunc"
 		Cell			"RemoveResetFunc"
+		Cell			"PreserveStateflowLocalDataDimensions"
 		PropName		"DisabledProps"
 	      }
 	      Description	      ""
@@ -816,6 +820,7 @@ Model {
 	      GeneratePreprocessorConditionals "Use local settings"
 	      CombineOutputUpdateFcns on
 	      CombineSignalStateStructs	off
+	      GroupInternalDataByFunction off
 	      SuppressErrorStatus     off
 	      IncludeFileDelimiter    "Auto"
 	      ERTCustomFileBanners    off
@@ -824,9 +829,9 @@ Model {
 	      MatFileLogging	      on
 	      MultiInstanceERTCode    off
 	      CodeInterfacePackaging  "Nonreusable function"
+	      PurelyIntegerCode	      off
 	      SupportNonFinite	      on
 	      SupportComplex	      on
-	      PurelyIntegerCode	      off
 	      SupportContinuousTime   on
 	      SupportNonInlinedSFcns  on
 	      RemoveDisableFunc	      off
@@ -834,6 +839,7 @@ Model {
 	      SupportVariableSizeSignals off
 	      ParenthesesLevel	      "Nominal"
 	      CastingMode	      "Nominal"
+	      PreserveStateflowLocalDataDimensions off
 	      MATLABClassNameForMDSCustomization "Simulink.SoftwareTarget.GRTCustomization"
 	      ModelStepFunctionPrototypeControlCompliant off
 	      CPPClassGenCompliant    on
@@ -849,6 +855,7 @@ Model {
 	      LUTObjectStructOrderExplicitValues "Size,Breakpoints,Table"
 	      LUTObjectStructOrderEvenSpacing "Size,Breakpoints,Table"
 	      ArrayLayout	      "Column-major"
+	      UnsupportedSFcnMsg      "error"
 	      ERTHeaderFileRootName   "$R$E"
 	      ERTSourceFileRootName   "$R$E"
 	      ERTDataFileRootName     "$R_data"
@@ -873,7 +880,7 @@ Model {
 	}
 	SlCovCC.ConfigComp {
 	  $ObjectID		  20
-	  Version		  "1.18.0"
+	  Version		  "1.18.1"
 	  DisabledProps		  []
 	  Description		  "Simulink Coverage Configuration Component"
 	  Name			  "Simulink Coverage"
@@ -913,7 +920,7 @@ Model {
 	}
 	hdlcoderui.hdlcc {
 	  $ObjectID		  21
-	  Version		  "1.18.0"
+	  Version		  "1.18.1"
 	  DisabledProps		  []
 	  Description		  "HDL Coder custom configuration component"
 	  Name			  "HDL Coder"
@@ -1016,38 +1023,11 @@ Model {
       BlockType		      Ground
     }
     Block {
-      BlockType		      Outport
-      Port		      "1"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: auto"
-      LockScale		      off
-      BusOutputAsStruct	      off
-      Unit		      "inherit"
-      PortDimensions	      "-1"
-      VarSizeSig	      "Inherit"
-      SampleTime	      "-1"
-      SignalType	      "auto"
-      SamplingMode	      "auto"
-      EnsureOutportIsVirtual  off
-      SourceOfInitialOutputValue "Dialog"
-      OutputWhenDisabled      "held"
-      InitialOutput	      "[]"
-      MustResolveToSignalObject	off
-      OutputWhenUnConnected   off
-      OutputWhenUnconnectedValue "0"
-      VectorParamsAs1DForOutWhenUnconnected off
-    }
-    Block {
       BlockType		      S-Function
       FunctionName	      "system"
       SFunctionModules	      "''"
       PortCounts	      "[]"
       MultiThreadCoSim	      "auto"
-    }
-    Block {
-      BlockType		      Scope
-      DefaultConfigurationName "Simulink.scopes.TimeScopeBlockCfg"
     }
     Block {
       BlockType		      SubSystem
@@ -1075,6 +1055,7 @@ Model {
       Opaque		      off
       MaskHideContents	      off
       SFBlockType	      "NONE"
+      VariantControlMode      "Expression"
       Variant		      off
       GeneratePreprocessorConditionals off
       AllowZeroVariantControls off
@@ -1083,6 +1064,9 @@ Model {
       ContentPreviewEnabled   off
       IsWebBlock	      off
       IsObserver	      off
+      Latency		      "0"
+      AutoFrameSizeCalculation off
+      IsWebBlockPanel	      off
     }
     Block {
       BlockType		      Terminator
@@ -1090,11 +1074,11 @@ Model {
   }
   System {
     Name		    "automata_learning"
-    Location		    [-1152, 161, -338, 694]
-    Open		    off
+    Location		    [93, 84, 907, 617]
+    Open		    on
     PortBlocksUseCompactNotation off
-    SetDomainSpec	    off
-    DomainSpecType	    "Deduce"
+    SetExecutionDomain	    off
+    ExecutionDomainType	    "Deduce"
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1107,28 +1091,13 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "2"
-    Block {
-      BlockType		      Scope
-      Name		      "Scope"
-      SID		      "2"
-      Ports		      [3]
-      Position		      [350, 27, 400, 103]
-      ZOrder		      3
-      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
-      "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
-      "ources','WiredSimulink',true,'DataLogging',true,'DataLoggingSaveFormat','Structure'),extmgr.Configuration('Visua"
-      "ls','Time Domain',true),extmgr.Configuration('Tools','Plot Navigation',true),extmgr.Configuration('Tools','Measu"
-      "rements',true)),'Version','2018a')"
-      NumInputPorts	      "3"
-      Floating		      off
-    }
+    SIDHighWatermark	    "1"
     Block {
       BlockType		      SubSystem
-      Name		      "automata_learning"
+      Name		      "Chart"
       SID		      "1"
-      Ports		      [0, 3]
-      Position		      [25, 23, 85, 77]
+      Ports		      []
+      Position		      [25, 19, 85, 71]
       ZOrder		      2
       ErrorFcn		      "Stateflow.Translate.translate"
       PermitHierarchicalResolution "ExplicitOnly"
@@ -1136,28 +1105,13 @@ Model {
       RequestExecContextInheritance off
       SFBlockType	      "Chart"
       ContentPreviewEnabled   on
-      Port {
-	PortNumber		1
-	Name			"x1"
-	PropagatedSignals	"x1_out"
-      }
-      Port {
-	PortNumber		2
-	Name			"x2"
-	PropagatedSignals	"x2_out"
-      }
-      Port {
-	PortNumber		3
-	Name			"automata_learning_location"
-	PropagatedSignals	"automata_learning_location"
-      }
       System {
-	Name			"automata_learning"
-	Location		[-1152, 161, -338, 694]
-	Open			on
+	Name			"Chart"
+	Location		[186, 89, 929, 809]
+	Open			off
 	PortBlocksUseCompactNotation off
-	SetDomainSpec		off
-	DomainSpecType		"Deduce"
+	SetExecutionDomain	off
+	ExecutionDomainType	"Deduce"
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1169,13 +1123,13 @@ Model {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
-	SIDHighWatermark	"95"
+	SIDHighWatermark	"92"
 	Block {
 	  BlockType		  Demux
 	  Name			  " Demux "
 	  SID			  "1::90"
 	  Ports			  [1, 1]
-	  Position		  [270, 245, 320, 285]
+	  Position		  [270, 100, 320, 140]
 	  ZOrder		  70
 	  Outputs		  "1"
 	}
@@ -1183,7 +1137,7 @@ Model {
 	  BlockType		  Ground
 	  Name			  " Ground "
 	  SID			  "1::92"
-	  Position		  [20, 141, 40, 159]
+	  Position		  [20, 111, 40, 129]
 	  ZOrder		  72
 	}
 	Block {
@@ -1191,140 +1145,44 @@ Model {
 	  Name			  " SFunction "
 	  SID			  "1::89"
 	  Tag			  "Stateflow S-Function automata_learning 3"
-	  Ports			  [1, 4]
-	  Position		  [180, 102, 230, 203]
+	  Ports			  [1, 1]
+	  Position		  [180, 100, 230, 140]
 	  ZOrder		  69
 	  FunctionName		  "sf_sfun"
-	  PortCounts		  "[1 4]"
+	  PortCounts		  "[1 1]"
 	  SFunctionDeploymentMode off
 	  EnableBusSupport	  off
 	  SFcnIsStateOwnerBlock	  off
-	  Port {
-	    PortNumber		    2
-	    Name		    "x1_out"
-	  }
-	  Port {
-	    PortNumber		    3
-	    Name		    "x2_out"
-	  }
-	  Port {
-	    PortNumber		    4
-	    Name		    "automata_learning_location"
-	  }
 	}
 	Block {
 	  BlockType		  Terminator
 	  Name			  " Terminator "
 	  SID			  "1::91"
-	  Position		  [460, 256, 480, 274]
+	  Position		  [460, 111, 480, 129]
 	  ZOrder		  71
 	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "x1_out"
-	  SID			  "1::93"
-	  Position		  [460, 101, 480, 119]
-	  ZOrder		  73
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "x2_out"
-	  SID			  "1::94"
-	  Position		  [460, 136, 480, 154]
-	  ZOrder		  74
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "automata_learning_location"
-	  SID			  "1::95"
-	  Position		  [460, 171, 480, 189]
-	  ZOrder		  75
-	  Port			  "3"
-	  IconDisplay		  "Port number"
-	}
 	Line {
-	  Name			  "x1_out"
-	  ZOrder		  16
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  2
-	  DstBlock		  "x1_out"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "x2_out"
-	  ZOrder		  17
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  3
-	  DstBlock		  "x2_out"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "automata_learning_location"
-	  ZOrder		  18
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  4
-	  DstBlock		  "automata_learning_location"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  19
+	  ZOrder		  4
 	  SrcBlock		  " Ground "
 	  SrcPort		  1
-	  Points		  [120, 0]
 	  DstBlock		  " SFunction "
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  20
+	  ZOrder		  5
 	  SrcBlock		  " Demux "
 	  SrcPort		  1
 	  DstBlock		  " Terminator "
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  21
+	  ZOrder		  6
 	  SrcBlock		  " SFunction "
 	  SrcPort		  1
 	  DstBlock		  " Demux "
 	  DstPort		  1
 	}
       }
-    }
-    Line {
-      Name		      "x1"
-      ZOrder		      1
-      Labels		      [0, 0]
-      SrcBlock		      "automata_learning"
-      SrcPort		      1
-      Points		      [120, 0; 0, 5]
-      DstBlock		      "Scope"
-      DstPort		      1
-    }
-    Line {
-      Name		      "x2"
-      ZOrder		      2
-      Labels		      [0, 0]
-      SrcBlock		      "automata_learning"
-      SrcPort		      2
-      Points		      [120, 0; 0, 15]
-      DstBlock		      "Scope"
-      DstPort		      2
-    }
-    Line {
-      Name		      "automata_learning_location"
-      ZOrder		      3
-      Labels		      [0, 0]
-      SrcBlock		      "automata_learning"
-      SrcPort		      3
-      Points		      [110, 0; 0, 25]
-      DstBlock		      "Scope"
-      DstPort		      3
     }
   }
 }
@@ -1337,312 +1195,37 @@ Stateflow {
   machine {
     id			    1
     name		    "automata_learning"
-    created		    "28-Oct-2019 21:26:00"
+    created		    "12-Jun-2021 15:14:22"
     isLibrary		    0
     sfVersion		    80000014
-    firstTarget		    16
+    firstTarget		    4
   }
   chart {
     id			    2
     machine		    1
-    name		    "automata_learning"
+    name		    "Chart"
     windowPosition	    [199.5 216.75 417 348.75]
-    viewLimits		    [521.191 1143.691 55.062 532.562]
-    zoomFactor		    1.667
+    viewLimits		    [0 707 0 549]
+    zoomFactor		    1.472
     screen		    [1 1 3200 1200 1.25]
-    treeNode		    [0 3 0 0]
     viewObj		    2
-    visible		    1
-    subviewS {
-    }
-    ssIdHighWaterMark	    12
+    toolbarMode		    LIBRARY_TOOLBAR
     decomposition	    CLUSTER_CHART
-    updateMethod	    CONTINUOUS
     chartFileNumber	    3
     allowGlobalAccessToExportedFunctions 0
     saturateOnIntegerOverflow 1
     userSpecifiedStateTransitionExecutionOrder 1
     disableImplicitCasting  1
     actionLanguage	    2
-    firstData		    6
-    firstTransition	    11
-  }
-  state {
-    id			    3
-    labelString		    "loc1\ndu:\nx1_dot = 19.82730190496659 * x1 - 483.35486798081547 * x2 + 6484.962363272905;\nx2_do"
-    "t = 290.77148099895567 * x1 - 123.04878845950589 * x2 + 1317.1628625802696;\nx1_out=x1;\nx2_out=x2;\nautomata_lear"
-    "ning_location =1;"
-    position		    [420 300 150 150]
-    fontSize		    12
-    chart		    2
-    treeNode		    [2 0 0 4]
-    subviewer		    2
-    ssIdNumber		    6
-    type		    OR_STATE
-    decomposition	    CLUSTER_STATE
-  }
-  state {
-    id			    4
-    labelString		    "loc2\ndu:\nx1_dot = 9064.579930633307 - 378.81976657547057 * x2 - 271.94735317956656 * x1;\nx2_d"
-    "ot = 452.66677063703537 * x1 - 51.243269544211216 * x2 + 60.72636410524137;\nx1_out=x1;\nx2_out=x2;\nautomata_lear"
-    "ning_location =2;"
-    position		    [720 300 150 150]
-    fontSize		    12
-    chart		    2
-    treeNode		    [2 0 3 5]
-    subviewer		    2
-    ssIdNumber		    8
-    type		    OR_STATE
-    decomposition	    CLUSTER_STATE
-  }
-  state {
-    id			    5
-    labelString		    "loc3\ndu:\nx1_dot = -196.2833062261343 * x1 - 375.63914385344833 * x2 - 22.514045030926354;\nx2_"
-    "dot = 456.52232484333217 * x1 - 54.72674559045117 * x2 + 104.7049718555063;\nx1_out=x1;\nx2_out=x2;\nautomata_lear"
-    "ning_location =3;"
-    position		    [1020 300 150 150]
-    fontSize		    12
-    chart		    2
-    treeNode		    [2 0 4 0]
-    subviewer		    2
-    ssIdNumber		    9
-    type		    OR_STATE
-    decomposition	    CLUSTER_STATE
-  }
-  data {
-    id			    6
-    ssIdNumber		    1
-    name		    "x1_out"
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-      unit {
-	name			"inherit"
-      }
-    }
-    dataType		    "Inherit: Same as Simulink"
-    linkNode		    [2 0 7]
-  }
-  data {
-    id			    7
-    ssIdNumber		    2
-    name		    "x1"
-    scope		    LOCAL_DATA
-    machine		    1
-    props {
-      updateMethod	      SF_CONTINUOUS_TIME_DATA
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-      unit {
-	name			"inherit"
-      }
-    }
-    dataType		    "Inherit: From definition in chart"
-    linkNode		    [2 6 8]
-  }
-  data {
-    id			    8
-    ssIdNumber		    3
-    name		    "x2_out"
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-      unit {
-	name			"inherit"
-      }
-    }
-    dataType		    "Inherit: Same as Simulink"
-    linkNode		    [2 7 9]
-  }
-  data {
-    id			    9
-    ssIdNumber		    4
-    name		    "x2"
-    scope		    LOCAL_DATA
-    machine		    1
-    props {
-      updateMethod	      SF_CONTINUOUS_TIME_DATA
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-      unit {
-	name			"inherit"
-      }
-    }
-    dataType		    "Inherit: From definition in chart"
-    linkNode		    [2 8 10]
-  }
-  data {
-    id			    10
-    ssIdNumber		    5
-    name		    "automata_learning_location"
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-      unit {
-	name			"inherit"
-      }
-    }
-    dataType		    "Inherit: Same as Simulink"
-    linkNode		    [2 9 0]
-  }
-  transition {
-    id			    11
-    labelString		    "[-11.2 * x1 - 0.07218 * x2 + 1.0 > 0.0]"
-    labelPosition	    [685 131 197 16]
-    fontSize		    12
-    src {
-      id		      5
-      intersection	      [1 0 -1 0.4849 1092.7362 300 0 0]
-    }
-    dst {
-      id		      3
-      intersection	      [1 0 -1 0.5151 497.2638 300 0 0]
-    }
-    midPoint		    [795 147.1185]
-    chart		    2
-    dataLimits		    [494.864 1092.736 147.139 300]
-    subviewer		    2
-    slide {
-      mode		      MIRROR_SLIDE
-      sticky		      BOTH_STICK
-    }
-    executionOrder	    1
-    ssIdNumber		    12
-    linkNode		    [2 0 12]
-  }
-  transition {
-    id			    12
-    labelString		    "[0.001078 * x1 - 0.08408 * x2 + 1.0 > 0.0]"
-    labelPosition	    [832 225 221 16]
-    fontSize		    12
-    src {
-      id		      3
-      intersection	      [1 0 -1 0.4492 487.3826 300 0 0]
-    }
-    dst {
-      id		      4
-      intersection	      [1 0 -1 0.5508 802.6174 300 0 0]
-    }
-    midPoint		    [645 217.1659]
-    chart		    2
-    dataLimits		    [487.383 805.017 217.054 300]
-    subviewer		    2
-    slide {
-      mode		      MIRROR_SLIDE
-      sticky		      BOTH_STICK
-    }
-    executionOrder	    1
-    ssIdNumber		    10
-    linkNode		    [2 11 13]
-  }
-  transition {
-    id			    13
-    labelString		    "{x1 = 0.0;\nx2 = 0.0;}"
-    labelPosition	    [445 220 52.328 30]
-    fontSize		    12
-    src {
-      intersection	      [0 1.4142 1.4142 0 495 270 0 0]
-    }
-    dst {
-      id		      3
-      intersection	      [1 0 -1 0.5 495 300 0 0]
-    }
-    midPoint		    [495 285]
-    chart		    2
-    dataLimits		    [492.6 497.4 270 300]
-    subviewer		    2
-    slide {
-      mode		      MIRROR_SLIDE
-      sticky		      BOTH_STICK
-    }
-    executionOrder	    1
-    ssIdNumber		    7
-    linkNode		    [2 12 14]
-  }
-  transition {
-    id			    14
-    labelString		    "[0.0008946 * x1 - 0.08262 * x2 + 1.0 < 0.0]"
-    labelPosition	    [1126 488 227 16]
-    fontSize		    12
-    src {
-      id		      4
-      intersection	      [3 0 1 0.2863 827.0542 450 0 0]
-    }
-    dst {
-      id		      5
-      intersection	      [3 0 1 0.7137 1062.9458 450 0 0]
-    }
-    midPoint		    [945 513.0068]
-    chart		    2
-    dataLimits		    [827.054 1065.346 450 513.156]
-    subviewer		    2
-    slide {
-      mode		      MIRROR_SLIDE
-      sticky		      BOTH_STICK
-    }
-    executionOrder	    1
-    ssIdNumber		    11
-    linkNode		    [2 13 0]
   }
   instance {
-    id			    15
+    id			    3
     machine		    1
-    name		    "automata_learning"
+    name		    "Chart"
     chart		    2
   }
   target {
-    id			    16
+    id			    4
     machine		    1
     name		    "sfun"
     description		    "Default Simulink S-Function Target."
