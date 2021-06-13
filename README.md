@@ -8,4 +8,4 @@ This framework contains functions as follows:
 - FnHyst2State: converts Hyst data structure to Stateflow data structure
 
 # Run examples
-Run main function in each example to generate the "automata_learning.mdl" which will be in the "output_slsf_models" folder
+Run the main function in each example to generate the "automata_learning.mdl" which will be in the "output_slsf_models" folder
