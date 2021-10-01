@@ -10,7 +10,7 @@ sigma = 0.02;  winlen = 10;
 num_var = 2; num_ud = 0;
 num =1; x = []; ud = []; 
 
-
+% Load data, process noise and detect changepoints
 for i = 1:11
     load(['training', int2str(i),'.mat']);
     trace_temp = FnProcessNoiseData(xout, num_var);
