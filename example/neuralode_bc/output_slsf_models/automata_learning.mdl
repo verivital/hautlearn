@@ -1,0 +1,2063 @@
+Model {
+  Name			  "automata_learning"
+  Version		  10.3
+  SavedCharacterEncoding  "windows-1252"
+  ModelUUID		  "284c066d-1d13-4ba5-9234-251a919d7215"
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.2"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+    NumProvidedFunctions    0
+    NumRequiredFunctions    0
+    NumResetEvents	    0
+    HasInitializeEvent	    0
+    HasTerminateEvent	    0
+    PreCompExecutionDomainType "Unset"
+    IsExportFunctionModel   0
+    SimulinkSubDomainType   "Simulink"
+    NumParameterArguments   0
+    NumExternalFileReferences 0
+    OrderedModelArguments   1
+  }
+  LogicAnalyzerPlugin	  "on"
+  WebScopes_FoundationPlugin "on"
+  SLCCPlugin		  "on"
+  slcheck_filter_plugin	  "on"
+  DiagnosticSuppressor	  "on"
+  AnimationPlugin	  "on"
+  NotesPlugin		  "on"
+  EnableAccessToBaseWorkspace on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  DataTypeOverrideAppliesTo "AllNumericTypes"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  FPTRunName		  "Run 1"
+  MaxMDLFileLineLength	  120
+  LastSavedArchitecture	  "win64"
+  Object {
+    $PropName		    "BdWindowsInfo"
+    $ObjectID		    1
+    $ClassName		    "Simulink.BDWindowsInfo"
+    Object {
+      $PropName		      "WindowsInfo"
+      $ObjectID		      2
+      $ClassName	      "Simulink.WindowInfo"
+      IsActive		      [1]
+      Location		      [23.0, 14.0, 994.0, 753.0]
+      Object {
+	$PropName		"ModelBrowserInfo"
+	$ObjectID		3
+	$ClassName		"Simulink.ModelBrowserInfo"
+	Visible			[1]
+	DockPosition		"Left"
+	Width			[50]
+	Height			[50]
+	Filter			[9]
+	Minimized		"On"
+      }
+      Object {
+	$PropName		"ExplorerBarInfo"
+	$ObjectID		4
+	$ClassName		"Simulink.ExplorerBarInfo"
+	Visible			[1]
+      }
+      Object {
+	$PropName		"EditorsInfo"
+	$ObjectID		5
+	$ClassName		"Simulink.EditorInfo"
+	IsActive		[1]
+	IsTabbed		[1]
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
+	Extents			[878.0, 511.0]
+	ZoomFactor		[1.0]
+	Offset			[0.0, 0.0]
+	SceneRectInView		[0.0, 0.0, 878.0, 511.0]
+      }
+      Array {
+	Type			"Simulink.DockComponentInfo"
+	Dimension		3
+	Object {
+	  $ObjectID		  6
+	  Type			  "GLUE2:DDG Component"
+	  ID			  "SymbolManager"
+	  Visible		  [0]
+	  CreateCallback	  "Stateflow.Interface.Panel.createSymbolManagerComponent"
+	  UserData		  "0"
+	  Floating		  [0]
+	  DockPosition		  "Right"
+	  Width			  [254]
+	  Height		  [544]
+	  Minimized		  "Unset"
+	}
+	Object {
+	  $ObjectID		  7
+	  Type			  "GLUE2:PropertyInspector"
+	  ID			  "Property Inspector"
+	  Visible		  [1]
+	  CreateCallback	  ""
+	  UserData		  ""
+	  Floating		  [0]
+	  DockPosition		  "Right"
+	  Width			  [640]
+	  Height		  [480]
+	  Minimized		  "On"
+	}
+	Object {
+	  $ObjectID		  8
+	  Type			  "Simulink:Editor:ReferencedFiles"
+	  ID			  "Referenced Files"
+	  Visible		  [0]
+	  CreateCallback	  ""
+	  UserData		  "{\"filterShowRefModels\":\"true\",\"filterShowRefSubs\":\"true\",\"filterShowOnlyDirtyFiles\":\"false\"}\n"
+	  Floating		  [0]
+	  DockPosition		  "Left"
+	  Width			  [640]
+	  Height		  [480]
+	  Minimized		  "Unset"
+	}
+	PropName		"DockComponentsInfo"
+      }
+      WindowState	      "AAAA/wAAAAD9AAAAAgAAAAAAAAC9AAAB+PwCAAAABPsAAAAWAEQAbwBjAGsAVwBpAGQAZwBlAHQAMwEAAAAxAAAB+AAAA"
+      "AAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0Ac"
+      "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAABjAAf///sAAABgAFMAaQBtAHUAb"
+      "ABpAG4AawA6AEUAZABpAHQAbwByADoAUgBlAGYAZQByAGUAbgBjAGUAZABGAGkAbABlAHMALwBSAGUAZgBlAHIAZQBuAGMAZQBkACAARgBpAGwAZ"
+      "QBzAAAAAAD/////AAAAjAD///8AAAABAAABAgAAAjz8AgAAAAL7AAAAVABHAEwAVQBFADIAOgBQAHIAbwBwAGUAcgB0AHkASQBuAHMAcABlAGMAd"
+      "ABvAHIALwBQAHIAbwBwAGUAcgB0AHkAIABJAG4AcwBwAGUAYwB0AG8AcgAAAAAA/////wAAAawA////+wAAAEIARwBMAFUARQAyADoARABEAEcAI"
+      "ABDAG8AbQBwAG8AbgBlAG4AdAAvAFMAeQBtAGIAbwBsAE0AYQBuAGEAZwBlAHIAAAAAeQAAAjwAAAAgAP///wAAA5QAAAI8AAAAAQAAAAIAAAABA"
+      "AAAAvwAAAADAAAAAAAAAAEAAAA2AGMAbwBsAGwAYQBwAHMAaQBiAGwAZQBQAGEAbgBlAGwAVABvAG8AbABCAGEAcgBMAGUAZgB0AwAAAAD/////A"
+      "AAAAAAAAAAAAAABAAAAAQAAADgAYwBvAGwAbABhAHAAcwBpAGIAbABlAFAAYQBuAGUAbABUAG8AbwBsAEIAYQByAFIAaQBnAGgAdAMAAAAA/////"
+      "wAAAAAAAAAAAAAAAwAAAAEAAAA6AGMAbwBsAGwAYQBwAHMAaQBiAGwAZQBQAGEAbgBlAGwAVABvAG8AbABCAGEAcgBCAG8AdAB0AG8AbQAAAAAA/"
+      "////wAAAAAAAAAA"
+      Array {
+	Type			"Cell"
+	Dimension		0
+	PropName		"PersistedApps"
+      }
+      WindowUuid	      "73b98cb5-e14f-4073-9185-4f69a7e93b9f"
+    }
+    BDUuid		    "72f92cad-84cf-4155-8232-4b6755ceeb0a"
+  }
+  HideAutomaticNames	  on
+  SequenceViewerTimePrecision 3
+  SequenceViewerHistory	  1000
+  Created		  "Fri Mar 04 16:06:12 2022"
+  Creator		  "diego"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "diego"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Fri Mar 04 16:18:24 2022"
+  RTWModifiedTimeStamp	  568310774
+  ModelVersionFormat	  "%<AutoIncrement:1.2>"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "disabled"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowAllPropagatedSignalLabels	off
+  PortDataTypeDisplayFormat "AliasTypeOnly"
+  ShowEditTimeErrors	  on
+  ShowEditTimeWarnings	  on
+  ShowEditTimeAdvisorChecks off
+  ShowPortUnits		  off
+  ShowDesignRanges	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  VariantCondition	  off
+  ShowLinearizationAnnotations on
+  ShowVisualizeInsertedRTB on
+  ShowMarkup		  on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  BlockVariantConditionDataTip off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  FunctionConnectors	  off
+  ScheduleConnectors	  off
+  BrowserLookUnderMasks	  off
+  MultithreadedSim	  "auto"
+  SimulationMode	  "normal"
+  SILPILModeSetting	  "automated"
+  SILPILSystemUnderTest	  "topmodel"
+  SILPILSimulationModeTopModel "normal"
+  SILPILSimulationModeModelRef "normal"
+  SimTabSimulationMode	  "normal"
+  CodeVerificationMode	  "software-in-the-loop (sil)"
+  PauseTimes		  "5"
+  NumberOfSteps		  1
+  SnapshotBufferSize	  10
+  SnapshotInterval	  10
+  NumberOfLastSnapshots	  0
+  EnablePacing		  off
+  PacingRate		  1
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  Object {
+    $PropName		    "DataLoggingOverride"
+    $ObjectID		    9
+    $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
+    model_		    "automata_learning"
+    overrideMode_	    [0U]
+    Array {
+      Type		      "Cell"
+      Dimension		      1
+      Cell		      "automata_learning"
+      PropName		      "logAsSpecifiedByModels_"
+    }
+    Array {
+      Type		      "Cell"
+      Dimension		      1
+      Cell		      []
+      PropName		      "logAsSpecifiedByModelsSSIDs_"
+    }
+  }
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigSignalOutputPortIndex 0
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  VariantFading		  on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  OrderedModelArguments	  on
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      10
+      Version		      "21.0.0"
+      DisabledProps	      []
+      Description	      ""
+      Array {
+	Type			"Handle"
+	Dimension		9
+	Simulink.SolverCC {
+	  $ObjectID		  11
+	  Version		  "21.0.0"
+	  DisabledProps		  []
+	  Description		  ""
+	  Components		  []
+	  StartTime		  "0.0"
+	  StopTime		  "10.0"
+	  AbsTol		  "auto"
+	  AutoScaleAbsTol	  on
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  EnableMultiTasking	  off
+	  ConcurrentTasks	  off
+	  SolverName		  "VariableStepAuto"
+	  SolverJacobianMethodControl "auto"
+	  DaesscMode		  "auto"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "Auto"
+	  SolverInfoToggleStatus  off
+	  IsAutoAppliedInSIP	  off
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	  SampleTimeProperty	  []
+	  DecoupledContinuousIntegration off
+	  MinimalZcImpactIntegration off
+	  ODENIntegrationMethod	  "ode3"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  12
+	  Version		  "21.0.0"
+	  DisabledProps		  []
+	  Description		  ""
+	  Components		  []
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  off
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveOperatingPoint	  off
+	  SaveFormat		  "Dataset"
+	  SignalLoggingSaveFormat "Dataset"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  DSMLogging		  on
+	  InspectSignalLogs	  off
+	  VisualizeSimOutput	  on
+	  StreamToWorkspace	  off
+	  StreamVariableName	  "streamout"
+	  SaveTime		  on
+	  ReturnWorkspaceOutputs  on
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  DSMLoggingName	  "dsmout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	  LoggingToFile		  off
+	  DatasetSignalFormat	  "timeseries"
+	  LoggingFileName	  "out.mat"
+	  LoggingIntervals	  "[-inf, inf]"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  13
+	  Version		  "21.0.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    9
+	    Cell		    "BooleansAsBitfields"
+	    Cell		    "PassReuseOutputArgsAs"
+	    Cell		    "PassReuseOutputArgsThreshold"
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    Cell		    "UseSpecifiedMinMax"
+	    Cell		    "EfficientTunableParamExpr"
+	    PropName		    "DisabledProps"
+	  }
+	  Description		  ""
+	  Components		  []
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  DefaultParameterBehavior "Tunable"
+	  UseDivisionForNetSlopeComputation "off"
+	  GainParamInheritBuiltInType off
+	  UseFloatMulNetSlope	  off
+	  InheritOutputTypeSmallerThanSingle off
+	  DefaultUnderspecifiedDataType	"double"
+	  UseSpecifiedMinMax	  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  CachingGlobalReferences off
+	  GlobalBufferReuse	  on
+	  StrengthReduction	  off
+	  AdvancedOptControl	  ""
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  BitfieldContainerType	  "uint_T"
+	  BitwiseOrLogicalOp	  "Same as modeled"
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  PassReuseOutputArgsThreshold 12
+	  ExpressionDepthLimit	  128
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  ActiveStateOutputEnumStorageType "Native Integer"
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  off
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero on
+	  LifeSpan		  "auto"
+	  MaxStackSize		  "Inherit from target"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "off"
+	  AccelVerboseBuild	  off
+	  OptimizeBlockOrder	  "off"
+	  OptimizeDataStoreBuffers on
+	  BusAssignmentInplaceUpdate on
+	  DifferentSizesBufferReuse off
+	  UseRowMajorAlgorithm	  off
+	  OptimizationLevel	  "level2"
+	  OptimizationPriority	  "Balanced"
+	  OptimizationCustomize	  on
+	  LabelGuidedReuse	  off
+	  MultiThreadedLoops	  off
+	  DenormalBehavior	  "GradualUnderflow"
+	  EfficientTunableParamExpr off
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  14
+	  Version		  "21.0.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "UseOnlyExistingSharedCode"
+	    PropName		    "DisabledProps"
+	  }
+	  Description		  ""
+	  Components		  []
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  StringTruncationChecking "error"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"warning"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Simplified"
+	  MergeDetectMultiDrivingBlocksExec "error"
+	  CheckExecutionContextPreStartOutputMsg off
+	  SignalResolutionControl "UseLocalSettings"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  MaskedZcDiagnostic	  "warning"
+	  IgnoredZcDiagnostic	  "warning"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  MultiTaskDSMMsg	  "error"
+	  MultiTaskCondExecSysMsg "error"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  ExportedTasksRateTransMsg "none"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  FcnCallInpInsideContextMsg "error"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  UseOnlyExistingSharedCode "error"
+	  SFcnCompatibilityMsg	  "none"
+	  FrameProcessingCompatibilityMsg "error"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  AllowSymbolicDim	  on
+	  RowMajorDimensionSupport off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceNoExplicitFinalValueMsg	"none"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "none"
+	  OperatingPointInterfaceChecksumMismatchMsg "warning"
+	  NonCurrentReleaseOperatingPointMsg "error"
+	  ChecksumConsistencyForSSReuse	"none"
+	  PregeneratedLibrarySubsystemCodeDiagnostic "warning"
+	  MatchCodeGenerationContextForUpdateDiagram "none"
+	  InitInArrayFormatMsg	  "warning"
+	  StrictBusMsg		  "ErrorLevel1"
+	  BusNameAdapt		  "WarnAndRepair"
+	  NonBusSignalsTreatedAsBus "none"
+	  SymbolicDimMinMaxWarning "warning"
+	  LossOfSymbolicDimsSimulationWarning "warning"
+	  LossOfSymbolicDimsCodeGenerationWarning "error"
+	  SymbolicDimsDataTypeCodeGenerationDiagnostic "error"
+	  BlockIODiagnostic	  "none"
+	  SFUnusedDataAndEventsDiag "warning"
+	  SFUnexpectedBacktrackingDiag "error"
+	  SFInvalidInputDataAccessInChartInitDiag "warning"
+	  SFNoUnconditionalDefaultTransitionDiag "error"
+	  SFTransitionOutsideNaturalParentDiag "warning"
+	  SFUnreachableExecutionPathDiag "warning"
+	  SFUndirectedBroadcastEventsDiag "warning"
+	  SFTransitionActionBeforeConditionDiag	"warning"
+	  SFOutputUsedAsStateInMooreChartDiag "error"
+	  SFTemporalDelaySmallerThanSampleTimeDiag "warning"
+	  SFSelfTransitionDiag	  "warning"
+	  SFExecutionAtInitializationDiag "warning"
+	  SFMachineParentedDataDiag "error"
+	  IntegerSaturationMsg	  "warning"
+	  AllowedUnitSystems	  "all"
+	  UnitsInconsistencyMsg	  "warning"
+	  AllowAutomaticUnitConversions	on
+	  RCSCRenamedMsg	  "warning"
+	  RCSCObservableMsg	  "warning"
+	  ForceCombineOutputUpdateInSim	off
+	  UnitDatabase		  ""
+	  UnderSpecifiedDimensionMsg "none"
+	  DebugExecutionForFMUViaOutOfProcess off
+	  ArithmeticOperatorsInVariantConditions "error"
+	  VariantConditionMismatch "none"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  15
+	  Version		  "21.0.0"
+	  DisabledProps		  []
+	  Description		  ""
+	  Components		  []
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdBitPerLongLong	  64
+	  ProdBitPerFloat	  32
+	  ProdBitPerDouble	  64
+	  ProdBitPerPointer	  64
+	  ProdBitPerSizeT	  64
+	  ProdBitPerPtrDiffT	  64
+	  ProdLargestAtomicInteger "Char"
+	  ProdLargestAtomicFloat  "Float"
+	  ProdIntDivRoundTo	  "Zero"
+	  ProdEndianess		  "LittleEndian"
+	  ProdWordSize		  64
+	  ProdShiftRightIntArith  on
+	  ProdLongLongMode	  off
+	  ProdHWDeviceType	  "Intel->x86-64 (Windows64)"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetBitPerLongLong	  64
+	  TargetBitPerFloat	  32
+	  TargetBitPerDouble	  64
+	  TargetBitPerPointer	  32
+	  TargetBitPerSizeT	  32
+	  TargetBitPerPtrDiffT	  32
+	  TargetLargestAtomicInteger "Char"
+	  TargetLargestAtomicFloat "None"
+	  TargetShiftRightIntArith on
+	  TargetLongLongMode	  off
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	  UseEmbeddedCoderFeatures on
+	  UseSimulinkCoderFeatures on
+	  HardwareBoardFeatureSet "EmbeddedCoderHSP"
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  16
+	  Version		  "21.0.0"
+	  DisabledProps		  []
+	  Description		  ""
+	  Components		  []
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  EnableRefExpFcnMdlSchedulingChecks on
+	  CheckModelReferenceTargetMessage "error"
+	  EnableParallelModelReferenceBuilds off
+	  ParallelModelReferenceErrorOnInvalidPool on
+	  ParallelModelReferenceMATLABWorkerInit "None"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  PropagateVarSize	  "Infer from blocks in model"
+	  ModelDependencies	  ""
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	  PropagateSignalLabelsOutOfModel on
+	  SupportModelReferenceSimTargetCustomCode off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  17
+	  Version		  "21.0.0"
+	  DisabledProps		  []
+	  Description		  ""
+	  Components		  []
+	  SimCustomSourceCode	  ""
+	  SimCustomHeaderCode	  ""
+	  SimCustomInitializer	  ""
+	  SimCustomTerminator	  ""
+	  SimReservedNameArray	  []
+	  SimUserSources	  ""
+	  SimUserIncludeDirs	  ""
+	  SimUserLibraries	  ""
+	  SimUserDefines	  ""
+	  SimCustomCompilerFlags  ""
+	  SimCustomLinkerFlags	  ""
+	  SFSimEcho		  on
+	  SimCtrlC		  on
+	  SimIntegrity		  "on"
+	  SimUseLocalCustomCode	  on
+	  SimParseCustomCode	  on
+	  SimAnalyzeCustomCode	  off
+	  SimDebugExecutionForCustomCode off
+	  SimGenImportedTypeDefs  off
+	  ModelFunctionsGlobalVisibility "on"
+	  CompileTimeRecursionLimit 50
+	  EnableRuntimeRecursion  on
+	  MATLABDynamicMemAlloc	  on
+	  MATLABDynamicMemAllocThreshold 65536
+	  LegacyBehaviorForPersistentVarInContinuousTime off
+	  CustomCodeFunctionArrayLayout	[]
+	  DefaultCustomCodeFunctionArrayLayout "NotSpecified"
+	  CustomCodeUndefinedFunction "FilterOut"
+	  CustomCodeGlobalsAsFunctionIO	off
+	  DefaultCustomCodeDeterministicFunctions "None"
+	  CustomCodeDeterministicFunctions ""
+	  SimHardwareAcceleration "generic"
+	  SimTargetLang		  "C"
+	  GPUAcceleration	  off
+	  SimGPUMallocThreshold	  200
+	  SimGPUStackLimitPerThread 1024
+	  SimGPUErrorChecks	  off
+	  SimGPUCustomComputeCapability	""
+	  SimGPUCompilerFlags	  ""
+	  SimDLTargetLibrary	  "mkl-dnn"
+	  SimDLAutoTuning	  on
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  18
+	  Version		  "21.0.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    16
+	    Cell		    "IncludeHyperlinkInReport"
+	    Cell		    "GenerateTraceInfo"
+	    Cell		    "GenerateTraceReport"
+	    Cell		    "GenerateTraceReportSl"
+	    Cell		    "GenerateTraceReportSf"
+	    Cell		    "GenerateTraceReportEml"
+	    Cell		    "PortableWordSizes"
+	    Cell		    "GenerateWebview"
+	    Cell		    "GenerateCodeMetricsReport"
+	    Cell		    "GenerateCodeReplacementReport"
+	    Cell		    "GenerateMissedCodeReplacementReport"
+	    Cell		    "GenerateErtSFunction"
+	    Cell		    "CreateSILPILBlock"
+	    Cell		    "CodeExecutionProfiling"
+	    Cell		    "CodeProfilingSaveOptions"
+	    Cell		    "CodeProfilingInstrumentation"
+	    PropName		    "DisabledProps"
+	  }
+	  Description		  ""
+	  SystemTargetFile	  "grt.tlc"
+	  HardwareBoard		  "None"
+	  ShowCustomHardwareApp	  off
+	  ShowEmbeddedHardwareApp off
+	  TLCOptions		  ""
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  PackageGeneratedCodeAndArtifacts off
+	  PackageName		  ""
+	  TemplateMakefile	  "grt_default_tmf"
+	  PostCodeGenCommand	  ""
+	  GenerateReport	  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  RTWBuildHooks		  []
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  RTWUseLocalCustomCode	  on
+	  RTWUseSimCustomCode	  off
+	  CustomSourceCode	  ""
+	  CustomHeaderCode	  ""
+	  CustomInclude		  ""
+	  CustomSource		  ""
+	  CustomLibrary		  ""
+	  CustomDefine		  ""
+	  CustomBLASCallback	  ""
+	  CustomLAPACKCallback	  ""
+	  CustomFFTCallback	  ""
+	  CustomInitializer	  ""
+	  CustomTerminator	  ""
+	  Toolchain		  "Automatically locate an installed toolchain"
+	  BuildConfiguration	  "Faster Builds"
+	  CustomToolchainOptions  []
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  PortableWordSizes	  off
+	  CreateSILPILBlock	  "None"
+	  CodeExecutionProfiling  off
+	  CodeExecutionProfileVariable "executionProfile"
+	  CodeProfilingSaveOptions "SummaryOnly"
+	  CodeProfilingInstrumentation "off"
+	  SILDebugging		  off
+	  TargetLang		  "C"
+	  GenerateGPUCode	  "None"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateWebview	  off
+	  GenerateCodeMetricsReport off
+	  GenerateCodeReplacementReport	off
+	  GenerateMissedCodeReplacementReport off
+	  RTWCompilerOptimization "off"
+	  ObjectivePriorities	  []
+	  RTWCustomCompilerOptimizations ""
+	  CheckMdlBeforeBuild	  "Off"
+	  SharedConstantsCachingThreshold 1024
+	  GPUKernelNamePrefix	  ""
+	  GPUDeviceID		  -1
+	  GPUMallocMode		  "discrete"
+	  GPUMallocThreshold	  200
+	  GPUStackLimitPerThread  1024
+	  GPUcuBLAS		  on
+	  GPUcuSOLVER		  on
+	  GPUcuFFT		  on
+	  GPUErrorChecks	  off
+	  GPUComputeCapability	  "3.5"
+	  GPUCustomComputeCapability ""
+	  GPUCompilerFlags	  ""
+	  GPUMaximumBlocksPerKernel 0
+	  DLTargetLibrary	  "none"
+	  DLAutoTuning		  on
+	  DLArmComputeVersion	  "19.05"
+	  DLArmComputeArch	  "unspecified"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      19
+	      Version		      "21.0.0"
+	      Array {
+		Type			"Cell"
+		Dimension		28
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"IgnoreTestpoints"
+		Cell			"BlockCommentType"
+		Cell			"InsertBlockDesc"
+		Cell			"InsertPolySpaceComments"
+		Cell			"SFDataObjDesc"
+		Cell			"MATLABFcnDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InternalIdentifier"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrModelFcn"
+		Cell			"CustomSymbolStrFcnArg"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		Cell			"CustomSymbolStrUtil"
+		Cell			"CustomSymbolStrEmxType"
+		Cell			"CustomSymbolStrEmxFcn"
+		Cell			"CustomUserTokenString"
+		Cell			"ReqsInCode"
+		PropName		"DisabledProps"
+	      }
+	      Description	      ""
+	      Components	      []
+	      Comment		      ""
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      CommentStyle	      "Auto"
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      OperatorAnnotations     off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      MATLABFcnDesc	      off
+	      MangleLength	      1
+	      SharedChecksumLength    8
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M_T"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrModelFcn "$R$N"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      CustomSymbolStrUtil     "$N$C"
+	      CustomSymbolStrEmxType  "emxArray_$M$N"
+	      CustomSymbolStrEmxFcn   "emx$M$N"
+	      CustomUserTokenString   ""
+	      CustomCommentsFcn	      ""
+	      DefineNamingRule	      "None"
+	      DefineNamingFcn	      ""
+	      ParamNamingRule	      "None"
+	      ParamNamingFcn	      ""
+	      SignalNamingRule	      "None"
+	      SignalNamingFcn	      ""
+	      InsertBlockDesc	      off
+	      InsertPolySpaceComments off
+	      SimulinkBlockComments   on
+	      BlockCommentType	      "BlockPathComment"
+	      StateflowObjectComments off
+	      MATLABSourceComments    off
+	      EnableCustomComments    off
+	      InternalIdentifierFile  ""
+	      InternalIdentifier      "Shortened"
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	      ReservedNameArray	      []
+	      EnumMemberNameClash     "error"
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      20
+	      Version		      "21.0.0"
+	      Array {
+		Type			"Cell"
+		Dimension		16
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"ExistingSharedCode"
+		Cell			"GenerateTestInterfaces"
+		Cell			"ModelStepFunctionPrototypeControlCompliant"
+		Cell			"GenerateAllocFcn"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		Cell			"RemoveDisableFunc"
+		Cell			"RemoveResetFunc"
+		Cell			"PreserveStateflowLocalDataDimensions"
+		PropName		"DisabledProps"
+	      }
+	      Description	      ""
+	      Components	      []
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "NOT IN USE"
+	      TargetLangStandard      "C99 (ISO)"
+	      CodeReplacementLibrary  "None"
+	      UtilityFuncGeneration   "Auto"
+	      MultiwordTypeDef	      "System defined"
+	      MultiwordLength	      2048
+	      DynamicStringBufferSize 256
+	      GenerateFullHeader      on
+	      InferredTypesCompatibility off
+	      ExistingSharedCode      ""
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      ConcurrentExecutionCompliant on
+	      IncludeMdlTerminateFcn  on
+	      CombineOutputUpdateFcns on
+	      CombineSignalStateStructs	off
+	      GroupInternalDataByFunction off
+	      SuppressErrorStatus     off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      CodeInterfacePackaging  "Nonreusable function"
+	      PurelyIntegerCode	      off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      RemoveDisableFunc	      off
+	      RemoveResetFunc	      off
+	      SupportVariableSizeSignals off
+	      ParenthesesLevel	      "Nominal"
+	      CastingMode	      "Nominal"
+	      MATLABClassNameForMDSCustomization "Simulink.SoftwareTarget.GRTCustomization"
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    on
+	      AutosarCompliant	      off
+	      MDXCompliant	      off
+	      GRTInterface	      off
+	      GenerateAllocFcn	      off
+	      UseToolchainInfoCompliant	on
+	      GenerateSharedConstants on
+	      CoderGroups	      []
+	      AccessMethods	      []
+	      LookupTableObjectStructAxisOrder "1,2,3,4,..."
+	      LUTObjectStructOrderExplicitValues "Size,Breakpoints,Table"
+	      LUTObjectStructOrderEvenSpacing "Size,Breakpoints,Table"
+	      ArrayLayout	      "Column-major"
+	      UnsupportedSFcnMsg      "error"
+	      ERTHeaderFileRootName   "$R$E"
+	      ERTSourceFileRootName   "$R$E"
+	      ERTDataFileRootName     "$R_data"
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeMexArgs	      ""
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      RTWCAPIRootIO	      off
+	      GenerateASAP2	      off
+	      MultiInstanceErrorCode  "Error"
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	SlCovCC.ConfigComp {
+	  $ObjectID		  21
+	  Version		  "21.0.0"
+	  DisabledProps		  []
+	  Description		  "Simulink Coverage Configuration Component"
+	  Components		  []
+	  Name			  "Simulink Coverage"
+	  CovEnable		  off
+	  CovScope		  "EntireSystem"
+	  CovIncludeTopModel	  on
+	  RecordCoverage	  off
+	  CovPath		  "/"
+	  CovSaveName		  "covdata"
+	  CovCompData		  ""
+	  CovMetricSettings	  "dwe"
+	  CovFilter		  ""
+	  CovHTMLOptions	  ""
+	  CovNameIncrementing	  off
+	  CovForceBlockReductionOff on
+	  CovEnableCumulative	  on
+	  CovSaveCumulativeToWorkspaceVar off
+	  CovSaveSingleToWorkspaceVar off
+	  CovCumulativeVarName	  "covCumulativeData"
+	  CovCumulativeReport	  off
+	  CovSaveOutputData	  on
+	  CovOutputDir		  "slcov_output/$ModelName$"
+	  CovDataFileName	  "$ModelName$_cvdata"
+	  CovReportOnPause	  on
+	  CovModelRefEnable	  "off"
+	  CovModelRefExcluded	  ""
+	  CovExternalEMLEnable	  on
+	  CovSFcnEnable		  on
+	  CovBoundaryAbsTol	  1e-05
+	  CovBoundaryRelTol	  0.01
+	  CovUseTimeInterval	  off
+	  CovStartTime		  0
+	  CovStopTime		  0
+	  CovMcdcMode		  "Masking"
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition    [ 0, 0, 0, 0 ]
+      ExtraOptions	      ""
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    10
+  }
+  Object {
+    $PropName		    "DataTransfer"
+    $ObjectID		    22
+    $ClassName		    "Simulink.GlobalDataTransfer"
+    DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
+    DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
+    DefaultTransitionBetweenContTasks "Ensure deterministic transfer (minimum delay)"
+    DefaultExtrapolationMethodBetweenContTasks "None"
+  }
+  ExplicitPartitioning	  off
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NameLocation	    "bottom"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    HideAutomaticName	    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "left"
+    VerticalAlignment	    "top"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    MarkupType		    "model"
+    UseDisplayTextAsClickCallback off
+    AnnotationType	    "note_annotation"
+    FixedHeight		    off
+    FixedWidth		    off
+    Interpreter		    "off"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  MaskDefaults {
+    SelfModifiable	    "off"
+    IconFrame		    "on"
+    IconOpaque		    "opaque"
+    RunInitForIconRedraw    "analyze"
+    IconRotate		    "none"
+    PortRotate		    "default"
+    IconUnits		    "autoscale"
+  }
+  MaskParameterDefaults {
+    Evaluate		    "on"
+    Tunable		    "on"
+    NeverSave		    "off"
+    Internal		    "off"
+    ReadOnly		    "off"
+    Enabled		    "on"
+    Visible		    "on"
+    ToolTip		    "on"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "bar"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      Ground
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      IconDisplay	      "Port number"
+      OutputFunctionCall      off
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      Unit		      "inherit"
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      EnsureOutportIsVirtual  off
+      SourceOfInitialOutputValue "Dialog"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+      MustResolveToSignalObject	off
+      OutputWhenUnConnected   off
+      OutputWhenUnconnectedValue "0"
+      VectorParamsAs1DForOutWhenUnconnected on
+    }
+    Block {
+      BlockType		      S-Function
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+      MultithreadedSim	      "auto"
+    }
+    Block {
+      BlockType		      Scope
+      DefaultConfigurationName "Simulink.scopes.TimeScopeBlockCfg"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      ScheduleAs	      "Sample time"
+      SystemSampleTime	      "-1"
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      FunctionInterfaceSpec   "void_void"
+      FunctionWithSeparateData off
+      MatchGraphicalInterface off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      DataTypeOverrideAppliesTo	"AllNumericTypes"
+      MinMaxOverflowLogging   "UseLocalSettings"
+      Opaque		      off
+      MaskHideContents	      off
+      SFBlockType	      "NONE"
+      Variant		      off
+      VariantControlMode      "expression"
+      VariantActivationTime   "update diagram"
+      AllowZeroVariantControls off
+      PropagateVariantConditions off
+      TreatAsGroupedWhenPropagatingVariantConditions on
+      ContentPreviewEnabled   off
+      IsWebBlock	      off
+      IsInjectorSS	      off
+      Latency		      "0"
+      AutoFrameSizeCalculation off
+      IsWebBlockPanel	      off
+    }
+    Block {
+      BlockType		      Terminator
+    }
+  }
+  System {
+    Name		    "automata_learning"
+    Location		    [23, 14, 1017, 767]
+    SystemRect		    [0.000000, 0.000000, 0.000000, 0.000000]
+    Open		    on
+    PortBlocksUseCompactNotation off
+    SetExecutionDomain	    off
+    ExecutionDomainType	    "Deduce"
+    ModelBrowserVisibility  on
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    SIDHighWatermark	    "2"
+    SimulinkSubDomain	    "Simulink"
+    Block {
+      BlockType		      Scope
+      Name		      "Scope"
+      SID		      "2"
+      Ports		      [3]
+      Position		      [350, 27, 400, 103]
+      ZOrder		      3
+      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
+      "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
+      "ources','WiredSimulink',true,'DataLogging',true,'DataLoggingSaveFormat','Structure'),extmgr.Configuration('Visua"
+      "ls','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-1.61999','MaxYLimReal','14.57993','YLabelRea"
+      "l','','MinYLimMag','0.00000','MaxYLimMag','14.57993','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMag"
+      "Phase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorO"
+      "rder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.3921"
+      "56862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 "
+      "0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNam"
+      "es',{{}},'NumLines',3,'LineNames',{{'x1','x2','automata_learning_location'}},'ShowContent',true,'Placement',1)},"
+      "'DisplayPropertyDefaults',struct('MinYLimReal','-1.61999','MaxYLimReal','14.57993','YLabelReal','','MinYLimMag',"
+      "'0.00000','MaxYLimMag','14.57993','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesC"
+      "olor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039"
+      "215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.27450"
+      "9803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 "
+      "0.650980392156863])),extmgr.Configuration('Tools','Plot Navigation',true),extmgr.Configuration('Tools','Measurem"
+      "ents',true,'Version','2021a')),'Version','2021a')"
+      NumInputPorts	      "3"
+      Floating		      off
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "automata_learning"
+      SID		      "1"
+      Ports		      [0, 3]
+      Position		      [25, 23, 85, 77]
+      ZOrder		      2
+      ErrorFcn		      "Stateflow.Translate.translate"
+      PermitHierarchicalResolution "ExplicitOnly"
+      TreatAsAtomicUnit	      on
+      RequestExecContextInheritance off
+      SFBlockType	      "Chart"
+      ContentPreviewEnabled   on
+      Port {
+	PortNumber		1
+	Name			"x1"
+	PropagatedSignals	"x1_out"
+      }
+      Port {
+	PortNumber		2
+	Name			"x2"
+	PropagatedSignals	"x2_out"
+      }
+      Port {
+	PortNumber		3
+	Name			"automata_learning_location"
+	PropagatedSignals	"automata_learning_location"
+      }
+      System {
+	Name			"automata_learning"
+	Location		[186, 89, 929, 809]
+	SystemRect		[0.000000, 0.000000, 0.000000, 0.000000]
+	Open			off
+	PortBlocksUseCompactNotation off
+	SetExecutionDomain	off
+	ExecutionDomainType	"Deduce"
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"107"
+	SimulinkSubDomain	"Simulink"
+	Block {
+	  BlockType		  Demux
+	  Name			  " Demux "
+	  SID			  "1::102"
+	  Ports			  [1, 1]
+	  Position		  [270, 245, 320, 285]
+	  ZOrder		  82
+	  Outputs		  "1"
+	}
+	Block {
+	  BlockType		  Ground
+	  Name			  " Ground "
+	  SID			  "1::104"
+	  Position		  [20, 141, 40, 159]
+	  ZOrder		  84
+	}
+	Block {
+	  BlockType		  S-Function
+	  Name			  " SFunction "
+	  SID			  "1::101"
+	  Tag			  "Stateflow S-Function 3"
+	  Ports			  [1, 4]
+	  Position		  [180, 102, 230, 203]
+	  ZOrder		  81
+	  FunctionName		  "sf_sfun"
+	  PortCounts		  "[1 4]"
+	  SFunctionDeploymentMode off
+	  EnableBusSupport	  on
+	  SFcnIsStateOwnerBlock	  off
+	  Port {
+	    PortNumber		    2
+	    Name		    "x1_out"
+	  }
+	  Port {
+	    PortNumber		    3
+	    Name		    "x2_out"
+	  }
+	  Port {
+	    PortNumber		    4
+	    Name		    "automata_learning_location"
+	  }
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  " Terminator "
+	  SID			  "1::103"
+	  Position		  [460, 256, 480, 274]
+	  ZOrder		  83
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "x1_out"
+	  SID			  "1::105"
+	  Position		  [460, 101, 480, 119]
+	  ZOrder		  85
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "x2_out"
+	  SID			  "1::106"
+	  Position		  [460, 136, 480, 154]
+	  ZOrder		  86
+	  Port			  "2"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "automata_learning_location"
+	  SID			  "1::107"
+	  Position		  [460, 171, 480, 189]
+	  ZOrder		  87
+	  Port			  "3"
+	}
+	Line {
+	  Name			  "x1_out"
+	  ZOrder		  16
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  2
+	  DstBlock		  "x1_out"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "x2_out"
+	  ZOrder		  17
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  3
+	  DstBlock		  "x2_out"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "automata_learning_location"
+	  ZOrder		  18
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  4
+	  DstBlock		  "automata_learning_location"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  19
+	  SrcBlock		  " Ground "
+	  SrcPort		  1
+	  Points		  [120, 0]
+	  DstBlock		  " SFunction "
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  20
+	  SrcBlock		  " Demux "
+	  SrcPort		  1
+	  DstBlock		  " Terminator "
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  21
+	  SrcBlock		  " SFunction "
+	  SrcPort		  1
+	  DstBlock		  " Demux "
+	  DstPort		  1
+	}
+      }
+    }
+    Line {
+      Name		      "x1"
+      ZOrder		      1
+      Labels		      [0, 0]
+      SrcBlock		      "automata_learning"
+      SrcPort		      1
+      Points		      [120, 0; 0, 5]
+      DstBlock		      "Scope"
+      DstPort		      1
+    }
+    Line {
+      Name		      "x2"
+      ZOrder		      2
+      Labels		      [0, 0]
+      SrcBlock		      "automata_learning"
+      SrcPort		      2
+      Points		      [120, 0; 0, 15]
+      DstBlock		      "Scope"
+      DstPort		      2
+    }
+    Line {
+      Name		      "automata_learning_location"
+      ZOrder		      3
+      Labels		      [0, 0]
+      SrcBlock		      "automata_learning"
+      SrcPort		      3
+      Points		      [110, 0; 0, 25]
+      DstBlock		      "Scope"
+      DstPort		      3
+    }
+  }
+}
+#Finite State Machines
+#
+#   Stateflow 80000041
+#
+#
+Stateflow {
+  machine {
+    id			    1
+    name		    "automata_learning"
+    sfVersion		    80000041
+    firstTarget		    16
+  }
+  chart {
+    id			    2
+    machine		    1
+    name		    "automata_learning"
+    windowPosition	    [199.5 216.75 417 348.75]
+    viewLimits		    [0 707 0 549]
+    zoomFactor		    1.472
+    screen		    [1 1 3200 1200 1.25]
+    treeNode		    [0 3 0 0]
+    viewObj		    2
+    visible		    1
+    toolbarMode		    LIBRARY_TOOLBAR
+    subviewS {
+    }
+    ssIdHighWaterMark	    12
+    decomposition	    CLUSTER_CHART
+    updateMethod	    CONTINUOUS
+    chartFileNumber	    3
+    allowGlobalAccessToExportedFunctions 0
+    saturateOnIntegerOverflow 1
+    userSpecifiedStateTransitionExecutionOrder 1
+    disableImplicitCasting  1
+    plantModelingInfo {
+    }
+    actionLanguage	    2
+    firstData		    6
+    firstTransition	    11
+  }
+  state {
+    id			    3
+    labelString		    "loc1\ndu:\nx1_dot = 0.4716027081012726 * (exp(0.4902026057243347 * x1 + 0.32916778326034546 * x2"
+    " + 0.12436557561159134) - 1.0) / (exp(0.4902026057243347 * x1 + 0.32916778326034546 * x2 + 0.12436557561159134) + "
+    "1.0) + 0.0772303119301796 * (exp(0.8932012319564819 * x1 + 0.4008401334285736 * x2 + 0.030844243243336678) - 1.0) "
+    "/ (exp(0.8932012319564819 * x1 + 0.4008401334285736 * x2 + 0.030844243243336678) + 1.0) + 0.20239026844501495 * (e"
+    "xp(0.031221142038702965 * x1 + 0.9505487084388733 * x2 + 0.11231078207492828) - 1.0) / (exp(0.031221142038702965 *"
+    " x1 + 0.9505487084388733 * x2 + 0.11231078207492828) + 1.0) + 0.17995257675647736 * (exp(0.017666250467300415 * x2"
+    " - 0.10346487909555435 * x1 + 0.12575627863407135) - 1.0) / (exp(0.017666250467300415 * x2 - 0.10346487909555435 *"
+    " x1 + 0.12575627863407135) + 1.0) - 0.14806684851646423 * (exp(0.25262296199798584 * x1 + 0.17212943732738495 * x2"
+    " - 0.09156552702188492) - 1.0) / (exp(0.25262296199798584 * x1 + 0.17212943732738495 * x2 - 0.09156552702188492) +"
+    " 1.0) + 0.17653384804725647 * (exp(0.6292319893836975 * x1 - 0.7034559845924377 * x2 + 0.1486000269651413) - 1.0) "
+    "/ (exp(0.6292319893836975 * x1 - 0.7034559845924377 * x2 + 0.1486000269651413) + 1.0) + 0.14621903002262115 * (exp"
+    "(0.35173696279525757 * x2 - 0.14781907200813293 * x1 + 0.1613396853208542) - 1.0) / (exp(0.35173696279525757 * x2 "
+    "- 0.14781907200813293 * x1 + 0.1613396853208542) + 1.0) + 0.3868248462677002 * (exp(0.10623868554830551 * x1 + 0.1"
+    "389903575181961 * x2 + 0.1495380848646164) - 1.0) / (exp(0.10623868554830551 * x1 + 0.1389903575181961 * x2 + 0.14"
+    "95380848646164) + 1.0) + 0.026621397584676743 * (exp(0.39851248264312744 * x2 - 0.14845803380012512 * x1 + 0.15416"
+    "92018508911) - 1.0) / (exp(0.39851248264312744 * x2 - 0.14845803380012512 * x1 + 0.1541692018508911) + 1.0) + 0.15"
+    "215443074703217 * (exp(0.3355456292629242 * x2 - 0.17812775075435638 * x1 + 0.16218087077140808) - 1.0) / (exp(0.3"
+    "355456292629242 * x2 - 0.17812775075435638 * x1 + 0.16218087077140808) + 1.0) + 0.2423621267080307 * (exp(0.318458"
+    "34851264954 * x1 - 0.368916779756546 * x2 + 0.16457311809062958) - 1.0) / (exp(0.31845834851264954 * x1 - 0.368916"
+    "779756546 * x2 + 0.16457311809062958) + 1.0) + 0.5095053315162659 * (exp(0.7398536205291748 * x1 + 0.5999785661697"
+    "388 * x2 + 0.08746011555194855) - 1.0) / (exp(0.7398536205291748 * x1 + 0.5999785661697388 * x2 + 0.08746011555194"
+    "855) + 1.0) + 0.22363349795341492 * (exp(0.4696442782878876 * x2 - 0.07120081037282944 * x1 + 0.016863320022821426"
+    ") - 1.0) / (exp(0.4696442782878876 * x2 - 0.07120081037282944 * x1 + 0.016863320022821426) + 1.0) - 0.198030397295"
+    "95184 * (exp(0.9458767771720886 * x2 - 0.26440635323524475 * x1 + 0.07780730724334717) - 1.0) / (exp(0.94587677717"
+    "20886 * x2 - 0.26440635323524475 * x1 + 0.07780730724334717) + 1.0) + 0.10493353754281998 * (exp(0.538952648639679"
+    " * x1 - 0.04519592225551605 * x2 + 0.10528528690338135) - 1.0) / (exp(0.538952648639679 * x1 - 0.04519592225551605"
+    " * x2 + 0.10528528690338135) + 1.0) + 0.1281740963459015 * (exp(0.40728944540023804 * x2 - 0.03385405242443085 * x"
+    "1 + 0.024185331538319588) - 1.0) / (exp(0.40728944540023804 * x2 - 0.03385405242443085 * x1 + 0.024185331538319588"
+    ") + 1.0) + 0.1877327561378479 * (exp(0.44407951831817627 * x1 + 0.0875476822257042 * x2 + 0.13712674379348755) - 1"
+    ".0) / (exp(0.44407951831817627 * x1 + 0.0875476822257042 * x2 + 0.13712674379348755) + 1.0) + 0.5150861144065857 *"
+    " (exp(0.6719331741333008 * x2 - 0.22213947772979736 * x1 + 0.15428362786769867) - 1.0) / (exp(0.6719331741333008 *"
+    " x2 - 0.22213947772979736 * x1 + 0.15428362786769867) + 1.0) - 0.3226105272769928 * (exp(0.29101788997650146 * x1 "
+    "+ 0.20947115123271942 * x2 - 0.10489220917224884) - 1.0) / (exp(0.29101788997650146 * x1 + 0.20947115123271942 * x"
+    "2 - 0.10489220917224884) + 1.0) + 0.4981163442134857 * (exp(0.37576398253440857 * x1 + 0.5992299318313599 * x2 + 0"
+    ".11554664373397827) - 1.0) / (exp(0.37576398253440857 * x1 + 0.5992299318313599 * x2 + 0.11554664373397827) + 1.0)"
+    " + 0.0695658028125763 * (exp(0.3645703196525574 * x1 + 0.4950220584869385 * x2 + 0.07197729498147964) - 1.0) / (ex"
+    "p(0.3645703196525574 * x1 + 0.4950220584869385 * x2 + 0.07197729498147964) + 1.0) + 0.13338574767112732 * (exp(0.1"
+    "66144460439682 * x1 - 0.7433528900146484 * x2 + 0.112460657954216) - 1.0) / (exp(0.166144460439682 * x1 - 0.743352"
+    "8900146484 * x2 + 0.112460657954216) + 1.0) - 0.06897702813148499 * (exp(0.41647300124168396 * x1 + 0.050582122057"
+    "676315 * x2 - 0.08496729284524918) - 1.0) / (exp(0.41647300124168396 * x1 + 0.050582122057676315 * x2 - 0.08496729"
+    "284524918) + 1.0) - 0.05625724419951439 * (exp(0.24224448204040527 * x1 + 0.839276909828186 * x2 - 0.0687267035245"
+    "8954) - 1.0) / (exp(0.24224448204040527 * x1 + 0.839276909828186 * x2 - 0.06872670352458954) + 1.0) - 0.3031435310"
+    "8406067 * (exp(0.3862956762313843 * x1 - 0.330698162317276 * x2 + 0.029494404792785645) - 1.0) / (exp(0.3862956762"
+    "313843 * x1 - 0.330698162317276 * x2 + 0.029494404792785645) + 1.0) - 0.31301164627075195 * (exp(0.201478347182273"
+    "86 * x1 + 0.7627087831497192 * x2 - 0.10361041128635406) - 1.0) / (exp(0.20147834718227386 * x1 + 0.76270878314971"
+    "92 * x2 - 0.10361041128635406) + 1.0) + 0.06647036969661713 * (exp(0.09352666139602661 * x2 - 0.4191778898239136 *"
+    " x1 + 0.050854817032814026) - 1.0) / (exp(0.09352666139602661 * x2 - 0.4191778898239136 * x1 + 0.05085481703281402"
+    "6) + 1.0) - 0.2553624212741852 * (exp(0.26251816749572754 * x1 + 0.22895655035972595 * x2 - 0.06057656556367874) -"
+    " 1.0) / (exp(0.26251816749572754 * x1 + 0.22895655035972595 * x2 - 0.06057656556367874) + 1.0) - 0.261290788650512"
+    "7 * (exp(0.4114644527435303 * x1 + 0.4958406686782837 * x2 - 0.07632268220186234) - 1.0) / (exp(0.4114644527435303"
+    " * x1 + 0.4958406686782837 * x2 - 0.07632268220186234) + 1.0) + 0.21924301981925964 * (exp(0.41340237855911255 * x"
+    "2 - 0.6624827980995178 * x1 + 0.11923247575759888) - 1.0) / (exp(0.41340237855911255 * x2 - 0.6624827980995178 * x"
+    "1 + 0.11923247575759888) + 1.0) + 0.08347097039222717;\nx2_dot = 0.29953667521476746 * (exp(0.8932012319564819 * x"
+    "1 + 0.4008401334285736 * x2 + 0.030844243243336678) - 1.0) / (exp(0.8932012319564819 * x1 + 0.4008401334285736 * x"
+    "2 + 0.030844243243336678) + 1.0) - 0.29886001348495483 * (exp(0.4902026057243347 * x1 + 0.32916778326034546 * x2 +"
+    " 0.12436557561159134) - 1.0) / (exp(0.4902026057243347 * x1 + 0.32916778326034546 * x2 + 0.12436557561159134) + 1."
+    "0) + 0.3447601795196533 * (exp(0.031221142038702965 * x1 + 0.9505487084388733 * x2 + 0.11231078207492828) - 1.0) /"
+    " (exp(0.031221142038702965 * x1 + 0.9505487084388733 * x2 + 0.11231078207492828) + 1.0) - 0.30129608511924744 * (e"
+    "xp(0.017666250467300415 * x2 - 0.10346487909555435 * x1 + 0.12575627863407135) - 1.0) / (exp(0.017666250467300415 "
+    "* x2 - 0.10346487909555435 * x1 + 0.12575627863407135) + 1.0) + 0.3042064905166626 * (exp(0.25262296199798584 * x1"
+    " + 0.17212943732738495 * x2 - 0.09156552702188492) - 1.0) / (exp(0.25262296199798584 * x1 + 0.17212943732738495 * "
+    "x2 - 0.09156552702188492) + 1.0) + 0.05604499578475952 * (exp(0.6292319893836975 * x1 - 0.7034559845924377 * x2 + "
+    "0.1486000269651413) - 1.0) / (exp(0.6292319893836975 * x1 - 0.7034559845924377 * x2 + 0.1486000269651413) + 1.0) +"
+    " 0.08056741952896118 * (exp(0.35173696279525757 * x2 - 0.14781907200813293 * x1 + 0.1613396853208542) - 1.0) / (ex"
+    "p(0.35173696279525757 * x2 - 0.14781907200813293 * x1 + 0.1613396853208542) + 1.0) + 0.43961355090141296 * (exp(0."
+    "10623868554830551 * x1 + 0.1389903575181961 * x2 + 0.1495380848646164) - 1.0) / (exp(0.10623868554830551 * x1 + 0."
+    "1389903575181961 * x2 + 0.1495380848646164) + 1.0) + 0.21277497708797455 * (exp(0.39851248264312744 * x2 - 0.14845"
+    "803380012512 * x1 + 0.1541692018508911) - 1.0) / (exp(0.39851248264312744 * x2 - 0.14845803380012512 * x1 + 0.1541"
+    "692018508911) + 1.0) + 0.2397332340478897 * (exp(0.3355456292629242 * x2 - 0.17812775075435638 * x1 + 0.1621808707"
+    "7140808) - 1.0) / (exp(0.3355456292629242 * x2 - 0.17812775075435638 * x1 + 0.16218087077140808) + 1.0) + 0.038934"
+    "774696826935 * (exp(0.31845834851264954 * x1 - 0.368916779756546 * x2 + 0.16457311809062958) - 1.0) / (exp(0.31845"
+    "834851264954 * x1 - 0.368916779756546 * x2 + 0.16457311809062958) + 1.0) - 0.21872496604919434 * (exp(0.7398536205"
+    "291748 * x1 + 0.5999785661697388 * x2 + 0.08746011555194855) - 1.0) / (exp(0.7398536205291748 * x1 + 0.59997856616"
+    "97388 * x2 + 0.08746011555194855) + 1.0) - 0.2105134278535843 * (exp(0.4696442782878876 * x2 - 0.07120081037282944"
+    " * x1 + 0.016863320022821426) - 1.0) / (exp(0.4696442782878876 * x2 - 0.07120081037282944 * x1 + 0.016863320022821"
+    "426) + 1.0) + 0.42845234274864197 * (exp(0.9458767771720886 * x2 - 0.26440635323524475 * x1 + 0.07780730724334717)"
+    " - 1.0) / (exp(0.9458767771720886 * x2 - 0.26440635323524475 * x1 + 0.07780730724334717) + 1.0) - 0.07858988642692"
+    "566 * (exp(0.538952648639679 * x1 - 0.04519592225551605 * x2 + 0.10528528690338135) - 1.0) / (exp(0.53895264863967"
+    "9 * x1 - 0.04519592225551605 * x2 + 0.10528528690338135) + 1.0) - 0.08358963578939438 * (exp(0.40728944540023804 *"
+    " x2 - 0.03385405242443085 * x1 + 0.024185331538319588) - 1.0) / (exp(0.40728944540023804 * x2 - 0.0338540524244308"
+    "5 * x1 + 0.024185331538319588) + 1.0) + 0.22452028095722198 * (exp(0.44407951831817627 * x1 + 0.0875476822257042 *"
+    " x2 + 0.13712674379348755) - 1.0) / (exp(0.44407951831817627 * x1 + 0.0875476822257042 * x2 + 0.13712674379348755)"
+    " + 1.0) + 0.4255010187625885 * (exp(0.6719331741333008 * x2 - 0.22213947772979736 * x1 + 0.15428362786769867) - 1."
+    "0) / (exp(0.6719331741333008 * x2 - 0.22213947772979736 * x1 + 0.15428362786769867) + 1.0) + 0.4666166603565216 * "
+    "(exp(0.29101788997650146 * x1 + 0.20947115123271942 * x2 - 0.10489220917224884) - 1.0) / (exp(0.29101788997650146 "
+    "* x1 + 0.20947115123271942 * x2 - 0.10489220917224884) + 1.0) + 0.11458497494459152 * (exp(0.37576398253440857 * x"
+    "1 + 0.5992299318313599 * x2 + 0.11554664373397827) - 1.0) / (exp(0.37576398253440857 * x1 + 0.5992299318313599 * x"
+    "2 + 0.11554664373397827) + 1.0) + 0.4029846787452698 * (exp(0.3645703196525574 * x1 + 0.4950220584869385 * x2 + 0."
+    "07197729498147964) - 1.0) / (exp(0.3645703196525574 * x1 + 0.4950220584869385 * x2 + 0.07197729498147964) + 1.0) -"
+    " 0.06546036899089813 * (exp(0.166144460439682 * x1 - 0.7433528900146484 * x2 + 0.112460657954216) - 1.0) / (exp(0."
+    "166144460439682 * x1 - 0.7433528900146484 * x2 + 0.112460657954216) + 1.0) + 0.35050633549690247 * (exp(0.41647300"
+    "124168396 * x1 + 0.050582122057676315 * x2 - 0.08496729284524918) - 1.0) / (exp(0.41647300124168396 * x1 + 0.05058"
+    "2122057676315 * x2 - 0.08496729284524918) + 1.0) - 0.14467309415340424 * (exp(0.24224448204040527 * x1 + 0.8392769"
+    "09828186 * x2 - 0.06872670352458954) - 1.0) / (exp(0.24224448204040527 * x1 + 0.839276909828186 * x2 - 0.068726703"
+    "52458954) + 1.0) + 0.3925016522407532 * (exp(0.3862956762313843 * x1 - 0.330698162317276 * x2 + 0.0294944047927856"
+    "45) - 1.0) / (exp(0.3862956762313843 * x1 - 0.330698162317276 * x2 + 0.029494404792785645) + 1.0) - 0.007749053649"
+    "6043205 * (exp(0.20147834718227386 * x1 + 0.7627087831497192 * x2 - 0.10361041128635406) - 1.0) / (exp(0.201478347"
+    "18227386 * x1 + 0.7627087831497192 * x2 - 0.10361041128635406) + 1.0) - 0.37136954069137573 * (exp(0.0935266613960"
+    "2661 * x2 - 0.4191778898239136 * x1 + 0.050854817032814026) - 1.0) / (exp(0.09352666139602661 * x2 - 0.41917788982"
+    "39136 * x1 + 0.050854817032814026) + 1.0) + 0.495627224445343 * (exp(0.26251816749572754 * x1 + 0.2289565503597259"
+    "5 * x2 - 0.06057656556367874) - 1.0) / (exp(0.26251816749572754 * x1 + 0.22895655035972595 * x2 - 0.06057656556367"
+    "874) + 1.0) + 0.30337753891944885 * (exp(0.4114644527435303 * x1 + 0.4958406686782837 * x2 - 0.07632268220186234) "
+    "- 1.0) / (exp(0.4114644527435303 * x1 + 0.4958406686782837 * x2 - 0.07632268220186234) + 1.0) - 0.1606845110654831"
+    " * (exp(0.41340237855911255 * x2 - 0.6624827980995178 * x1 + 0.11923247575759888) - 1.0) / (exp(0.4134023785591125"
+    "5 * x2 - 0.6624827980995178 * x1 + 0.11923247575759888) + 1.0) + 0.06921185553073883;\nx1_out=x1;\nx2_out=x2;\naut"
+    "omata_learning_location =1;"
+    position		    [420 300 150 150]
+    fontSize		    12
+    chart		    2
+    treeNode		    [2 0 0 4]
+    subviewer		    2
+    ssIdNumber		    6
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+    }
+  }
+  state {
+    id			    4
+    labelString		    "loc2\ndu:\nx1_dot = 0.09940944612026215 * (exp(0.5129854679107666 * x1 - 0.18030770123004913 * x"
+    "2 + 0.1873820722103119) - 1.0) / (exp(0.5129854679107666 * x1 - 0.18030770123004913 * x2 + 0.1873820722103119) + 1"
+    ".0) - 0.42218178510665894 * (exp(0.6277164220809937 * x1 + 0.617414116859436 * x2 + 0.004451151471585035) - 1.0) /"
+    " (exp(0.6277164220809937 * x1 + 0.617414116859436 * x2 + 0.004451151471585035) + 1.0) - 0.3160305321216583 * (exp("
+    "0.08397187292575836 * x2 - 0.2538594901561737 * x1 + 0.16200947761535645) - 1.0) / (exp(0.08397187292575836 * x2 -"
+    " 0.2538594901561737 * x1 + 0.16200947761535645) + 1.0) - 0.39030373096466064 * (exp(0.36400753259658813 * x1 + 0.1"
+    "5067961812019348 * x2 + 0.13504287600517273) - 1.0) / (exp(0.36400753259658813 * x1 + 0.15067961812019348 * x2 + 0"
+    ".13504287600517273) + 1.0) - 0.27643054723739624 * (exp(0.31390586495399475 * x2 - 0.6137946844100952 * x1 + 0.170"
+    "2032834291458) - 1.0) / (exp(0.31390586495399475 * x2 - 0.6137946844100952 * x1 + 0.1702032834291458) + 1.0) - 0.4"
+    "79932963848114 * (exp(0.8240847587585449 * x2 - 0.28391969203948975 * x1 + 0.03534712642431259) - 1.0) / (exp(0.82"
+    "40847587585449 * x2 - 0.28391969203948975 * x1 + 0.03534712642431259) + 1.0) - 0.16250859200954437 * (exp(0.560089"
+    "2305374146 * x1 + 0.8643016815185547 * x2 + 0.0000672234091325663) - 1.0) / (exp(0.5600892305374146 * x1 + 0.86430"
+    "16815185547 * x2 + 0.0000672234091325663) + 1.0) - 0.29141247272491455 * (exp(0.9385667443275452 * x1 - 0.11919985"
+    "711574554 * x2 + 0.18359696865081787) - 1.0) / (exp(0.9385667443275452 * x1 - 0.11919985711574554 * x2 + 0.1835969"
+    "6865081787) + 1.0) - 0.03527059406042099 * (exp(0.2679094076156616 * x1 - 0.4687827527523041 * x2 + 0.065313786268"
+    "23425) - 1.0) / (exp(0.2679094076156616 * x1 - 0.4687827527523041 * x2 + 0.06531378626823425) + 1.0) + 0.096534743"
+    "90506744 * (exp(0.14174817502498627 * x1 + 0.6471890807151794 * x2 - 0.0032111676409840584) - 1.0) / (exp(0.141748"
+    "17502498627 * x1 + 0.6471890807151794 * x2 - 0.0032111676409840584) + 1.0) + 0.014543856494128704 * (exp(0.7148066"
+    "759109497 * x1 + 0.32383447885513306 * x2 - 0.005282739643007517) - 1.0) / (exp(0.7148066759109497 * x1 + 0.323834"
+    "47885513306 * x2 - 0.005282739643007517) + 1.0) - 0.31576135754585266 * (exp(0.7772475481033325 * x1 + 0.620503067"
+    "9702759 * x2 + 0.0026706208009272814) - 1.0) / (exp(0.7772475481033325 * x1 + 0.6205030679702759 * x2 + 0.00267062"
+    "08009272814) + 1.0) - 0.07309793680906296 * (exp(0.3710882067680359 * x1 + 0.42241641879081726 * x2 + 0.0080373575"
+    "91092587) - 1.0) / (exp(0.3710882067680359 * x1 + 0.42241641879081726 * x2 + 0.008037357591092587) + 1.0) - 0.1115"
+    "7591640949249 * (exp(0.8755472302436829 * x1 + 0.016193941235542297 * x2 + 0.045251455157995224) - 1.0) / (exp(0.8"
+    "755472302436829 * x1 + 0.016193941235542297 * x2 + 0.045251455157995224) + 1.0) - 0.27048492431640625 * (exp(0.717"
+    "4910306930542 * x2 - 0.020182371139526367 * x1 + 0.01213579811155796) - 1.0) / (exp(0.7174910306930542 * x2 - 0.02"
+    "0182371139526367 * x1 + 0.01213579811155796) + 1.0) + 0.21859526634216309 * (exp(0.3823607265949249 * x1 + 0.01121"
+    "1603879928589 * x2 - 0.17011186480522156) - 1.0) / (exp(0.3823607265949249 * x1 + 0.011211603879928589 * x2 - 0.17"
+    "011186480522156) + 1.0) - 0.5246142148971558 * (exp(0.6425513029098511 * x1 + 0.8145269751548767 * x2 + 0.00035174"
+    "659569747746) - 1.0) / (exp(0.6425513029098511 * x1 + 0.8145269751548767 * x2 + 0.00035174659569747746) + 1.0) - 0"
+    ".4463590085506439 * (exp(0.8022674918174744 * x2 - 0.40092170238494873 * x1 + 0.01813332922756672) - 1.0) / (exp(0"
+    ".8022674918174744 * x2 - 0.40092170238494873 * x1 + 0.01813332922756672) + 1.0) - 0.15713675320148468 * (exp(0.179"
+    "45900559425354 * x1 + 0.018578974530100822 * x2 + 0.23023265600204468) - 1.0) / (exp(0.17945900559425354 * x1 + 0."
+    "018578974530100822 * x2 + 0.23023265600204468) + 1.0) - 0.30604884028434753 * (exp(0.9907521605491638 * x1 - 0.070"
+    "89634984731674 * x2 + 0.17325547337532043) - 1.0) / (exp(0.9907521605491638 * x1 - 0.07089634984731674 * x2 + 0.17"
+    "325547337532043) + 1.0) - 0.3188997805118561 * (exp(0.6597588062286377 * x2 - 0.30360668897628784 * x1 + 0.0621515"
+    "32620191574) - 1.0) / (exp(0.6597588062286377 * x2 - 0.30360668897628784 * x1 + 0.062151532620191574) + 1.0) - 0.0"
+    "603540763258934 * (exp(0.015293381176888943 * x1 + 0.6490828394889832 * x2 + 0.0006276756757870317) - 1.0) / (exp("
+    "0.015293381176888943 * x1 + 0.6490828394889832 * x2 + 0.0006276756757870317) + 1.0) - 0.31608855724334717 * (exp(0"
+    ".4966748356819153 * x2 - 0.35509493947029114 * x1 + 0.14687995612621307) - 1.0) / (exp(0.4966748356819153 * x2 - 0"
+    ".35509493947029114 * x1 + 0.14687995612621307) + 1.0) - 0.3006037771701813 * (exp(0.822778046131134 * x1 + 0.57314"
+    "81909751892 * x2 + 0.003578938776627183) - 1.0) / (exp(0.822778046131134 * x1 + 0.5731481909751892 * x2 + 0.003578"
+    "938776627183) + 1.0) - 0.10746271908283234 * (exp(0.9494896531105042 * x1 - 0.31396573781967163 * x2 + 0.183779001"
+    "23596191) - 1.0) / (exp(0.9494896531105042 * x1 - 0.31396573781967163 * x2 + 0.18377900123596191) + 1.0) + 0.12556"
+    "539475917816 * (exp(0.8368351459503174 * x1 + 0.7917801737785339 * x2 - 0.00008519824041286483) - 1.0) / (exp(0.83"
+    "68351459503174 * x1 + 0.7917801737785339 * x2 - 0.00008519824041286483) + 1.0) - 0.3539440929889679 * (exp(0.11118"
+    "344217538834 * x1 + 0.40518802404403687 * x2 + 0.07945182919502258) - 1.0) / (exp(0.11118344217538834 * x1 + 0.405"
+    "18802404403687 * x2 + 0.07945182919502258) + 1.0) - 0.09993302077054977 * (exp(0.48451855778694153 * x1 + 0.302628"
+    "0701160431 * x2 + 0.024994682520627975) - 1.0) / (exp(0.48451855778694153 * x1 + 0.3026280701160431 * x2 + 0.02499"
+    "4682520627975) + 1.0) - 0.047244176268577576 * (exp(0.4798101484775543 * x1 + 0.23761166632175446 * x2 - 0.0021442"
+    "38678738475) - 1.0) / (exp(0.4798101484775543 * x1 + 0.23761166632175446 * x2 - 0.002144238678738475) + 1.0) - 0.5"
+    "185962319374084 * (exp(0.4929291903972626 * x1 + 0.5782368779182434 * x2 + 0.014680703170597553) - 1.0) / (exp(0.4"
+    "929291903972626 * x1 + 0.5782368779182434 * x2 + 0.014680703170597553) + 1.0) - 0.0967850461602211;\nx2_dot = 0.33"
+    "681049942970276 * (exp(0.9385667443275452 * x1 - 0.11919985711574554 * x2 + 0.18359696865081787) - 1.0) / (exp(0.9"
+    "385667443275452 * x1 - 0.11919985711574554 * x2 + 0.18359696865081787) + 1.0) + 0.14419449865818024 * (exp(0.62771"
+    "64220809937 * x1 + 0.617414116859436 * x2 + 0.004451151471585035) - 1.0) / (exp(0.6277164220809937 * x1 + 0.617414"
+    "116859436 * x2 + 0.004451151471585035) + 1.0) - 0.38718295097351074 * (exp(0.08397187292575836 * x2 - 0.2538594901"
+    "561737 * x1 + 0.16200947761535645) - 1.0) / (exp(0.08397187292575836 * x2 - 0.2538594901561737 * x1 + 0.1620094776"
+    "1535645) + 1.0) - 0.09114948660135269 * (exp(0.36400753259658813 * x1 + 0.15067961812019348 * x2 + 0.1350428760051"
+    "7273) - 1.0) / (exp(0.36400753259658813 * x1 + 0.15067961812019348 * x2 + 0.13504287600517273) + 1.0) + 0.06673061"
+    "847686768 * (exp(0.31390586495399475 * x2 - 0.6137946844100952 * x1 + 0.1702032834291458) - 1.0) / (exp(0.31390586"
+    "495399475 * x2 - 0.6137946844100952 * x1 + 0.1702032834291458) + 1.0) + 0.4028923809528351 * (exp(0.82408475875854"
+    "49 * x2 - 0.28391969203948975 * x1 + 0.03534712642431259) - 1.0) / (exp(0.8240847587585449 * x2 - 0.28391969203948"
+    "975 * x1 + 0.03534712642431259) + 1.0) - 0.0999240130186081 * (exp(0.5600892305374146 * x1 + 0.8643016815185547 * "
+    "x2 + 0.0000672234091325663) - 1.0) / (exp(0.5600892305374146 * x1 + 0.8643016815185547 * x2 + 0.000067223409132566"
+    "3) + 1.0) + 0.37331923842430115 * (exp(0.5129854679107666 * x1 - 0.18030770123004913 * x2 + 0.1873820722103119) - "
+    "1.0) / (exp(0.5129854679107666 * x1 - 0.18030770123004913 * x2 + 0.1873820722103119) + 1.0) + 0.3410731852054596 *"
+    " (exp(0.2679094076156616 * x1 - 0.4687827527523041 * x2 + 0.06531378626823425) - 1.0) / (exp(0.2679094076156616 * "
+    "x1 - 0.4687827527523041 * x2 + 0.06531378626823425) + 1.0) - 0.25230082869529724 * (exp(0.14174817502498627 * x1 +"
+    " 0.6471890807151794 * x2 - 0.0032111676409840584) - 1.0) / (exp(0.14174817502498627 * x1 + 0.6471890807151794 * x2"
+    " - 0.0032111676409840584) + 1.0) - 0.12504620850086212 * (exp(0.7148066759109497 * x1 + 0.32383447885513306 * x2 -"
+    " 0.005282739643007517) - 1.0) / (exp(0.7148066759109497 * x1 + 0.32383447885513306 * x2 - 0.005282739643007517) + "
+    "1.0) - 0.14907056093215942 * (exp(0.7772475481033325 * x1 + 0.6205030679702759 * x2 + 0.0026706208009272814) - 1.0"
+    ") / (exp(0.7772475481033325 * x1 + 0.6205030679702759 * x2 + 0.0026706208009272814) + 1.0) + 0.2956780791282654 * "
+    "(exp(0.3710882067680359 * x1 + 0.42241641879081726 * x2 + 0.008037357591092587) - 1.0) / (exp(0.3710882067680359 *"
+    " x1 + 0.42241641879081726 * x2 + 0.008037357591092587) + 1.0) + 0.3950228691101074 * (exp(0.8755472302436829 * x1 "
+    "+ 0.016193941235542297 * x2 + 0.045251455157995224) - 1.0) / (exp(0.8755472302436829 * x1 + 0.016193941235542297 *"
+    " x2 + 0.045251455157995224) + 1.0) + 0.49911952018737793 * (exp(0.7174910306930542 * x2 - 0.020182371139526367 * x"
+    "1 + 0.01213579811155796) - 1.0) / (exp(0.7174910306930542 * x2 - 0.020182371139526367 * x1 + 0.01213579811155796) "
+    "+ 1.0) - 0.1835329383611679 * (exp(0.3823607265949249 * x1 + 0.011211603879928589 * x2 - 0.17011186480522156) - 1."
+    "0) / (exp(0.3823607265949249 * x1 + 0.011211603879928589 * x2 - 0.17011186480522156) + 1.0) + 0.42436978220939636 "
+    "* (exp(0.6425513029098511 * x1 + 0.8145269751548767 * x2 + 0.00035174659569747746) - 1.0) / (exp(0.642551302909851"
+    "1 * x1 + 0.8145269751548767 * x2 + 0.00035174659569747746) + 1.0) - 0.3059418499469757 * (exp(0.8022674918174744 *"
+    " x2 - 0.40092170238494873 * x1 + 0.01813332922756672) - 1.0) / (exp(0.8022674918174744 * x2 - 0.40092170238494873 "
+    "* x1 + 0.01813332922756672) + 1.0) + 0.2961410880088806 * (exp(0.17945900559425354 * x1 + 0.018578974530100822 * x"
+    "2 + 0.23023265600204468) - 1.0) / (exp(0.17945900559425354 * x1 + 0.018578974530100822 * x2 + 0.23023265600204468)"
+    " + 1.0) + 0.24017132818698883 * (exp(0.9907521605491638 * x1 - 0.07089634984731674 * x2 + 0.17325547337532043) - 1"
+    ".0) / (exp(0.9907521605491638 * x1 - 0.07089634984731674 * x2 + 0.17325547337532043) + 1.0) - 0.1033150926232338 *"
+    " (exp(0.6597588062286377 * x2 - 0.30360668897628784 * x1 + 0.062151532620191574) - 1.0) / (exp(0.6597588062286377 "
+    "* x2 - 0.30360668897628784 * x1 + 0.062151532620191574) + 1.0) + 0.0581403486430645 * (exp(0.015293381176888943 * "
+    "x1 + 0.6490828394889832 * x2 + 0.0006276756757870317) - 1.0) / (exp(0.015293381176888943 * x1 + 0.6490828394889832"
+    " * x2 + 0.0006276756757870317) + 1.0) + 0.22430425882339478 * (exp(0.4966748356819153 * x2 - 0.35509493947029114 *"
+    " x1 + 0.14687995612621307) - 1.0) / (exp(0.4966748356819153 * x2 - 0.35509493947029114 * x1 + 0.14687995612621307)"
+    " + 1.0) + 0.04207557439804077 * (exp(0.822778046131134 * x1 + 0.5731481909751892 * x2 + 0.003578938776627183) - 1."
+    "0) / (exp(0.822778046131134 * x1 + 0.5731481909751892 * x2 + 0.003578938776627183) + 1.0) + 0.28885316848754883 * "
+    "(exp(0.9494896531105042 * x1 - 0.31396573781967163 * x2 + 0.18377900123596191) - 1.0) / (exp(0.9494896531105042 * "
+    "x1 - 0.31396573781967163 * x2 + 0.18377900123596191) + 1.0) - 0.16381853818893433 * (exp(0.8368351459503174 * x1 +"
+    " 0.7917801737785339 * x2 - 0.00008519824041286483) - 1.0) / (exp(0.8368351459503174 * x1 + 0.7917801737785339 * x2"
+    " - 0.00008519824041286483) + 1.0) - 0.19841310381889343 * (exp(0.11118344217538834 * x1 + 0.40518802404403687 * x2"
+    " + 0.07945182919502258) - 1.0) / (exp(0.11118344217538834 * x1 + 0.40518802404403687 * x2 + 0.07945182919502258) +"
+    " 1.0) - 0.1740700751543045 * (exp(0.48451855778694153 * x1 + 0.3026280701160431 * x2 + 0.024994682520627975) - 1.0"
+    ") / (exp(0.48451855778694153 * x1 + 0.3026280701160431 * x2 + 0.024994682520627975) + 1.0) + 0.18555928766727448 *"
+    " (exp(0.4798101484775543 * x1 + 0.23761166632175446 * x2 - 0.002144238678738475) - 1.0) / (exp(0.4798101484775543 "
+    "* x1 + 0.23761166632175446 * x2 - 0.002144238678738475) + 1.0) - 0.13522174954414368 * (exp(0.4929291903972626 * x"
+    "1 + 0.5782368779182434 * x2 + 0.014680703170597553) - 1.0) / (exp(0.4929291903972626 * x1 + 0.5782368779182434 * x"
+    "2 + 0.014680703170597553) + 1.0) + 0.08975403755903244;\nx1_out=x1;\nx2_out=x2;\nautomata_learning_location =2;"
+    position		    [720 300 150 150]
+    fontSize		    12
+    chart		    2
+    treeNode		    [2 0 3 5]
+    subviewer		    2
+    ssIdNumber		    8
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+    }
+  }
+  state {
+    id			    5
+    labelString		    "loc3\ndu:\nx1_dot = 0.13391880691051483 * (exp(0.06181495264172554 * x1 + 0.830928385257721 * x2"
+    " - 0.00042180376476608217) - 1.0) / (exp(0.06181495264172554 * x1 + 0.830928385257721 * x2 - 0.0004218037647660821"
+    "7) + 1.0) - 0.11919530481100082 * (exp(0.522223949432373 * x1 - 0.6981194615364075 * x2 + 0.002108635613694787) - "
+    "1.0) / (exp(0.522223949432373 * x1 - 0.6981194615364075 * x2 + 0.002108635613694787) + 1.0) + 0.19859743118286133 "
+    "* (exp(0.5409014225006104 * x1 - 0.18676605820655823 * x2 + 0.1448603719472885) - 1.0) / (exp(0.5409014225006104 *"
+    " x1 - 0.18676605820655823 * x2 + 0.1448603719472885) + 1.0) + 0.015296559780836105 * (exp(0.5186636447906494 * x1 "
+    "- 0.7686441540718079 * x2 + 0.0011455173371359706) - 1.0) / (exp(0.5186636447906494 * x1 - 0.7686441540718079 * x2"
+    " + 0.0011455173371359706) + 1.0) - 0.4283091127872467 * (exp(0.5837187170982361 * x1 + 0.4516241252422333 * x2 - 0"
+    ".03196272999048233) - 1.0) / (exp(0.5837187170982361 * x1 + 0.4516241252422333 * x2 - 0.03196272999048233) + 1.0) "
+    "+ 0.3406931161880493 * (exp(0.676913857460022 * x1 + 0.5504132509231567 * x2 - 0.006321039516478777) - 1.0) / (exp"
+    "(0.676913857460022 * x1 + 0.5504132509231567 * x2 - 0.006321039516478777) + 1.0) + 0.3375319838523865 * (exp(0.774"
+    "1734385490417 * x2 - 0.15453040599822998 * x1 + 0.000163470976985991) - 1.0) / (exp(0.7741734385490417 * x2 - 0.15"
+    "453040599822998 * x1 + 0.000163470976985991) + 1.0) + 0.09929674118757248 * (exp(0.38023465871810913 * x1 - 0.7263"
+    "79930973053 * x2 + 0.00029279489535838366) - 1.0) / (exp(0.38023465871810913 * x1 - 0.726379930973053 * x2 + 0.000"
+    "29279489535838366) + 1.0) - 0.09152176231145859 * (exp(0.7769408226013184 * x2 - 0.16671495139598846 * x1 + 0.0012"
+    "986381771042943) - 1.0) / (exp(0.7769408226013184 * x2 - 0.16671495139598846 * x1 + 0.0012986381771042943) + 1.0) "
+    "+ 0.057577308267354965 * (exp(0.6970188021659851 * x2 - 0.2001141607761383 * x1 + 0.004786035045981407) - 1.0) / ("
+    "exp(0.6970188021659851 * x2 - 0.2001141607761383 * x1 + 0.004786035045981407) + 1.0) - 0.12983807921409607 * (exp("
+    "0.8190765976905823 * x1 + 0.19012735784053802 * x2 + 0.13562315702438354) - 1.0) / (exp(0.8190765976905823 * x1 + "
+    "0.19012735784053802 * x2 + 0.13562315702438354) + 1.0) + 0.31065547466278076 * (exp(0.7990989089012146 * x1 + 0.09"
+    "012157469987869 * x2 - 0.15513083338737488) - 1.0) / (exp(0.7990989089012146 * x1 + 0.09012157469987869 * x2 - 0.1"
+    "5513083338737488) + 1.0) + 0.3659955859184265 * (exp(0.23125216364860535 * x1 + 0.6959024667739868 * x2 + 0.000127"
+    "04286200460047) - 1.0) / (exp(0.23125216364860535 * x1 + 0.6959024667739868 * x2 + 0.00012704286200460047) + 1.0) "
+    "- 0.20614756643772125 * (exp(0.18442755937576294 * x1 + 0.2617461681365967 * x2 + 0.11357703059911728) - 1.0) / (e"
+    "xp(0.18442755937576294 * x1 + 0.2617461681365967 * x2 + 0.11357703059911728) + 1.0) - 0.423560231924057 * (exp(0.7"
+    "35741138458252 * x1 + 0.45589232444763184 * x2 - 0.016892028972506523) - 1.0) / (exp(0.735741138458252 * x1 + 0.45"
+    "589232444763184 * x2 - 0.016892028972506523) + 1.0) - 0.00873386487364769 * (exp(0.4189932346343994 * x1 + 0.08070"
+    "419728755951 * x2 + 0.18171867728233337) - 1.0) / (exp(0.4189932346343994 * x1 + 0.08070419728755951 * x2 + 0.1817"
+    "1867728233337) + 1.0) + 0.2383020669221878 * (exp(0.6878048181533813 * x2 - 0.7323256731033325 * x1 + 0.0061799115"
+    "5013442) - 1.0) / (exp(0.6878048181533813 * x2 - 0.7323256731033325 * x1 + 0.00617991155013442) + 1.0) - 0.4284738"
+    "8982772827 * (exp(0.2325640171766281 * x2 - 0.6580464243888855 * x1 + 0.07914160192012787) - 1.0) / (exp(0.2325640"
+    "171766281 * x2 - 0.6580464243888855 * x1 + 0.07914160192012787) + 1.0) - 0.08512790501117706 * (exp(0.607730865478"
+    "5156 * x1 + 0.7174503803253174 * x2 + 0.0036251882556825876) - 1.0) / (exp(0.6077308654785156 * x1 + 0.71745038032"
+    "53174 * x2 + 0.0036251882556825876) + 1.0) - 0.11688737571239471 * (exp(0.8507214188575745 * x2 - 0.40460792183876"
+    "04 * x1 + 0.0005854947958141565) - 1.0) / (exp(0.8507214188575745 * x2 - 0.4046079218387604 * x1 + 0.0005854947958"
+    "141565) + 1.0) + 0.3675585389137268 * (exp(0.6745675206184387 * x1 + 0.11397437751293182 * x2 - 0.0964978039264679"
+    ") - 1.0) / (exp(0.6745675206184387 * x1 + 0.11397437751293182 * x2 - 0.0964978039264679) + 1.0) + 0.21359951794147"
+    "491 * (exp(0.44495517015457153 * x2 - 0.5907729864120483 * x1 + 0.05593755096197128) - 1.0) / (exp(0.4449551701545"
+    "7153 * x2 - 0.5907729864120483 * x1 + 0.05593755096197128) + 1.0) + 0.35291817784309387 * (exp(0.6072133183479309 "
+    "* x2 - 0.8590480089187622 * x1 + 0.014273274689912796) - 1.0) / (exp(0.6072133183479309 * x2 - 0.8590480089187622 "
+    "* x1 + 0.014273274689912796) + 1.0) + 0.38521742820739746 * (exp(0.8470609784126282 * x2 - 0.20842193067073822 * x"
+    "1 + 0.0006987780798226595) - 1.0) / (exp(0.8470609784126282 * x2 - 0.20842193067073822 * x1 + 0.000698778079822659"
+    "5) + 1.0) - 0.11519917845726013 * (exp(0.626823902130127 * x2 - 0.8023239970207214 * x1 + 0.01543375477194786) - 1"
+    ".0) / (exp(0.626823902130127 * x2 - 0.8023239970207214 * x1 + 0.01543375477194786) + 1.0) - 0.2617543637752533 * ("
+    "exp(0.027313269674777985 * x1 + 0.23437267541885376 * x2 - 0.07693794369697571) - 1.0) / (exp(0.027313269674777985"
+    " * x1 + 0.23437267541885376 * x2 - 0.07693794369697571) + 1.0) - 0.14551043510437012 * (exp(0.09938313066959381 * "
+    "x2 - 0.7570124864578247 * x1 + 0.11116168648004532) - 1.0) / (exp(0.09938313066959381 * x2 - 0.7570124864578247 * "
+    "x1 + 0.11116168648004532) + 1.0) - 0.012510816566646099 * (exp(0.7602941989898682 * x1 + 0.8424192667007446 * x2 -"
+    " 0.0004436737799551338) - 1.0) / (exp(0.7602941989898682 * x1 + 0.8424192667007446 * x2 - 0.0004436737799551338) +"
+    " 1.0) - 0.2714858949184418 * (exp(0.46065810322761536 * x1 + 0.806241512298584 * x2 - 0.0008009360171854496) - 1.0"
+    ") / (exp(0.46065810322761536 * x1 + 0.806241512298584 * x2 - 0.0008009360171854496) + 1.0) - 0.21159721910953522 *"
+    " (exp(0.24011659622192383 * x2 - 0.3292262852191925 * x1 + 0.12026399374008179) - 1.0) / (exp(0.24011659622192383 "
+    "* x2 - 0.3292262852191925 * x1 + 0.12026399374008179) + 1.0) - 0.00020466868591029197;\nx2_dot = 0.247987329959869"
+    "38 * (exp(0.06181495264172554 * x1 + 0.830928385257721 * x2 - 0.00042180376476608217) - 1.0) / (exp(0.061814952641"
+    "72554 * x1 + 0.830928385257721 * x2 - 0.00042180376476608217) + 1.0) - 0.25351449847221375 * (exp(0.52222394943237"
+    "3 * x1 - 0.6981194615364075 * x2 + 0.002108635613694787) - 1.0) / (exp(0.522223949432373 * x1 - 0.6981194615364075"
+    " * x2 + 0.002108635613694787) + 1.0) - 0.2634170949459076 * (exp(0.5409014225006104 * x1 - 0.18676605820655823 * x"
+    "2 + 0.1448603719472885) - 1.0) / (exp(0.5409014225006104 * x1 - 0.18676605820655823 * x2 + 0.1448603719472885) + 1"
+    ".0) - 0.3005005121231079 * (exp(0.5186636447906494 * x1 - 0.7686441540718079 * x2 + 0.0011455173371359706) - 1.0) "
+    "/ (exp(0.5186636447906494 * x1 - 0.7686441540718079 * x2 + 0.0011455173371359706) + 1.0) + 0.32044389843940735 * ("
+    "exp(0.5837187170982361 * x1 + 0.4516241252422333 * x2 - 0.03196272999048233) - 1.0) / (exp(0.5837187170982361 * x1"
+    " + 0.4516241252422333 * x2 - 0.03196272999048233) + 1.0) + 0.17418645322322845 * (exp(0.676913857460022 * x1 + 0.5"
+    "504132509231567 * x2 - 0.006321039516478777) - 1.0) / (exp(0.676913857460022 * x1 + 0.5504132509231567 * x2 - 0.00"
+    "6321039516478777) + 1.0) - 0.03148535639047623 * (exp(0.7741734385490417 * x2 - 0.15453040599822998 * x1 + 0.00016"
+    "3470976985991) - 1.0) / (exp(0.7741734385490417 * x2 - 0.15453040599822998 * x1 + 0.000163470976985991) + 1.0) + 0"
+    ".013643022626638412 * (exp(0.38023465871810913 * x1 - 0.726379930973053 * x2 + 0.00029279489535838366) - 1.0) / (e"
+    "xp(0.38023465871810913 * x1 - 0.726379930973053 * x2 + 0.00029279489535838366) + 1.0) - 0.416521817445755 * (exp(0"
+    ".7769408226013184 * x2 - 0.16671495139598846 * x1 + 0.0012986381771042943) - 1.0) / (exp(0.7769408226013184 * x2 -"
+    " 0.16671495139598846 * x1 + 0.0012986381771042943) + 1.0) - 0.42894044518470764 * (exp(0.6970188021659851 * x2 - 0"
+    ".2001141607761383 * x1 + 0.004786035045981407) - 1.0) / (exp(0.6970188021659851 * x2 - 0.2001141607761383 * x1 + 0"
+    ".004786035045981407) + 1.0) - 0.5313743352890015 * (exp(0.8190765976905823 * x1 + 0.19012735784053802 * x2 + 0.135"
+    "62315702438354) - 1.0) / (exp(0.8190765976905823 * x1 + 0.19012735784053802 * x2 + 0.13562315702438354) + 1.0) + 0"
+    ".2343064695596695 * (exp(0.7990989089012146 * x1 + 0.09012157469987869 * x2 - 0.15513083338737488) - 1.0) / (exp(0"
+    ".7990989089012146 * x1 + 0.09012157469987869 * x2 - 0.15513083338737488) + 1.0) + 0.009861676022410393 * (exp(0.23"
+    "125216364860535 * x1 + 0.6959024667739868 * x2 + 0.00012704286200460047) - 1.0) / (exp(0.23125216364860535 * x1 + "
+    "0.6959024667739868 * x2 + 0.00012704286200460047) + 1.0) - 0.36287400126457214 * (exp(0.18442755937576294 * x1 + 0"
+    ".2617461681365967 * x2 + 0.11357703059911728) - 1.0) / (exp(0.18442755937576294 * x1 + 0.2617461681365967 * x2 + 0"
+    ".11357703059911728) + 1.0) + 0.042243316769599915 * (exp(0.735741138458252 * x1 + 0.45589232444763184 * x2 - 0.016"
+    "892028972506523) - 1.0) / (exp(0.735741138458252 * x1 + 0.45589232444763184 * x2 - 0.016892028972506523) + 1.0) - "
+    "0.3669668138027191 * (exp(0.4189932346343994 * x1 + 0.08070419728755951 * x2 + 0.18171867728233337) - 1.0) / (exp("
+    "0.4189932346343994 * x1 + 0.08070419728755951 * x2 + 0.18171867728233337) + 1.0) - 0.4460239112377167 * (exp(0.687"
+    "8048181533813 * x2 - 0.7323256731033325 * x1 + 0.00617991155013442) - 1.0) / (exp(0.6878048181533813 * x2 - 0.7323"
+    "256731033325 * x1 + 0.00617991155013442) + 1.0) - 0.22172729671001434 * (exp(0.2325640171766281 * x2 - 0.658046424"
+    "3888855 * x1 + 0.07914160192012787) - 1.0) / (exp(0.2325640171766281 * x2 - 0.6580464243888855 * x1 + 0.0791416019"
+    "2012787) + 1.0) - 0.4694260060787201 * (exp(0.6077308654785156 * x1 + 0.7174503803253174 * x2 + 0.0036251882556825"
+    "876) - 1.0) / (exp(0.6077308654785156 * x1 + 0.7174503803253174 * x2 + 0.0036251882556825876) + 1.0) - 0.500471174"
+    "7169495 * (exp(0.8507214188575745 * x2 - 0.4046079218387604 * x1 + 0.0005854947958141565) - 1.0) / (exp(0.85072141"
+    "88575745 * x2 - 0.4046079218387604 * x1 + 0.0005854947958141565) + 1.0) + 0.11379243433475494 * (exp(0.67456752061"
+    "84387 * x1 + 0.11397437751293182 * x2 - 0.0964978039264679) - 1.0) / (exp(0.6745675206184387 * x1 + 0.113974377512"
+    "93182 * x2 - 0.0964978039264679) + 1.0) - 0.23656167089939117 * (exp(0.44495517015457153 * x2 - 0.5907729864120483"
+    " * x1 + 0.05593755096197128) - 1.0) / (exp(0.44495517015457153 * x2 - 0.5907729864120483 * x1 + 0.0559375509619712"
+    "8) + 1.0) - 0.3321789801120758 * (exp(0.6072133183479309 * x2 - 0.8590480089187622 * x1 + 0.014273274689912796) - "
+    "1.0) / (exp(0.6072133183479309 * x2 - 0.8590480089187622 * x1 + 0.014273274689912796) + 1.0) - 0.4643550217151642 "
+    "* (exp(0.8470609784126282 * x2 - 0.20842193067073822 * x1 + 0.0006987780798226595) - 1.0) / (exp(0.847060978412628"
+    "2 * x2 - 0.20842193067073822 * x1 + 0.0006987780798226595) + 1.0) - 0.510519802570343 * (exp(0.626823902130127 * x"
+    "2 - 0.8023239970207214 * x1 + 0.01543375477194786) - 1.0) / (exp(0.626823902130127 * x2 - 0.8023239970207214 * x1 "
+    "+ 0.01543375477194786) + 1.0) + 0.05251113697886467 * (exp(0.027313269674777985 * x1 + 0.23437267541885376 * x2 - "
+    "0.07693794369697571) - 1.0) / (exp(0.027313269674777985 * x1 + 0.23437267541885376 * x2 - 0.07693794369697571) + 1"
+    ".0) - 0.13555075228214264 * (exp(0.09938313066959381 * x2 - 0.7570124864578247 * x1 + 0.11116168648004532) - 1.0) "
+    "/ (exp(0.09938313066959381 * x2 - 0.7570124864578247 * x1 + 0.11116168648004532) + 1.0) + 0.2771265208721161 * (ex"
+    "p(0.7602941989898682 * x1 + 0.8424192667007446 * x2 - 0.0004436737799551338) - 1.0) / (exp(0.7602941989898682 * x1"
+    " + 0.8424192667007446 * x2 - 0.0004436737799551338) + 1.0) + 0.2789631485939026 * (exp(0.46065810322761536 * x1 + "
+    "0.806241512298584 * x2 - 0.0008009360171854496) - 1.0) / (exp(0.46065810322761536 * x1 + 0.806241512298584 * x2 - "
+    "0.0008009360171854496) + 1.0) - 0.42788058519363403 * (exp(0.24011659622192383 * x2 - 0.3292262852191925 * x1 + 0."
+    "12026399374008179) - 1.0) / (exp(0.24011659622192383 * x2 - 0.3292262852191925 * x1 + 0.12026399374008179) + 1.0) "
+    "- 0.08952217549085617;\nx1_out=x1;\nx2_out=x2;\nautomata_learning_location =3;"
+    position		    [1020 300 150 150]
+    fontSize		    12
+    chart		    2
+    treeNode		    [2 0 4 0]
+    subviewer		    2
+    ssIdNumber		    9
+    type		    OR_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+    }
+  }
+  data {
+    id			    6
+    ssIdNumber		    1
+    name		    "x1_out"
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      frame		      SF_FRAME_NO
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+    linkNode		    [2 0 7]
+  }
+  data {
+    id			    7
+    ssIdNumber		    2
+    name		    "x1"
+    scope		    LOCAL_DATA
+    machine		    1
+    props {
+      updateMethod	      SF_CONTINUOUS_TIME_DATA
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: From definition in chart"
+    linkNode		    [2 6 8]
+  }
+  data {
+    id			    8
+    ssIdNumber		    3
+    name		    "x2_out"
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      frame		      SF_FRAME_NO
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+    linkNode		    [2 7 9]
+  }
+  data {
+    id			    9
+    ssIdNumber		    4
+    name		    "x2"
+    scope		    LOCAL_DATA
+    machine		    1
+    props {
+      updateMethod	      SF_CONTINUOUS_TIME_DATA
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: From definition in chart"
+    linkNode		    [2 8 10]
+  }
+  data {
+    id			    10
+    ssIdNumber		    5
+    name		    "automata_learning_location"
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      frame		      SF_FRAME_NO
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+    linkNode		    [2 9 0]
+  }
+  transition {
+    id			    11
+    labelString		    "[-0.03057 * x1 - 0.08402 * x2 + 1.0 > 0.0]"
+    labelPosition	    [864 241 218 16]
+    fontSize		    12
+    src {
+      id		      5
+      intersection	      [1 0 -1 0.2406 1056.0921 300 0 0]
+    }
+    dst {
+      id		      3
+      intersection	      [1 0 -1 0.7594 533.9079 300 0 0]
+    }
+    midPoint		    [795 165.4386]
+    chart		    2
+    dataLimits		    [531.508 1056.092 165.425 300]
+    subviewer		    2
+    slide {
+      mode		      MIRROR_SLIDE
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    12
+    linkNode		    [2 0 12]
+  }
+  transition {
+    id			    12
+    labelString		    "[-0.0006553 * x1 - 0.08273 * x2 + 1.0 < 0.0]"
+    labelPosition	    [719 175 231 16]
+    fontSize		    12
+    src {
+      id		      3
+      intersection	      [1 0 -1 0.2476 457.1396 300 0 0]
+    }
+    dst {
+      id		      4
+      intersection	      [1 0 -1 0.7524 832.8604 300 0 0]
+    }
+    midPoint		    [645 202.0485]
+    chart		    2
+    dataLimits		    [457.14 835.26 201.965 300]
+    subviewer		    2
+    slide {
+      mode		      MIRROR_SLIDE
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    10
+    linkNode		    [2 11 13]
+  }
+  transition {
+    id			    13
+    labelString		    "{x1 = 0.0;\nx2 = 0.0;}"
+    labelPosition	    [445 220 52.328 30]
+    fontSize		    12
+    src {
+      intersection	      [0 1.4142 1.4142 0 495 270 0 0]
+    }
+    dst {
+      id		      3
+      intersection	      [1 0 -1 0.5 495 300 0 0]
+    }
+    midPoint		    [495 285]
+    chart		    2
+    dataLimits		    [492.6 497.4 270 300]
+    subviewer		    2
+    slide {
+      mode		      MIRROR_SLIDE
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    7
+    linkNode		    [2 12 14]
+  }
+  transition {
+    id			    14
+    labelString		    "[2.337 * x1 - 0.1122 * x2 + 1.0 < 0.0]"
+    labelPosition	    [1106 491 193 16]
+    fontSize		    12
+    src {
+      id		      4
+      intersection	      [3 0 1 0.476 798.6016 450 0 0]
+    }
+    dst {
+      id		      5
+      intersection	      [3 0 1 0.524 1091.3984 450 0 0]
+    }
+    midPoint		    [945 527.2265]
+    chart		    2
+    dataLimits		    [798.602 1093.798 450 527.349]
+    subviewer		    2
+    slide {
+      mode		      MIRROR_SLIDE
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    11
+    linkNode		    [2 13 0]
+  }
+  instance {
+    id			    15
+    machine		    1
+    name		    "automata_learning"
+    chart		    2
+  }
+  target {
+    id			    16
+    machine		    1
+    name		    "sfun"
+    description		    "Default Simulink S-Function Target."
+    linkNode		    [1 0 0]
+  }
+}
