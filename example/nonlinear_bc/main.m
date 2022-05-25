@@ -11,8 +11,8 @@ winlen = 10;
 num_var = 2;
 num_ud = 0;
 mdata = 601; 
-mu = 25^2/3; 
-PolyDegree = 3;
+mu = 7; 
+PolyDegree = 2;
 num = 1; x = []; ud = []; 
 
 % Load data, process noise and detect changepoints
@@ -50,6 +50,12 @@ FnHystNL('automata_learning',label_guard, num_var, ode, pta_trace);
 addpath(['..', filesep, '..', filesep, 'src',filesep,'hyst', filesep, 'src', filesep, 'matlab']);
 try
     SpaceExToStateflow('.\automata_learning.xml');
+catch
+end
+
+disp('Converting Hybrid Automaton from SpaceEx to CORA')
+try
+    spaceex2cora('automata_learning.xml',0,'automata_learning_sys','buck_cora',pwd);
 catch
 end
 
