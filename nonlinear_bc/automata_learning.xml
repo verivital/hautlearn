@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<sspaceex xmlns="http://www-verimag.imag.fr/xml-namespaces/sspaceex" math="SpaceEx" version="0.2">
+   <component id="automata_learning_sys">
+      <param controlled="true" d1="1" d2="1" dynamics="any" local="false" name="x1" type="real"/>
+      <param controlled="true" d1="1" d2="1" dynamics="any" local="false" name="x2" type="real"/>
+      <location id="1" name="loc1">
+         <flow>x1' == 8151232084910891.0 * x1 * x2 / 281474976710656.0 - 4093935506054123.0 * x2 / 17592186044416.0 - 6576282501786685.0 * x1 / 17592186044416.0 + 7284516860072967.0 * x1 ^ 2.0 / 1125899906842624.0 - 2927197926445625.0 * x2 ^ 2.0 / 144115188075855872.0 + 2789.2762602924136 &amp;
+ x2' == 1209052687878493.0 * x2 / 1099511627776.0 - 5725276808341829.0 * x1 / 70368744177664.0 + 8116349032574343.0 * x1 * x2 / 281474976710656.0 - 6423242370548607.0 * x1 ^ 2.0 / 281474976710656.0 - 2771913659414835.0 * x2 ^ 2.0 / 35184372088832.0 - 2411.53905560294</flow>
+      </location>
+      <location id="2" name="loc2">
+         <flow>x1' == 3310441217128939.0 * x2 / 70368744177664.0 - 7684940035815905.0 * x1 / 140737488355328.0 + 6382682002572739.0 * x1 * x2 / 1125899906842624.0 - 8572158031044939.0 * x1 ^ 2.0 / 1125899906842624.0 - 4909139297429565.0 * x2 ^ 2.0 / 2251799813685248.0 - 300.1548105344621 &amp;
+ x2' == 2581033876095029.0 * x1 * x2 / 9007199254740992.0 - 1556822466617749.0 * x2 / 2199023255552.0 - 178651500549451.0 * x1 / 2199023255552.0 + 3065711424760557.0 * x1 ^ 2.0 / 281474976710656.0 + 7010435710535015.0 * x2 ^ 2.0 / 281474976710656.0 + 5004.196714416355</flow>
+      </location>
+      <location id="3" name="loc3">
+         <flow>x1' == 6662307014193281.0 * x1 / 274877906944.0 + 5662304321094693.0 * x2 / 35184372088832.0 - 7770093196679501.0 * x1 * x2 / 4398046511104.0 - 8114545899978747.0 * x1 ^ 2.0 / 137438953472.0 - 3418811758812599.0 * x2 ^ 2.0 / 562949953421312.0 - 1010.2706704047573 &amp;
+ x2' == 6169541157778843.0 * x2 / 35184372088832.0 - 1786175858449119.0 * x1 / 34359738368.0 + 1168800067111029.0 * x1 * x2 / 274877906944.0 - 628503606243585.0 * x1 ^ 2.0 / 2147483648.0 - 4171513379086491.0 * x2 ^ 2.0 / 562949953421312.0 - 778.449980409669</flow>
+      </location>
+      <transition asap="false" bezier="false" source="1" target="2" timedriven="false">
+         <guard>-0.0007872 * x1 - 0.0826 * x2 + 1.0 &lt; 0.0</guard>
+         <labelposition/>
+         <middlepoint/>
+      </transition>
+      <transition asap="false" bezier="false" source="3" target="1" timedriven="false">
+         <guard>-0.03057 * x1 - 0.08402 * x2 + 1.0 &gt; 0.0</guard>
+         <labelposition/>
+         <middlepoint/>
+      </transition>
+      <transition asap="false" bezier="false" source="2" target="3" timedriven="false">
+         <guard>2.337 * x1 - 0.1122 * x2 + 1.0 &lt; 0.0</guard>
+         <labelposition/>
+         <middlepoint/>
+      </transition>
+   </component>
+   <component id="automata_learning_net">
+      <param controlled="true" d1="1" d2="1" dynamics="any" local="false" name="x1" type="real"/>
+      <param controlled="true" d1="1" d2="1" dynamics="any" local="false" name="x2" type="real"/>
+      <bind as="automata_learning" component="automata_learning_sys">
+         <map key="x1">x1</map>
+         <map key="x2">x2</map>
+      </bind>
+   </component>
+</sspaceex>
