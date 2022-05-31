@@ -278,7 +278,7 @@ function [out] = addOutput(num_port,name,chart)
     sF_output = Stateflow.Data(chart); 
     sF_output.Name = name;
     sF_output.Scope = 'Output';
-    sF_output.Update = 'DISCRETE';
+    sF_output.UpdateMethod = 'DISCRETE';
     out = num_port + 1;
 end
 
@@ -290,7 +290,7 @@ function addVariable(name, chart, isInputVariable)
     else
         sF_var.Scope = 'Local';
     end
-    sF_var.Update = 'CONTINUOUS';
+    sF_var.UpdateMethod = 'CONTINUOUS';
 end
 
 function addScope(num_port,model,chart)

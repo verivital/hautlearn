@@ -1,4 +1,4 @@
-function [out_slsf_model, out_slsf_model_path, out_config] = SpaceExToStateflow(varargin)
+function SpaceExToStateflow(varargin)
 %SPACEEXTOSTATEFLOW SpaceEx to Stateflow conversion
 %
 % example call without semantics preservation:
@@ -79,14 +79,20 @@ function [out_slsf_model, out_slsf_model_path, out_config] = SpaceExToStateflow(
     import de.uni_freiburg.informatik.swt.sxhybridautomaton.*;
     
     %
+    global Ts 
     % add classes and functions subfolders to path
     addpath(genpath('functions'));
     % Specify options from the input argument
     [options, path_name, xml_filename, cfg_filename] = ...
         option_SpaceExToStateflow(varargin);
     
-    xml_filepath = [path_name, filesep, xml_filename];
-    cfg_filepath = [path_name, filesep, cfg_filename];
+    if isempty(path_name)
+        xml_filepath = xml_filename;
+        cfg_filepath = cfg_filename;
+    else
+        xml_filepath = [path_name, filesep, xml_filename];
+        cfg_filepath = [path_name, filesep, cfg_filename];
+    end
     
     [config, name] = createConfigFromSpaceEx(xml_filepath, cfg_filepath);
     
@@ -138,10 +144,14 @@ function [out_slsf_model, out_slsf_model_path, out_config] = SpaceExToStateflow(
     % translates the automaton to Stateflow
     translateAutomaton(m, config, options);
     
+    % Set solver details to match that of collected data
+    cs = getActiveConfigSet(name);
+    cs.set_param('SolverType', 'Fixed-step');   % Type
+    cs.set_param('FixedStep',num2str(Ts));   % Type
     % Save model file
-    sfsave(m.Name, slsf_model_path);
+    save_system(slsf_model_path);
     % output
-    out_slsf_model_path = slsf_model_path;
-    out_slsf_model = m;
-    out_config = config;
+%     out_slsf_model_path = slsf_model_path;
+%     out_slsf_model = m;
+%     out_config = config;
 end

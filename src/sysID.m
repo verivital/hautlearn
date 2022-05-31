@@ -1,5 +1,7 @@
 function theta = sysID(W,h,pars)
 % This is the script to perform the system identification routine using occupation kernels.
+% h is the timestep (double) (1x1)
+% W is the collection of trajectories (struct) with m trajectories of (num_var x time_length)
 %% Load data
 t = tic;
 TrajectoryInfo = size(W);

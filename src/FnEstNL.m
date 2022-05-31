@@ -1,33 +1,49 @@
 function ode = FnEstNL(trace)
-% global Ts num_var num_ud
-% global mdata mu PolyDegree
-global num_var
+global num_var Ts
 len_labels = length(trace(1).labels_num);
 for label = 1:len_labels
-    x_seg = [];
-    x_seg_plus = [];
-    ud_seg = [];
+    x_seg_plus = {};
+    traj_length = [];
+    tj = 1; % Keep track of number of different traces
     for j = 1:length(trace)
         labels_trace = trace(j).labels_trace;
         idx = find(labels_trace == label);
         x = trace(j).x(:,1:num_var);
-        ud = trace(j).ud;
          
         startj = trace(j).chpoints(idx);
         endj = trace(j).chpoints(idx+1)-1;
         
         for n = 1:length(startj)
-            x_seg = [x_seg, x(startj(n):(endj(n)-1), :)'];
-            if isempty(ud)
-                ud_seg = [ud_seg, ones(1, (endj(n)- startj(n)))];
-            else
-                ud_seg = [ud_seg, [ud(startj(n):(endj(n)-1), :)'; ones(1, (endj(n)- startj(n)))]];
-            end
-            x_seg_plus = [x_seg_plus, x((startj(n)+1):endj(n), :)'];
+            x_seg_plus{tj} = x((startj(n)+1):endj(n), :)';
+            tj = tj+1;
+            traj_length = [traj_length, abs(startj(n)+1-endj(n))];
         end
     end
-    
-    coeffs = FnEstCoeffs(x_seg_plus);
-    ode{label} = coeffs;
+    % Convert data format to that used in weak sindy
+    % What is the minimum size of an trajectory to consider?
+    min_length = min(traj_length);
+%     if min_length < 50
+%         idxs = find(traj_length > 50);
+%         min_length = min(traj_length(idxs));
+%         trajs = zeros(length(idxs),num_var,min_length);
+%         for k=1:length(idxs)
+%             x_seg = x_seg_plus{idxs(k)};
+%             trajs(k,:,:) = x_seg(:,1:min_length);
+%         end
+%     else
+    trajs = zeros(length(x_seg_plus),num_var,min_length);
+    for k=1:length(x_seg_plus)
+        x_seg = x_seg_plus{k};
+        trajs(k,:,:) = x_seg(:,1:min_length);
+    end
+%     end
+    if num_var == 7
+        coeffs1 = sysID(trajs(:,[1 3 5],:),Ts,[]);
+        coeffs2 = sysID(trajs(:,[2 4 6],:),Ts,[]);
+        coeffs3 = sysID(trajs(:,7,:),Ts,[]);
+    else
+        coeffs = sysID(trajs,Ts,[]);
+        ode{label} = coeffs;
+    end
 end
 
