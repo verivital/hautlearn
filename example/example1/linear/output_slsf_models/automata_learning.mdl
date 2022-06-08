@@ -41,10 +41,10 @@ __MWOPC_PART_BEGIN__ /metadata/coreProperties.xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcmitype="http://purl.org/dc/dcmitype/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <cp:category>model</cp:category>
-  <dcterms:created xsi:type="dcterms:W3CDTF">2022-05-30T14:18:58Z</dcterms:created>
+  <dcterms:created xsi:type="dcterms:W3CDTF">2022-06-06T18:08:13Z</dcterms:created>
   <dc:creator>diego</dc:creator>
   <cp:lastModifiedBy>diego</cp:lastModifiedBy>
-  <dcterms:modified xsi:type="dcterms:W3CDTF">2022-05-30T14:19:00Z</dcterms:modified>
+  <dcterms:modified xsi:type="dcterms:W3CDTF">2022-06-06T18:08:15Z</dcterms:modified>
   <cp:revision>1.2</cp:revision>
   <cp:version>R2022a</cp:version>
 </cp:coreProperties>
@@ -107,12 +107,12 @@ __MWOPC_PART_BEGIN__ /simulink/blockdiagram.xml
 <?xml version="1.0" encoding="utf-8"?>
 <ModelInformation Version="1.0">
   <Model>
-    <P Name="ModelUUID">3019ecf0-3d4f-43ee-a641-c75f4dba2392</P>
+    <P Name="ModelUUID">6c2a2dd8-bc24-4a3a-b04a-a0ccb2fabfc8</P>
     <P Name="LastSavedArchitecture">win64</P>
     <ConfigManagerSettings>
       <P Name="ModifiedByFormat">%&lt;Auto&gt;</P>
       <P Name="ModifiedDateFormat">%&lt;Auto&gt;</P>
-      <P Name="RTWModifiedTimeStamp">575803140</P>
+      <P Name="RTWModifiedTimeStamp">576421695</P>
       <P Name="ModelVersionFormat">%&lt;AutoIncrement:1.2&gt;</P>
     </ConfigManagerSettings>
     <SimulationSettings>
@@ -908,23 +908,23 @@ __MWOPC_PART_BEGIN__ /simulink/graphicalInterface.xml
 __MWOPC_PART_BEGIN__ /simulink/modelDictionary.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <MF0 version="1.1" defaultPackage="slid" packageUris="http://schema.mathworks.com/mf0/slid/R2020b_20191110">
-  <System type="System" uuid="93f6ad33-4435-4eea-955e-950636b7785c">
-    <Interface type="Interface" uuid="7cdf1e9b-c6ea-431e-902a-4476f3f5f927"/>
+  <System type="System" uuid="c7db7f1c-c674-44aa-9cf5-a5e5cfed5170">
+    <Interface type="Interface" uuid="3e5a0bc2-43af-472a-ba96-a2cc7a21fd7b"/>
   </System>
 </MF0>
 __MWOPC_PART_BEGIN__ /simulink/ScheduleCore.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <sltp_graph version="1.1" packageUris="http://schema.mathworks.com/mf0/sltp_mm/R2021b_202106150630">
-  <sltp.mm.core.Context type="sltp.mm.core.Context" uuid="321cf68d-d5d2-4083-b76f-f3bb16c2aa43">
+  <sltp.mm.core.Context type="sltp.mm.core.Context" uuid="5c1d1726-05ec-4f8d-8265-16fa95a63b03">
     <editorState type="sltp.mm.core.EditorState" uuid="cd5b5fb8-674e-43ba-a729-ac2f21e8a07a">
       <panelState type="sltp.mm.core.EditorPanelState" uuid="087ee299-35f7-41ee-9fb4-d8d0c6d7323e"/>
     </editorState>
-    <rootTask type="sltp.mm.core.Task" uuid="febe8ea7-f5a4-40b9-bfa0-798e6ac0284b">
-      <context type="sltp.mm.core.Context" uuid="321cf68d-d5d2-4083-b76f-f3bb16c2aa43"/>
+    <rootTask type="sltp.mm.core.Task" uuid="e6f1704d-df7c-4bb9-9e7c-17e4d2543b1e">
+      <context type="sltp.mm.core.Context" uuid="5c1d1726-05ec-4f8d-8265-16fa95a63b03"/>
       <explicit>false</explicit>
       <name>Default</name>
       <priority>-2147483648</priority>
-      <subgraph type="sltp.mm.core.Graph" uuid="20d03e92-4539-4b61-b909-a816dc67a177"/>
+      <subgraph type="sltp.mm.core.Graph" uuid="a861a293-cab4-4743-aabd-04cbe4a4a996"/>
     </rootTask>
   </sltp.mm.core.Context>
 </sltp_graph>
@@ -1098,18 +1098,18 @@ automata_learning_location =2;</P>
     </data>
     <transition SSID="9">
       <P Name="labelString">[0.0000005511 * x2 - 0.2482 * x1 + 1.0 &lt; 0.0]</P>
-      <P Name="labelPosition">[710.637 174.153 240.438 16]</P>
+      <P Name="labelPosition">[732.898 174.813 240.438 16]</P>
       <P Name="fontSize">12</P>
       <src>
         <P Name="SSID">6</P>
-        <P Name="intersection">[1 0 -1 0.2418 456.2752 300 0 0]</P>
+        <P Name="intersection">[1 0 -1 0.2391 455.8694 300 0 0]</P>
       </src>
       <dst>
         <P Name="SSID">8</P>
-        <P Name="intersection">[1 0 -1 0.7582 833.7248 300 0 0]</P>
+        <P Name="intersection">[1 0 -1 0.7609 834.1306 300 0 0]</P>
       </dst>
-      <P Name="midPoint">[645 201.6164]</P>
-      <P Name="dataLimits">[456.275 836.125 201.534 300]</P>
+      <P Name="midPoint">[645 201.4136]</P>
+      <P Name="dataLimits">[455.869 836.531 201.332 300]</P>
       <P Name="subviewer">12</P>
       <slide>
         <P Name="mode">MIRROR_SLIDE</P>
@@ -1140,18 +1140,18 @@ x2 = 0.0;}</P>
     </transition>
     <transition SSID="10">
       <P Name="labelString">[43.09132960916031 * x1 + 0.021145646542095164 * x2 + 1.0 &lt; 0.0 &amp;&amp; -75.02048562094569 * x1 - 0.1991395009226835 * x2 + 1.0 &gt; 0.0]</P>
-      <P Name="labelPosition">[750.862 519.368 742.953 16]</P>
+      <P Name="labelPosition">[763.705 527.311 742.953 16]</P>
       <P Name="fontSize">12</P>
       <src>
         <P Name="SSID">8</P>
-        <P Name="intersection">[3 0 1 0.3893 811.6122 450 0 0]</P>
+        <P Name="intersection">[3 0 1 0.266 830.1061 450 0 0]</P>
       </src>
       <dst>
         <P Name="SSID">6</P>
-        <P Name="intersection">[3 0 1 0.6107 478.3878 450 0 0]</P>
+        <P Name="intersection">[3 0 1 0.734 459.8939 450 0 0]</P>
       </dst>
-      <P Name="midPoint">[645 537.3301]</P>
-      <P Name="dataLimits">[475.988 811.612 450 537.433]</P>
+      <P Name="midPoint">[645 546.5747]</P>
+      <P Name="dataLimits">[457.494 830.106 450 546.66]</P>
       <P Name="subviewer">12</P>
       <slide>
         <P Name="mode">MIRROR_SLIDE</P>
@@ -1426,7 +1426,7 @@ __MWOPC_PART_BEGIN__ /simulink/windowsInfo.xml
       <Array PropName="PersistedApps" Type="Cell" Dimension="0*1"/>
       <P Name="WindowUuid" Class="char">a96fc7aa-11d9-479e-8d02-a70be0aebc6a</P>
     </Object>
-    <P Name="BDUuid" Class="char">76610f52-3eba-46ac-afac-dc762e3001f7</P>
+    <P Name="BDUuid" Class="char">549e3b93-bd4e-47f1-b71e-a526bd411127</P>
   </Object>
 </WindowsInfo>
 

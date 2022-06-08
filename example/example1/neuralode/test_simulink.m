@@ -4,8 +4,8 @@ close_system('automata_learning',0); % To avoid confusion with other simulations
 i0=0; v0=0;
 out = sim('../example1.slx','StartTime','0','StopTime','50','FixedStep','0.05');
 out_est = sim('output_slsf_models/automata_learning.mdl','StartTime','0','StopTime','50','FixedStep','0.05');
-simHA = [out.i_out, out.v_out];
-xtest = [out_est.ScopeData.signals(1).values, out_est.ScopeData.signals(2).values];
+xtest = [out.i_out, out.v_out];
+simHA = [out_est.ScopeData.signals(1).values, out_est.ScopeData.signals(2).values];
 simT = out.tout;
 
 % Compute mse

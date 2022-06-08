@@ -1,14 +1,13 @@
 clc
 clear
 
-global sigma num_var num_ud Ts winlen Time PolyDegree
+global sigma num_var num_ud Ts winlen Time
 Time = false;
 Ts  = 0.05;
 sigma = 0.003;  
 winlen = 10;
 num_var = 2;
 num_ud = 0;
-PolyDegree = 2;
 num = 1; x = []; ud = []; 
 
 % Load data, process noise and detect changepoints
@@ -33,7 +32,11 @@ t1 = toc;
 for n=1:length(trace)
     trace(n).labels_trace = [trace(n).labels_trace;0];
 end
+rng(5);
+tode = tic;
 ode = FnEstNODE(trace);
+tode = toc(tode);
+save('tode.mat','tode');
 
 %% 
 eta = 100000; % number of iterations 

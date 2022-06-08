@@ -41,10 +41,10 @@ __MWOPC_PART_BEGIN__ /metadata/coreProperties.xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcmitype="http://purl.org/dc/dcmitype/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <cp:category>model</cp:category>
-  <dcterms:created xsi:type="dcterms:W3CDTF">2022-05-29T17:27:27Z</dcterms:created>
+  <dcterms:created xsi:type="dcterms:W3CDTF">2022-06-06T19:33:03Z</dcterms:created>
   <dc:creator>diego</dc:creator>
   <cp:lastModifiedBy>diego</cp:lastModifiedBy>
-  <dcterms:modified xsi:type="dcterms:W3CDTF">2022-05-29T17:27:28Z</dcterms:modified>
+  <dcterms:modified xsi:type="dcterms:W3CDTF">2022-06-06T19:33:05Z</dcterms:modified>
   <cp:revision>1.2</cp:revision>
   <cp:version>R2022a</cp:version>
 </cp:coreProperties>
@@ -107,12 +107,12 @@ __MWOPC_PART_BEGIN__ /simulink/blockdiagram.xml
 <?xml version="1.0" encoding="utf-8"?>
 <ModelInformation Version="1.0">
   <Model>
-    <P Name="ModelUUID">b0cfea97-8b53-459e-b913-4613e4ea94e5</P>
+    <P Name="ModelUUID">e1deaca0-b693-4f73-a81f-9ff5f5da6931</P>
     <P Name="LastSavedArchitecture">win64</P>
     <ConfigManagerSettings>
       <P Name="ModifiedByFormat">%&lt;Auto&gt;</P>
       <P Name="ModifiedDateFormat">%&lt;Auto&gt;</P>
-      <P Name="RTWModifiedTimeStamp">575728048</P>
+      <P Name="RTWModifiedTimeStamp">576426784</P>
       <P Name="ModelVersionFormat">%&lt;AutoIncrement:1.2&gt;</P>
     </ConfigManagerSettings>
     <SimulationSettings>
@@ -908,23 +908,23 @@ __MWOPC_PART_BEGIN__ /simulink/graphicalInterface.xml
 __MWOPC_PART_BEGIN__ /simulink/modelDictionary.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <MF0 version="1.1" defaultPackage="slid" packageUris="http://schema.mathworks.com/mf0/slid/R2020b_20191110">
-  <System type="System" uuid="1d5c68bc-2369-42d6-ab2c-cce01bfc0493">
-    <Interface type="Interface" uuid="0afa9857-325d-44b8-a176-747e49e3040b"/>
+  <System type="System" uuid="6fc1533f-1f97-4ebf-bb81-080dd1f1999c">
+    <Interface type="Interface" uuid="f9405e9d-79f9-43a4-a643-88f3a80729f1"/>
   </System>
 </MF0>
 __MWOPC_PART_BEGIN__ /simulink/ScheduleCore.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <sltp_graph version="1.1" packageUris="http://schema.mathworks.com/mf0/sltp_mm/R2021b_202106150630">
-  <sltp.mm.core.Context type="sltp.mm.core.Context" uuid="7b837342-ca1f-4851-8e27-40216f28113d">
+  <sltp.mm.core.Context type="sltp.mm.core.Context" uuid="904504f1-81a2-4a85-ab05-49a6ddcd1032">
     <editorState type="sltp.mm.core.EditorState" uuid="cd5b5fb8-674e-43ba-a729-ac2f21e8a07a">
       <panelState type="sltp.mm.core.EditorPanelState" uuid="087ee299-35f7-41ee-9fb4-d8d0c6d7323e"/>
     </editorState>
-    <rootTask type="sltp.mm.core.Task" uuid="a6f3c43e-49c5-4f93-8ad6-ec466fab04c7">
-      <context type="sltp.mm.core.Context" uuid="7b837342-ca1f-4851-8e27-40216f28113d"/>
+    <rootTask type="sltp.mm.core.Task" uuid="fd0315f2-5cfb-4cf9-bfdc-e6ad63ae85e9">
+      <context type="sltp.mm.core.Context" uuid="904504f1-81a2-4a85-ab05-49a6ddcd1032"/>
       <explicit>false</explicit>
       <name>Default</name>
       <priority>-2147483648</priority>
-      <subgraph type="sltp.mm.core.Graph" uuid="31eb56b6-58a9-473d-860e-8d64d389e6c3"/>
+      <subgraph type="sltp.mm.core.Graph" uuid="5ac0082d-9b13-4d0b-97bd-5f2c85c02728"/>
     </rootTask>
   </sltp.mm.core.Context>
 </sltp_graph>
@@ -974,8 +974,8 @@ __MWOPC_PART_BEGIN__ /simulink/stateflow/chart_12.xml
     <state SSID="6">
       <P Name="labelString">loc1
 du:
-x1_dot = 17709872814793.0 * x2 / 147573952589676410000.0 - 4885549301075.0 * x1 / 295147905179352830000.0 - 25560522869469.0 * x1 * x2 / 36893488147419103000.0 + 23348987725423.0 * x1 ^ 2.0 / 295147905179352830000.0 + 37317396741413.0 * x2 ^ 2.0 / 36893488147419103000.0 + 0.9999999961747696;
-x2_dot = 4503599648254823.0 * x1 / 4503599627370496.0 + 475678987389.0 * x2 / 9223372036854776000.0 - 192670781808847.0 * x1 * x2 / 295147905179352830000.0 + 55569792035993.0 * x1 ^ 2.0 / 1180591620717411300000.0 + 336092630055397.0 * x2 ^ 2.0 / 295147905179352830000.0 - 0.0000000020426695939894023;
+x1_dot = 4249753183359.0 * x2 / 36893488147419103000.0 - 20625009085385.0 * x1 / 590295810358705650000.0 + 249275132783321.0 * x1 * x2 / 590295810358705650000.0 + 15212474004191.0 * x1 * x2 ^ 2.0 / 1152921504606846980.0 - 18445541461201.0 * x1 ^ 2.0 * x2 / 4611686018427387900.0 - 3792914324641.0 * x1 ^ 2.0 / 2361183241434822600000.0 + 88119674747395.0 * x1 ^ 3.0 / 295147905179352830000.0 - 178657709509017.0 * x2 ^ 2.0 / 147573952589676410000.0 - 28388829485609.0 * x2 ^ 3.0 / 2305843009213694000.0 + 0.9999999996128748;
+x2_dot = 1125899935901001.0 * x1 / 1125899906842624.0 - 53960201748161.0 * x2 / 295147905179352830000.0 + 92838875559977.0 * x1 * x2 / 73786976294838210000.0 - 10446924461989.0 * x1 * x2 ^ 2.0 / 9223372036854776000.0 - 22212208841919.0 * x1 ^ 2.0 * x2 / 18446744073709552000.0 - 13834015794439.0 * x1 ^ 2.0 / 73786976294838210000.0 + 16716091216289.0 * x1 ^ 3.0 / 73786976294838210000.0 - 4002913804115.0 * x2 ^ 2.0 / 4611686018427387900.0 + 43602879580957.0 * x2 ^ 3.0 / 9223372036854776000.0 - 0.0000000013871638261455583;
 x1_out=x1;
 x2_out=x2;
 automata_learning_location =1;</P>
@@ -988,8 +988,8 @@ automata_learning_location =1;</P>
     <state SSID="8">
       <P Name="labelString">loc2
 du:
-x1_dot = 11278941379.0 * x1 * x2 / 2251799813685248.0 - 614502682225.0 * x2 / 36028797018963968.0 - 1617979564213.0 * x1 / 144115188075855872.0 + 2104648728409.0 * x1 ^ 2.0 / 1152921504606846980.0 - 9007161403513265.0 * x2 ^ 2.0 / 9007199254740992.0 + 0.00001782211096618136;
-x2_dot = 2069062415.0 * x1 / 1125899906842624.0 + 14700152253.0 * x2 / 4503599627370496.0 - 238660367459.0 * x1 * x2 / 288230376151711740.0 - 399866766279.0 * x1 ^ 2.0 / 1152921504606846980.0 - 55380855441.0 * x2 ^ 2.0 / 72057594037927936.0 - 1.0000030969954306;
+x1_dot = 9160403553.0 * x1 / 18014398509481984.0 + 30089422625.0 * x2 / 1125899906842624.0 - 433519622367.0 * x1 * x2 / 72057594037927936.0 + 760172969721.0 * x1 * x2 ^ 2.0 / 288230376151711740.0 - 4158539127.0 * x1 ^ 2.0 * x2 / 36028797018963968.0 + 228507862685.0 * x1 ^ 2.0 / 72057594037927936.0 - 275161948525.0 * x1 ^ 3.0 / 288230376151711740.0 - 2251844071045909.0 * x2 ^ 2.0 / 2251799813685248.0 + 165527646427.0 * x2 ^ 3.0 / 36028797018963968.0 - 0.00001076071273356169;
+x2_dot = 13375112363.0 * x1 * x2 / 562949953421312.0 - 335170800985.0 * x2 / 9007199254740992.0 - 202063888851.0 * x1 / 9007199254740992.0 - 109509584763.0 * x1 * x2 ^ 2.0 / 18014398509481984.0 - 55477463579.0 * x1 ^ 2.0 * x2 / 18014398509481984.0 + 53638642541.0 * x1 ^ 2.0 / 9007199254740992.0 - 151604123269.0 * x1 ^ 3.0 / 288230376151711740.0 + 75954333009.0 * x2 ^ 2.0 / 4503599627370496.0 - 74538628627.0 * x2 ^ 3.0 / 36028797018963968.0 - 0.9999753350707068;
 x1_out=x1;
 x2_out=x2;
 automata_learning_location =2;</P>
@@ -1098,18 +1098,18 @@ automata_learning_location =2;</P>
     </data>
     <transition SSID="9">
       <P Name="labelString">[0.0009391 * x2 - 0.4996 * x1 + 1.0 &lt; 0.0]</P>
-      <P Name="labelPosition">[756.064 191.119 221.312 16]</P>
+      <P Name="labelPosition">[767.438 176.581 221.312 16]</P>
       <P Name="fontSize">12</P>
       <src>
         <P Name="SSID">6</P>
-        <P Name="intersection">[1 0 -1 0.4689 490.3373 300 0 0]</P>
+        <P Name="intersection">[1 0 -1 0.2277 454.153 300 0 0]</P>
       </src>
       <dst>
         <P Name="SSID">8</P>
-        <P Name="intersection">[1 0 -1 0.5311 799.6627 300 0 0]</P>
+        <P Name="intersection">[1 0 -1 0.7723 835.847 300 0 0]</P>
       </dst>
-      <P Name="midPoint">[645 218.6428]</P>
-      <P Name="dataLimits">[490.337 802.063 218.528 300]</P>
+      <P Name="midPoint">[645 200.5556]</P>
+      <P Name="dataLimits">[454.153 838.247 200.475 300]</P>
       <P Name="subviewer">12</P>
       <slide>
         <P Name="mode">MIRROR_SLIDE</P>
@@ -1140,18 +1140,18 @@ x2 = 0.0;}</P>
     </transition>
     <transition SSID="10">
       <P Name="labelString">[0.01034 * x1 + 196.7 * x2 + 1.0 &lt; 0.0]</P>
-      <P Name="labelPosition">[735.916 519.852 204.312 16]</P>
+      <P Name="labelPosition">[754.782 520.864 204.312 16]</P>
       <P Name="fontSize">12</P>
       <src>
         <P Name="SSID">8</P>
-        <P Name="intersection">[3 0 1 0.3832 812.5233 450 0 0]</P>
+        <P Name="intersection">[3 0 1 0.3663 815.0538 450 0 0]</P>
       </src>
       <dst>
         <P Name="SSID">6</P>
-        <P Name="intersection">[3 0 1 0.6168 477.4767 450 0 0]</P>
+        <P Name="intersection">[3 0 1 0.6337 474.9462 450 0 0]</P>
       </dst>
-      <P Name="midPoint">[645 537.7855]</P>
-      <P Name="dataLimits">[475.077 812.523 450 537.888]</P>
+      <P Name="midPoint">[645 539.0504]</P>
+      <P Name="dataLimits">[472.546 815.054 450 539.15]</P>
       <P Name="subviewer">12</P>
       <slide>
         <P Name="mode">MIRROR_SLIDE</P>
@@ -1385,6 +1385,18 @@ __MWOPC_PART_BEGIN__ /simulink/windowsInfo.xml
       </Object>
       <Array PropName="DockComponentsInfo" Type="Simulink.DockComponentInfo" Dimension="1*3">
         <Object ObjectID="6">
+          <P Name="Type" Class="char">GLUE2:DDG Component</P>
+          <P Name="ID" Class="char">SymbolManager</P>
+          <P Name="Visible" Class="logical">0</P>
+          <P Name="CreateCallback" Class="char">Stateflow.Interface.Panel.createSymbolManagerComponent</P>
+          <P Name="UserData" Class="char">0</P>
+          <P Name="Floating" Class="logical">0</P>
+          <P Name="DockPosition" Class="char">Right</P>
+          <P Name="Width" Class="int32">254</P>
+          <P Name="Height" Class="int32">539</P>
+          <P Name="Minimized" Class="char">Unset</P>
+        </Object>
+        <Object ObjectID="7">
           <P Name="Type" Class="char">Simulink:Editor:ReferencedFiles</P>
           <P Name="ID" Class="char">Referenced Files</P>
           <P Name="Visible" Class="logical">0</P>
@@ -1395,18 +1407,6 @@ __MWOPC_PART_BEGIN__ /simulink/windowsInfo.xml
           <P Name="DockPosition" Class="char">Left</P>
           <P Name="Width" Class="int32">640</P>
           <P Name="Height" Class="int32">480</P>
-          <P Name="Minimized" Class="char">Unset</P>
-        </Object>
-        <Object ObjectID="7">
-          <P Name="Type" Class="char">GLUE2:DDG Component</P>
-          <P Name="ID" Class="char">SymbolManager</P>
-          <P Name="Visible" Class="logical">0</P>
-          <P Name="CreateCallback" Class="char">Stateflow.Interface.Panel.createSymbolManagerComponent</P>
-          <P Name="UserData" Class="char">0</P>
-          <P Name="Floating" Class="logical">0</P>
-          <P Name="DockPosition" Class="char">Right</P>
-          <P Name="Width" Class="int32">254</P>
-          <P Name="Height" Class="int32">539</P>
           <P Name="Minimized" Class="char">Unset</P>
         </Object>
         <Object ObjectID="8">
@@ -1426,7 +1426,7 @@ __MWOPC_PART_BEGIN__ /simulink/windowsInfo.xml
       <Array PropName="PersistedApps" Type="Cell" Dimension="0*1"/>
       <P Name="WindowUuid" Class="char">a96fc7aa-11d9-479e-8d02-a70be0aebc6a</P>
     </Object>
-    <P Name="BDUuid" Class="char">a928854d-22b0-4880-82a3-0737906f0532</P>
+    <P Name="BDUuid" Class="char">87333d47-4a3d-4812-981c-1f896d2a2564</P>
   </Object>
 </WindowsInfo>
 

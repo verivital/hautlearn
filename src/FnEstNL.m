@@ -1,5 +1,5 @@
 function ode = FnEstNL(trace)
-global num_var Ts
+global num_var Ts PolyDegree
 len_labels = length(trace(1).labels_num);
 for label = 1:len_labels
     x_seg_plus = {};
@@ -36,14 +36,8 @@ for label = 1:len_labels
         x_seg = x_seg_plus{k};
         trajs(k,:,:) = x_seg(:,1:min_length);
     end
-%     end
-    if num_var == 7
-        coeffs1 = sysID(trajs(:,[1 3 5],:),Ts,[]);
-        coeffs2 = sysID(trajs(:,[2 4 6],:),Ts,[]);
-        coeffs3 = sysID(trajs(:,7,:),Ts,[]);
-    else
-        coeffs = sysID(trajs,Ts,[]);
-        ode{label} = coeffs;
-    end
+    pars.polydegree = PolyDegree;
+    coeffs = sysID(trajs,Ts,pars);
+    ode{label} = coeffs;
 end
 

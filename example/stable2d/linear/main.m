@@ -1,18 +1,17 @@
 clc
 clear
 
-global sigma num_var num_ud Ts winlen Time PolyDegree
+global sigma num_var num_ud Ts winlen Time 
 Time = false;
 Ts  = 0.01;
-sigma = 0.3;  
+sigma = 0.006;  
 winlen = 10;
-num_var = 7;
-num_ud = 0; 
-PolyDegree = 2;
+num_var = 2;
+num_ud = 0;
 num = 1; x = []; ud = []; 
 
 % Load data, process noise and detect changepoints
-for i = 1:3
+for i = 1:10
     load(['..', filesep, 'trainingdata' , filesep, 'run', int2str(i), '.mat']);
     trace_temp = FnProcessNoiseData(xout, num_var);
     trace(num) = trace_temp;
@@ -32,11 +31,15 @@ t1 = toc;
 for n=1:length(trace)
     trace(n).labels_trace = [trace(n).labels_trace;0];
 end
-ode = FnEstNL(trace);
+
+tode = tic;
+ode = FnEstODE(trace);
+tode = toc(tode);
+save('tode.mat','tode');
 
 %% 
 eta = 100000; % number of iterations 
-lambda = 0.005; % tolerance 
+lambda = 0.05; % tolerance 
 % gamma = 10; %the least number of inliers
 gamma = 3;
 [trace,label_guard] = FnLI(trace, eta, lambda, gamma);
@@ -44,9 +47,8 @@ t2 = toc;
 pta_trace = FnPTA(trace);
 pta_trace = pta_filter(pta_trace);
 t3 = toc;
-
 %%
-FnHystNL('automata_learning',label_guard, num_var, ode, pta_trace);
+FnGenerateHyst('automata_learning',label_guard, num_var, ode, pta_trace);
 
 addpath(['..', filesep, '..', filesep, 'src',filesep,'hyst', filesep, 'src', filesep, 'matlab']);
 try
@@ -56,7 +58,7 @@ end
 
 disp('Converting Hybrid Automaton from SpaceEx to CORA')
 try
-    spaceex2cora('automata_learning.xml',0,'automata_learning_sys','avoid_nl',pwd);
+    spaceex2cora('automata_learning.xml',0,'automata_learning_sys','stable2d_linear',pwd);
 catch
 end
 

@@ -8,7 +8,7 @@ x = trace; %
 numTimeSteps = length(x);
 
 % 2) Define the Network
-hiddenSize = 30; % Could add this as an input
+hiddenSize = 20; % Could add this as an input
 inputSize = size(x,1);
 outputSize = inputSize;
 
@@ -23,7 +23,7 @@ neuralOdeLayers = [ % These layers, how do we decide what layers/activation func
 neuralOdeInternalDlnetwork = dlnetwork(neuralOdeLayers,'Initialize',false);
 % neuralOdeInternalDlnetwork.Learnables
 % Define ode solver parameters
-neuralOdeInternalTimesteps = 2; % This is to learn the ODE, let's see how this would affect the learning
+neuralOdeInternalTimesteps = 20; % This is to learn the ODE, let's see how this would affect the learning
 neuralOdeLayerName = 'neuralOde';
 customNeuralOdeLayer = neuralOdeLayer(neuralOdeInternalDlnetwork,neuralOdeInternalTimesteps,Ts,neuralOdeLayerName);
 % Initialize the network

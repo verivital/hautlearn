@@ -1,26 +1,24 @@
 clc
 clear
 
-global sigma num_var num_ud Ts winlen Time mdata
+global sigma num_var num_ud Ts winlen Time 
 Time = false;
 Ts  = 0.01;
 sigma = 0.003;  
 winlen = 10;
 num_var = 2;
 num_ud = 0;
-mdata = 10001; 
 num = 1; x = []; ud = []; 
 
 % Load data, process noise and detect changepoints
 for i = 1:10
-    load(['..', filesep, 'ex2', filesep, 'trainingdata' , filesep, 'run', int2str(i), '.mat']);
+    load(['..', filesep, 'trainingdata' , filesep, 'run', int2str(i), '.mat']);
     trace_temp = FnProcessNoiseData(xout, num_var);
     trace(num) = trace_temp;
     x = [x; trace(num).x];
     ud = [ud; trace(num).ud];
     num = num+1; 
 end
-mu = mean(std(xout,[],'all'));
 
 %%
 
@@ -33,7 +31,12 @@ t1 = toc;
 for n=1:length(trace)
     trace(n).labels_trace = [trace(n).labels_trace;0];
 end
+
+rng(5);
+tode = tic;
 ode = FnEstNODE(trace);
+tode = toc(tode);
+save('tode.mat','tode');
 
 %% 
 eta = 100000; % number of iterations 
@@ -109,7 +112,6 @@ function indx = changepoint(values)
     diffs = diff(values,2);
     indx = find(diffs<=-0.005|diffs>=0.005)+1;
     indx = union(1,[indx; length(values)]);
-    
 end
 
 function indx = filterindx(indx)

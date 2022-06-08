@@ -1,7 +1,7 @@
 function HA = ex2_linear(~)
 
 
-%% Generated on 29-May-2022
+%% Generated on 06-Jun-2022
 
 %-------Automaton created from Component 'automata_learning_sys'-----------
 

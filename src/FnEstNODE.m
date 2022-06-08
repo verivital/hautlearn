@@ -1,5 +1,5 @@
 function ode = FnEstNODE(trace)
-global Ts num_var num_ud
+global num_var 
 len_labels = length(trace(1).labels_num);
 for label = 1:len_labels
     x_seg = [];
@@ -28,19 +28,3 @@ for label = 1:len_labels
     dlnet = FnEst_node(x_seg_plus);
     ode(label) = dlnet;
 end
-
-%% Some notes
-% we need to combine the cluster data into different time-series, do some
-% type of k-1 validation, and use that model for each trace.
-% We are going to have to do that manually
-% For now, we could  estimate different models for each trace? How is it
-% done here?
-%
-% Let's analyze how the neural ode training is done, and then we can think
-% about it. Is it done by picking two points in the set and computing
-% integration between them? It does not make sense to simply concatenate
-% traces because that may imply some jumps in the data that we don't
-% want...
-%
-% I'm also very confused as of how the ODEs are estimated in the hautlearn
-% framework

@@ -32,7 +32,11 @@ t1 = toc;
 for n=1:length(trace)
     trace(n).labels_trace = [trace(n).labels_trace;0];
 end
+%% 
+tode = tic;
 ode = FnEstODE(trace);
+tode = toc(tode);
+save('tode.mat','tode');
 
 %% 
 eta = 100000; % number of iterations 
