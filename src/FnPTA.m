@@ -1,5 +1,5 @@
 % trace by trace
-function pta_trace = FnPTA3(trace)
+function pta_trace = FnPTA(trace)
 num = 1;
 seg_ids = [];
 for n = 1:length(trace)

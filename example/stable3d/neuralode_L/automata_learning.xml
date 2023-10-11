@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<sspaceex xmlns="http://www-verimag.imag.fr/xml-namespaces/sspaceex" math="SpaceEx" version="0.2">
+   <component id="automata_learning_sys">
+      <param controlled="true" d1="1" d2="1" dynamics="any" local="false" name="x1" type="real"/>
+      <param controlled="true" d1="1" d2="1" dynamics="any" local="false" name="x2" type="real"/>
+      <param controlled="true" d1="1" d2="1" dynamics="any" local="false" name="x3" type="real"/>
+      <location id="1" name="loc1">
+         <flow>x1' == 3.117145091360726 - 6.236726331582759 * x2 - 0.06048766661353966 * x3 - 7.16491395077901 * x1 &amp;
+ x2' == 5.6789874840469565 * x1 + 4.015041317165014 * x2 + 1.472908217470831 * x3 - 5.369614987808745 &amp;
+ x3' == 2.8918727170093916 * x1 + 2.047286249115132 * x2 - 2.2942002437339397 * x3 + 0.3685019598733561</flow>
+      </location>
+      <location id="2" name="loc2">
+         <flow>x1' == 0.3781958949784894 * x1 + 0.5667232912255713 * x2 + 1.1820176425426325 * x3 + 0.04975323615462912 &amp;
+ x2' == 1.0199052188399946 * x1 - 0.8502210061997175 * x2 + 0.48139552073553205 * x3 + 0.06099497224931838 &amp;
+ x3' == 0.6268806836960721 * x2 - 1.3935050202198909 * x1 - 1.3442249700638058 * x3 - 0.1265419602464135</flow>
+      </location>
+      <transition asap="false" bezier="false" source="1" target="2" timedriven="false">
+         <guard>3.613 * x1 + 3.088 * x2 - 2.026 * x3 + 1.0 &gt; 0.0</guard>
+         <labelposition/>
+         <middlepoint/>
+      </transition>
+   </component>
+   <component id="automata_learning_net">
+      <param controlled="true" d1="1" d2="1" dynamics="any" local="false" name="x1" type="real"/>
+      <param controlled="true" d1="1" d2="1" dynamics="any" local="false" name="x2" type="real"/>
+      <param controlled="true" d1="1" d2="1" dynamics="any" local="false" name="x3" type="real"/>
+      <bind as="automata_learning" component="automata_learning_sys">
+         <map key="x1">x1</map>
+         <map key="x2">x2</map>
+         <map key="x3">x3</map>
+      </bind>
+   </component>
+</sspaceex>

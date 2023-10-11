@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<sspaceex xmlns="http://www-verimag.imag.fr/xml-namespaces/sspaceex" math="SpaceEx" version="0.2">
+   <component id="automata_learning_sys">
+      <param controlled="true" d1="1" d2="1" dynamics="any" local="false" name="x1" type="real"/>
+      <param controlled="true" d1="1" d2="1" dynamics="any" local="false" name="x2" type="real"/>
+      <location id="1" name="loc1">
+         <flow>x1' == 0.0704534481999417 * x1 - 1.0682322679022036 * x2 - 0.15567711649509874 &amp;
+ x2' == 0.8992468202686723 * x2 - 0.013011252348547941 * x1 + 1.9777609818411293</flow>
+      </location>
+      <location id="2" name="loc2">
+         <flow>x1' == 0.04840411734767258 * x1 - 1.0018367484590271 * x2 + 0.0767735259660185 &amp;
+ x2' == 6.452419820823707 * x1 - 0.019179947266934505 * x2 + 6.124703451030655</flow>
+      </location>
+      <transition asap="false" bezier="false" source="1" target="2" timedriven="false">
+         <guard>0.3288 * x1 - 0.333 * x2 + 1.0 &lt; 0.0</guard>
+         <labelposition/>
+         <middlepoint/>
+      </transition>
+      <transition asap="false" bezier="false" source="2" target="1" timedriven="false">
+         <guard>0.499 * x2 - 0.0006802 * x1 + 1.0 &lt; 0.0</guard>
+         <labelposition/>
+         <middlepoint/>
+      </transition>
+   </component>
+   <component id="automata_learning_net">
+      <param controlled="true" d1="1" d2="1" dynamics="any" local="false" name="x1" type="real"/>
+      <param controlled="true" d1="1" d2="1" dynamics="any" local="false" name="x2" type="real"/>
+      <bind as="automata_learning" component="automata_learning_sys">
+         <map key="x1">x1</map>
+         <map key="x2">x2</map>
+      </bind>
+   </component>
+</sspaceex>

@@ -2,7 +2,7 @@ function FnGenerateHyst(file_name,label_guard, num_var, ode, pta_trace)
 
 %load([data,'.mat']);
 % import data structures from Hyst
-javaaddpath(['..', filesep, '..', filesep, 'src',filesep,'hyst', filesep, 'lib', filesep, 'Hyst.jar']);
+javaaddpath(['..', filesep, '..', filesep, '..', filesep, 'src',filesep,'hyst', filesep, 'lib', filesep, 'Hyst.jar']);
 import de.uni_freiburg.informatik.swt.spaceexboogieprinter.*;
 import com.verivital.hyst.automaton.*;
 import com.verivital.hyst.grammar.antlr.*;

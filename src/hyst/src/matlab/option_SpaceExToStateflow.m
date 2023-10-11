@@ -21,9 +21,13 @@ function [options, path_name, xml_name, cfg_name] = option_SpaceExToStateflow(ar
         xml_path_name = strrep(xml_path_name, '\', filesep);
         if strfind(xml_path_name,'.xml')
             k = strfind(xml_path_name, filesep);
-            index = k(length(k));
-            path_name = xml_path_name(1:index-1);
-            xml_name = xml_path_name(index + 1: end);
+            if isempty(k)
+                xml_name = xml_path_name;
+            else
+                index = k(length(k));
+                path_name = xml_path_name(1:index-1);
+                xml_name = xml_path_name(index + 1: end);
+            end
         end
         
         if length(argument) > 1 && ~isempty(strfind(argument{2},'.cfg'))
